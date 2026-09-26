@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ToolFactory — 150+ free online tools (calculators, converters, generators)</title>
+<meta name="description" content="Free online tools that just work. Fast, private, no signup. 150 free tools including EMI, GST, SIP, percentage and unit converters. No signup, works offline, processed in your browser.">
+
+<link rel="canonical" href="https://toolfactory.pages.dev/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ToolFactory — 150+ free online tools (calculators, converters, generators)">
+<meta property="og:description" content="Free online tools that just work. Fast, private, no signup. 150 free tools including EMI, GST, SIP, percentage and unit converters. No signup, works offline, processed in your browser.">
+<meta property="og:url" content="https://toolfactory.pages.dev/">
+<meta property="og:site_name" content="ToolFactory">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ToolFactory","url":"https://toolfactory.pages.dev/","description":"Free online tools that just work. Fast, private, no signup.","potentialAction":{"@type":"SearchAction","target":"https://toolfactory.pages.dev/tools/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f7f8fb; --panel:#fff; --ink:#131720; --muted:#5b6478; --line:#e2e6ef;
+  --accent:#2f6df6; --accent-ink:#fff; --ok:#0f8a4d; --warn:#b45309; --bad:#c02626;
+  --radius:12px; --wrap:860px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0e1017;--panel:#161a24;--ink:#eef1f7;--muted:#9aa4bb;--line:#252b39;--accent:#6f9bff;}
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;z-index:9;background:var(--panel);padding:8px 12px;border-radius:8px}
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;
+  max-width:var(--wrap);margin:0 auto;padding:12px 16px}
+.brand{font-weight:700;font-size:18px;color:var(--ink)}
+.brand span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:12px;font-size:14px}
+main{padding:20px 0 48px}
+h1{font-size:1.75rem;line-height:1.25;margin:8px 0 6px}
+h2{font-size:1.2rem;margin:28px 0 8px}
+h3{font-size:1rem;margin:18px 0 6px}
+p{margin:8px 0}
+.lede{color:var(--muted);margin:0 0 16px}
+.crumbs{font-size:13px;color:var(--muted);margin:0 0 4px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;margin:0 0 8px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+label{display:block;font-size:13px;font-weight:600;margin:0 0 4px}
+input,select,textarea{width:100%;padding:9px 10px;border:1px solid var(--line);
+  border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:15px}
+textarea{min-height:132px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+button{font:inherit;font-weight:600;cursor:pointer;border:1px solid var(--accent);
+  background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:8px}
+button.ghost{background:transparent;color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+.result{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.big{font-size:2rem;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.big .unit{font-size:1rem;font-weight:600;color:var(--muted);margin-left:6px}
+.outs{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+.outs th,.outs td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+.outs td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+table.data{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+table.data th,table.data td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left}
+table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-width:96px}
+.stat b{display:block;font-size:1.25rem;line-height:1.2}
+.stat span{font-size:12px;color:var(--muted)}
+.verdict{font-weight:700}
+.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
+  border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
+.err{color:var(--bad);font-size:14px;margin-top:8px}
+.related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
+.related li span,.hub li span{display:block;color:var(--muted);font-size:13px}
+.faq dt{font-weight:600;margin-top:14px}
+.faq dd{margin:4px 0 0;color:var(--ink)}
+.note{font-size:13px;color:var(--muted)}
+.cta{display:inline-block;margin-top:8px}
+footer.site{border-top:1px solid var(--line);background:var(--panel);padding:20px 0;font-size:14px;color:var(--muted)}
+footer.site .cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+footer.site h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px}
+footer.site ul{list-style:none;padding:0;margin:0;columns:2;column-gap:16px}
+footer.site li{margin:3px 0}
+.legal h2{margin-top:26px}
+.qr{image-rendering:pixelated;background:#fff;padding:12px;border-radius:10px;max-width:100%;height:auto}
+@media print{header.site,footer.site,.related,button{display:none}}
+</style>
+</head>
+<body>
+<header class="site"><div class="bar">
+<a class="brand" href="/">ToolFacto<span>ry</span></a>
+<nav aria-label="Categories"><a href="/calculators/">Calculators</a><a href="/converters/">Converters</a><a href="/formatters/">Formatters</a><a href="/generators/">Generators</a><a href="/checkers/">Checkers</a></nav>
+</div></header>
+<main class="wrap">
+<h1>Free online tools that just work</h1>
+<p class="lede">Free online tools that just work. Fast, private, no signup. 150 tools, all offline-capable and free forever.</p>
+<section class="card"><label for="q">Search 150 tools</label>
+      <input type="search" id="q" placeholder="emi, percentage, json, password…" autocomplete="off">
+      <ul class="hub" id="results" style="margin-top:10px"></ul></section>
+<section id="popular"><h2>Most used tools</h2><ul class="hub"><li><a href="/tools/age-calculator/">Age Calculator</a><span>Age Calculator — free online tool. Counted the way a calendar counts: the leap days and month lengths are handled, so the years/months/days answer is what you would write on a form. Works on mobile and offline.</span></li>
+<li><a href="/tools/percentage-calculator/">Percentage Calculator</a><span>Percentage Calculator — free online tool. This is the everyday percentage case: GST on a price, a tip, a discount, a salary hike. Works on mobile and offline.</span></li>
+<li><a href="/tools/emi-calculator/">EMI Calculator</a><span>EMI Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.</span></li>
+<li><a href="/tools/gst-calculator/">GST Calculator</a><span>GST Calculator — free online tool. Use Add GST when you know the pre-tax price, and Remove GST when the bill already includes tax — the two directions give different answers, which is the most common GST arithmetic mistake. Works on mobile and offline.</span></li>
+<li><a href="/tools/sip-calculator/">SIP Calculator</a><span>SIP Calculator — free online tool. The result depends entirely on how long you stay invested, not on timing the market. Works on mobile and offline.</span></li>
+<li><a href="/tools/bmi-calculator/">BMI Calculator</a><span>Calculate your BMI using your weight and height. Understand your weight category: underweight, normal, overweight, or obese.</span></li>
+<li><a href="/tools/word-counter/">Word Counter</a><span>This word counter tool provides counts for words, characters, sentences, lines, and paragraphs. Paste your text to get instant statistics.</span></li>
+<li><a href="/tools/case-converter/">Case Converter</a><span>This online case converter tool transforms your text to uppercase, lowercase, title case, or sentence case. Paste your text and convert.</span></li>
+<li><a href="/tools/json-formatter/">JSON Formatter</a><span>This JSON Formatter tool helps you pretty-print JSON data. It indents and structures your JSON for better readability and debugging.</span></li>
+<li><a href="/tools/password-generator/">Password Generator</a><span>Generate strong, random passwords. Customize password length and select character types: letters, alphanumeric, or all symbols. Free online tool.</span></li>
+<li><a href="/tools/qr-code-generator/">QR Code Generator</a><span>Create QR codes for free. Enter text or a URL, set the size in pixels, and download your custom QR code instantly.</span></li>
+<li><a href="/tools/unit-converter/">Unit Converter</a><span>This Unit Converter tool converts values across various units. Select your category, input a value, and choose your from and to units.</span></li></ul></section>
+<section id="categories"><h2>Browse by category</h2><ul class="hub"><li><a href="/calculators/">Calculators</a><span>76 tools — Finance &amp; Math</span></li>
+<li><a href="/converters/">Converters</a><span>21 tools — Unit &amp; Data</span></li>
+<li><a href="/formatters/">Formatters</a><span>9 tools — Text &amp; Code</span></li>
+<li><a href="/generators/">Generators</a><span>17 tools — Security &amp; Web</span></li>
+<li><a href="/checkers/">Checkers</a><span>27 tools — Validation &amp; Stats</span></li></ul></section>
+<section id="recent"><h2>Recently added</h2><ul class="hub"><li><a href="/tools/pin-generator/">PIN Generator</a><span>PIN Generator — free online tool. Fast, private, no signup. Works on mobile and offline.</span></li>
+<li><a href="/tools/memorable-password-generator/">Memorable Password Generator</a><span>Memorable Password Generator — free online tool. Fast, private, no signup. Works on mobile and offline.</span></li>
+<li><a href="/tools/passphrase-generator/">Passphrase Generator</a><span>Passphrase Generator — free online tool. Fast, private, no signup. Works on mobile and offline.</span></li>
+<li><a href="/tools/rgb-to-cmyk-converter/">RGB to CMYK Converter</a><span>RGB to CMYK Converter — free online tool. Fast, private, no signup. Works on mobile and offline.</span></li>
+<li><a href="/tools/url-validator/">URL Validator</a><span>URL Validator — free online tool. Fast, private, no signup. Works on mobile and offline.</span></li>
+<li><a href="/tools/sentence-counter/">Sentence Counter</a><span>Sentence Counter — free online tool. Fast, private, no signup. Works on mobile and offline.</span></li>
+<li><a href="/tools/hsl-to-hex-converter/">HSL to HEX Converter</a><span>HSL to HEX Converter — free online tool. Fast, private, no signup. Works on mobile and offline.</span></li>
+<li><a href="/tools/phone-number-validator/">Phone Number Validator</a><span>Phone Number Validator — free online tool. Fast, private, no signup. Works on mobile and offline.</span></li></ul></section>
+<section id="how-site"><h2>How this site works</h2>
+<p>Every tool here is a single lightweight page. The maths runs in your own browser, so nothing you type is uploaded, logged or stored — there is no account, no cookie banner and no tracking pixel.</p>
+<p>We check every calculator against worked examples before it goes live, and the pages are plain HTML so they load fast even on a weak mobile connection. If something ever gives a wrong result, we want to know about it.</p>
+<p>Missing a tool you need? <a href="/contact/">Tell us</a> — requests shape what gets built next.</p></section>
+<section id="all"><h2>All tools</h2><p><a href="/tools/">See the complete list of 150 tools →</a></p></section>
+
+</main>
+<footer class="site"><div class="wrap"><div class="cols">
+<div><h3>Tools</h3><ul><li><a href="/calculators/">Calculators</a></li><li><a href="/converters/">Converters</a></li><li><a href="/formatters/">Formatters</a></li><li><a href="/generators/">Generators</a></li><li><a href="/checkers/">Checkers</a></li></ul></div>
+<div><h3>Site</h3><ul>
+<li><a href="/tools/">All tools</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/contact/">Contact</a></li>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/terms/">Terms</a></li>
+</ul></div>
+<div><h3>ToolFactory</h3><p>Free online tools that just work. Fast, private, no signup.</p>
+<p class="note">Free tools, no signup, no tracking. Everything runs in your browser.</p></div>
+</div>
+<p class="note" style="margin-top:16px">&copy; 2026 ToolFactory. All rights reserved.</p>
+</div></footer>
+<script>
+
+var ALL = [{"i":"age-calculator","n":"Age Calculator","c":"calculators"},{"i":"percentage-calculator","n":"Percentage Calculator","c":"calculators"},{"i":"emi-calculator","n":"EMI Calculator","c":"calculators"},{"i":"gst-calculator","n":"GST Calculator","c":"calculators"},{"i":"sip-calculator","n":"SIP Calculator","c":"calculators"},{"i":"bmi-calculator","n":"BMI Calculator","c":"calculators"},{"i":"word-counter","n":"Word Counter","c":"checkers"},{"i":"case-converter","n":"Case Converter","c":"formatters"},{"i":"json-formatter","n":"JSON Formatter","c":"formatters"},{"i":"password-generator","n":"Password Generator","c":"generators"},{"i":"qr-code-generator","n":"QR Code Generator","c":"generators"},{"i":"unit-converter","n":"Unit Converter","c":"converters"},{"i":"date-difference-calculator","n":"Date Difference Calculator","c":"calculators"},{"i":"discount-calculator","n":"Discount Calculator","c":"calculators"},{"i":"simple-interest-calculator","n":"Simple Interest Calculator","c":"calculators"},{"i":"compound-interest-calculator","n":"Compound Interest Calculator","c":"calculators"},{"i":"loan-eligibility-calculator","n":"Loan Eligibility Calculator","c":"calculators"},{"i":"random-number-generator","n":"Random Number Generator","c":"calculators"},{"i":"uuid-generator","n":"UUID Generator","c":"generators"},{"i":"epoch-converter","n":"Epoch Converter","c":"converters"},{"i":"base64-encoder","n":"Base64 Encoder","c":"converters"},{"i":"url-encoder","n":"URL Encoder","c":"converters"},{"i":"slug-generator","n":"Slug Generator","c":"generators"},{"i":"text-cleaner","n":"Text Cleaner","c":"formatters"},{"i":"duplicate-line-remover","n":"Duplicate Line Remover","c":"formatters"},{"i":"character-counter","n":"Character Counter","c":"checkers"},{"i":"fuel-cost-calculator","n":"Fuel Cost Calculator","c":"calculators"},{"i":"tip-calculator","n":"Tip Calculator","c":"calculators"},{"i":"celsius-to-fahrenheit","n":"Celsius to Fahrenheit","c":"converters"},{"i":"kg-to-pounds","n":"KG to Pounds","c":"converters"},{"i":"cm-to-inches","n":"CM to Inches","c":"converters"},{"i":"days-until-calculator","n":"Days Until Calculator","c":"calculators"},{"i":"percentage-difference-calculator","n":"Percentage Difference Calculator","c":"calculators"},{"i":"aspect-ratio-calculator","n":"Aspect Ratio Calculator","c":"calculators"},{"i":"sales-tax-calculator","n":"Sales Tax Calculator","c":"calculators"},{"i":"fd-calculator","n":"FD Calculator","c":"calculators"},{"i":"ppf-calculator","n":"PPF Calculator","c":"calculators"},{"i":"lumpsum-calculator","n":"Lumpsum Calculator","c":"calculators"},{"i":"swp-calculator","n":"SWP Calculator","c":"calculators"},{"i":"gratuity-calculator","n":"Gratuity Calculator","c":"calculators"},{"i":"hra-exemption-calculator","n":"HRA Exemption Calculator","c":"calculators"},{"i":"income-tax-calculator","n":"Income Tax Calculator","c":"calculators"},{"i":"salary-in-hand-calculator","n":"Salary In-Hand Calculator","c":"calculators"},{"i":"time-zone-converter","n":"Time Zone Converter","c":"converters"},{"i":"roman-numerals-converter","n":"Roman Numerals Converter","c":"converters"},{"i":"binary-to-text-converter","n":"Binary to Text Converter","c":"converters"},{"i":"hex-to-rgb-converter","n":"HEX to RGB Converter","c":"converters"},{"i":"lorem-ipsum-generator","n":"Lorem Ipsum Generator","c":"generators"},{"i":"regex-tester","n":"Regex Tester","c":"checkers"},{"i":"markdown-preview","n":"Markdown Preview","c":"formatters"},{"i":"home-loan-emi-calculator","n":"Home Loan EMI Calculator","c":"calculators"},{"i":"text-to-pdf","n":"Text to PDF","c":"generators"},{"i":"jpg-to-pdf","n":"JPG to PDF","c":"generators"},{"i":"gst-calculator-reverse-charge","n":"GST Calculator Reverse Charge","c":"calculators"},{"i":"image-resizer","n":"Image Resizer","c":"generators"},{"i":"pan-card-validator","n":"PAN Card Validator","c":"calculators"},{"i":"what-is-x-percent-of-y","n":"What is X Percent of Y","c":"calculators"},{"i":"aadhaar-number-validator","n":"Aadhaar Number Validator","c":"calculators"},{"i":"gstin-validator","n":"GSTIN Validator","c":"calculators"},{"i":"ifsc-code-validator","n":"IFSC Code Validator","c":"calculators"},{"i":"indian-mobile-number-validator","n":"Indian Mobile Number Validator","c":"calculators"},{"i":"pin-code-validator","n":"PIN Code Validator","c":"calculators"},{"i":"vehicle-number-validator","n":"Vehicle Number Validator","c":"calculators"},{"i":"land-area-converter-india","n":"Land Area Converter (India)","c":"calculators"},{"i":"numerology-number-calculator","n":"Numerology Number Calculator","c":"calculators"},{"i":"upi-payment-link-generator","n":"UPI Payment Link Generator","c":"calculators"},{"i":"imei-validator","n":"IMEI Validator","c":"calculators"},{"i":"number-to-words","n":"Number to Words","c":"calculators"},{"i":"event-countdown-calculator","n":"Event Countdown Calculator","c":"calculators"},{"i":"income-tax-calculator-new-regime","n":"Income Tax Calculator New Regime","c":"calculators"},{"i":"age-calculator-in-months","n":"Age Calculator in Months","c":"calculators"},{"i":"bmr-calculator","n":"BMR Calculator","c":"calculators"},{"i":"percentage-to-marks-calculator","n":"Percentage to Marks Calculator","c":"calculators"},{"i":"gpa-calculator","n":"GPA Calculator","c":"checkers"},{"i":"kilometer-to-mile-converter","n":"Kilometer to Mile Converter","c":"converters"},{"i":"uppercase-converter","n":"Uppercase Converter","c":"formatters"},{"i":"word-counter-for-essays","n":"Word Counter for Essays","c":"checkers"},{"i":"strong-password-generator","n":"Strong Password Generator","c":"generators"},{"i":"email-validator","n":"Email Validator","c":"checkers"},{"i":"gst-number-checker","n":"GST Number Checker","c":"calculators"},{"i":"unix-timestamp-milliseconds","n":"Unix Timestamp Milliseconds","c":"converters"},{"i":"cron-expression-builder","n":"Cron Expression Builder","c":"checkers"},{"i":"instagram-font-generator","n":"Instagram Font Generator","c":"checkers"},{"i":"hashtag-counter","n":"Hashtag Counter","c":"checkers"},{"i":"instagram-engagement-rate-calculator","n":"Instagram Engagement Rate Calculator","c":"calculators"},{"i":"rgb-to-hex-converter","n":"RGB to HEX Converter","c":"converters"},{"i":"affiliate-commission-calculator","n":"Affiliate Commission Calculator","c":"calculators"},{"i":"keyword-density-checker-pro","n":"Keyword Density Checker Pro","c":"checkers"},{"i":"car-loan-emi-calculator","n":"Car Loan EMI Calculator","c":"calculators"},{"i":"gst-inclusive-calculator","n":"GST Inclusive Calculator","c":"calculators"},{"i":"income-tax-calculator-old-regime","n":"Income Tax Calculator Old Regime","c":"calculators"},{"i":"x-is-what-percent-of-y","n":"X is What Percent of Y","c":"calculators"},{"i":"age-difference-calculator","n":"Age Difference Calculator","c":"calculators"},{"i":"bmr-calculator-female","n":"BMR Calculator Female","c":"calculators"},{"i":"test-score-calculator","n":"Test Score Calculator","c":"calculators"},{"i":"sgpa-calculator","n":"SGPA Calculator","c":"checkers"},{"i":"mile-to-kilometer-converter","n":"Mile to Kilometer Converter","c":"converters"},{"i":"lowercase-converter","n":"Lowercase Converter","c":"formatters"},{"i":"passphrase-generator","n":"Passphrase Generator","c":"generators"},{"i":"character-counter-with-spaces","n":"Character Counter with Spaces","c":"checkers"},{"i":"bulk-email-validator","n":"Bulk Email Validator","c":"checkers"},{"i":"numeric-password-generator","n":"Numeric Password Generator","c":"generators"},{"i":"regex-tester-online","n":"Regex Tester Online","c":"checkers"},{"i":"instagram-bio-generator","n":"Instagram Bio Generator","c":"generators"},{"i":"iso-date-converter","n":"ISO Date Converter","c":"converters"},{"i":"crontab-generator","n":"Crontab Generator","c":"checkers"},{"i":"hex-to-hsl-converter","n":"HEX to HSL Converter","c":"checkers"},{"i":"twitter-character-limit-checker","n":"Twitter Character Limit Checker","c":"checkers"},{"i":"youtube-money-calculator","n":"YouTube Money Calculator","c":"calculators"},{"i":"image-aspect-ratio-resizer","n":"Image Aspect Ratio Resizer","c":"calculators"},{"i":"content-freshness-calculator","n":"Content Freshness Calculator","c":"calculators"},{"i":"serp-snippet-length-checker","n":"SERP Snippet Length Checker","c":"checkers"},{"i":"personal-loan-emi-calculator","n":"Personal Loan EMI Calculator","c":"calculators"},{"i":"gst-calculator-5-percent","n":"GST Calculator 5 Percent","c":"calculators"},{"i":"percentage-increase-calculator","n":"Percentage Increase Calculator","c":"calculators"},{"i":"age-calculator-by-date-of-birth","n":"Age Calculator by Date of Birth","c":"calculators"},{"i":"ideal-weight-calculator","n":"Ideal Weight Calculator","c":"calculators"},{"i":"cut-off-mark-calculator","n":"Cut Off Mark Calculator","c":"calculators"},{"i":"memorable-password-generator","n":"Memorable Password Generator","c":"generators"},{"i":"meter-to-foot-converter","n":"Meter to Foot Converter","c":"converters"},{"i":"phone-number-validator","n":"Phone Number Validator","c":"checkers"},{"i":"title-case-converter","n":"Title Case Converter","c":"formatters"},{"i":"character-counter-without-spaces","n":"Character Counter without Spaces","c":"checkers"},{"i":"uuid-v4-generator","n":"UUID v4 Generator","c":"generators"},{"i":"hsl-to-hex-converter","n":"HSL to HEX Converter","c":"calculators"},{"i":"regex-match-extractor","n":"Regex Match Extractor","c":"checkers"},{"i":"binary-encoder","n":"Binary Encoder","c":"converters"},{"i":"youtube-rpm-calculator","n":"YouTube RPM Calculator","c":"calculators"},{"i":"color-code-picker","n":"Color Code Picker","c":"converters"},{"i":"image-dpi-calculator","n":"Image DPI Calculator","c":"calculators"},{"i":"meta-description-generator","n":"Meta Description Generator","c":"generators"},{"i":"education-loan-emi-calculator","n":"Education Loan EMI Calculator","c":"calculators"},{"i":"gst-calculator-28-percent","n":"GST Calculator 28 Percent","c":"calculators"},{"i":"sentence-counter","n":"Sentence Counter","c":"checkers"},{"i":"percentage-decrease-calculator","n":"Percentage Decrease Calculator","c":"calculators"},{"i":"pin-generator","n":"PIN Generator","c":"generators"},{"i":"retirement-age-calculator","n":"Retirement Age Calculator","c":"calculators"},{"i":"url-validator","n":"URL Validator","c":"checkers"},{"i":"ideal-weight-calculator-female","n":"Ideal Weight Calculator Female","c":"calculators"},{"i":"exam-countdown-calculator","n":"Exam Countdown Calculator","c":"calculators"},{"i":"weighted-grade-calculator","n":"Weighted Grade Calculator","c":"checkers"},{"i":"rgb-to-cmyk-converter","n":"RGB to CMYK Converter","c":"calculators"},{"i":"foot-to-meter-converter","n":"Foot to Meter Converter","c":"converters"},{"i":"sentence-case-converter","n":"Sentence Case Converter","c":"formatters"},{"i":"keyword-density-checker","n":"Keyword Density Checker","c":"checkers"},{"i":"line-counter","n":"Line Counter","c":"checkers"},{"i":"bulk-uuid-generator","n":"Bulk UUID Generator","c":"generators"},{"i":"email-regex-tester","n":"Email Regex Tester","c":"checkers"},{"i":"binary-decoder","n":"Binary Decoder","c":"converters"},{"i":"youtube-earnings-estimator-india","n":"YouTube Earnings Estimator India","c":"calculators"}];
+var q = document.getElementById('q');
+var box = document.getElementById('results');
+q.addEventListener('input', function () {
+  var term = q.value.trim().toLowerCase();
+  if (!term) { box.innerHTML = ''; return; }
+  var hits = ALL.filter(function (t) { return t.n.toLowerCase().indexOf(term) >= 0 || t.i.indexOf(term) >= 0; }).slice(0, 12);
+  box.innerHTML = hits.map(function (t) {
+    return '<li><a href="/tools/' + t.i + '/">' + t.n + '</a><span>' + t.c + '</span></li>';
+  }).join('') || '<li>No match — try a shorter word.</li>';
+});
+</script>
+</body>
+</html>

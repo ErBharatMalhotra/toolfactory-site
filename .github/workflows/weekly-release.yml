@@ -1,0 +1,80 @@
+name: weekly-release
+
+on:
+  schedule:
+    - cron: "30 1 * * 1" # Monday 07:00 IST (01:30 UTC)
+  workflow_dispatch: {} # manual run from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Clone private core
+        env:
+          CORE_TOKEN: ${{ secrets.CORE_TOKEN }}
+        run: git clone --depth 1 "https://x-access-token:${CORE_TOKEN}@github.com/ErBharatMalhotra/ToolFactory.git" core
+
+      - name: Install core deps (none expected)
+        run: node -e "console.log('core engine ready, zero deps by design')"
+
+      - name: Privacy gate
+        run: node core/scripts/privacy-gate.mjs
+
+      - name: Unit tests
+        working-directory: core
+        run: node tests/run.mjs
+
+      - name: Publish next weekly batch
+        working-directory: core
+        env:
+          GEMINI_KEYS: ""
+          GEMINI_API_KEY: ""
+        run: node engine/publisher.mjs
+
+      - name: Rebuild full site
+        working-directory: core
+        env:
+          GEMINI_KEYS: ""
+          GEMINI_API_KEY: ""
+        run: node engine/publisher.mjs --rebuild-all
+
+      - name: Privacy gate (fresh build)
+        working-directory: core
+        run: node scripts/privacy-gate.mjs
+
+      - name: Verify
+        working-directory: core
+        run: |
+          node engine/tests.mjs --all-live
+          node scripts/runtime-check.mjs
+          node scripts/default-invalid-check.mjs
+
+      - name: Sync built site into public repo
+        run: |
+          rm -rf site/dist
+          mkdir -p site data
+          cp -r core/site/dist site/dist
+          cp core/data/live-tools.json data/live-tools.json
+          echo "last-sync: $(date -u +%FT%TZ)" > data/last-sync.txt
+
+      - name: Commit and push
+        run: |
+          git config user.name "Bharat Malhotra"
+          git config user.email "mr.bharatmalhotra@gmail.com"
+          git add site/dist data/
+          git diff --cached --quiet || git commit -m "site update: $(date -u +%F-%H%M)"
+          git push

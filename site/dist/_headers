@@ -1,0 +1,18 @@
+# Cloudflare Pages headers — copied verbatim into site/dist on every build.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Cross-Origin-Opener-Policy: same-origin
+
+/tools/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/favicon.svg
+  Cache-Control: public, max-age=604800, immutable
+
+/sitemap.xml
+  Content-Type: application/xml
+  Cache-Control: public, max-age=3600

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Online Calculators — 76 tools | ToolFactory</title>
+<meta name="description" content="Browse 76 free online calculators on ToolFactory. Every tool runs in your browser, works on mobile and needs no signup.">
+
+<link rel="canonical" href="https://toolfactory.pages.dev/calculators/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Online Calculators — 76 tools | ToolFactory">
+<meta property="og:description" content="Browse 76 free online calculators on ToolFactory. Every tool runs in your browser, works on mobile and needs no signup.">
+<meta property="og:url" content="https://toolfactory.pages.dev/calculators/">
+<meta property="og:site_name" content="ToolFactory">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ToolFactory","url":"https://toolfactory.pages.dev/","description":"Free online tools that just work. Fast, private, no signup.","potentialAction":{"@type":"SearchAction","target":"https://toolfactory.pages.dev/tools/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f7f8fb; --panel:#fff; --ink:#131720; --muted:#5b6478; --line:#e2e6ef;
+  --accent:#2f6df6; --accent-ink:#fff; --ok:#0f8a4d; --warn:#b45309; --bad:#c02626;
+  --radius:12px; --wrap:860px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0e1017;--panel:#161a24;--ink:#eef1f7;--muted:#9aa4bb;--line:#252b39;--accent:#6f9bff;}
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;z-index:9;background:var(--panel);padding:8px 12px;border-radius:8px}
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;
+  max-width:var(--wrap);margin:0 auto;padding:12px 16px}
+.brand{font-weight:700;font-size:18px;color:var(--ink)}
+.brand span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:12px;font-size:14px}
+main{padding:20px 0 48px}
+h1{font-size:1.75rem;line-height:1.25;margin:8px 0 6px}
+h2{font-size:1.2rem;margin:28px 0 8px}
+h3{font-size:1rem;margin:18px 0 6px}
+p{margin:8px 0}
+.lede{color:var(--muted);margin:0 0 16px}
+.crumbs{font-size:13px;color:var(--muted);margin:0 0 4px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;margin:0 0 8px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+label{display:block;font-size:13px;font-weight:600;margin:0 0 4px}
+input,select,textarea{width:100%;padding:9px 10px;border:1px solid var(--line);
+  border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:15px}
+textarea{min-height:132px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+button{font:inherit;font-weight:600;cursor:pointer;border:1px solid var(--accent);
+  background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:8px}
+button.ghost{background:transparent;color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+.result{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.big{font-size:2rem;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.big .unit{font-size:1rem;font-weight:600;color:var(--muted);margin-left:6px}
+.outs{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+.outs th,.outs td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+.outs td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+table.data{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+table.data th,table.data td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left}
+table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-width:96px}
+.stat b{display:block;font-size:1.25rem;line-height:1.2}
+.stat span{font-size:12px;color:var(--muted)}
+.verdict{font-weight:700}
+.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
+  border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
+.err{color:var(--bad);font-size:14px;margin-top:8px}
+.related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
+.related li span,.hub li span{display:block;color:var(--muted);font-size:13px}
+.faq dt{font-weight:600;margin-top:14px}
+.faq dd{margin:4px 0 0;color:var(--ink)}
+.note{font-size:13px;color:var(--muted)}
+.cta{display:inline-block;margin-top:8px}
+footer.site{border-top:1px solid var(--line);background:var(--panel);padding:20px 0;font-size:14px;color:var(--muted)}
+footer.site .cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+footer.site h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px}
+footer.site ul{list-style:none;padding:0;margin:0;columns:2;column-gap:16px}
+footer.site li{margin:3px 0}
+.legal h2{margin-top:26px}
+.qr{image-rendering:pixelated;background:#fff;padding:12px;border-radius:10px;max-width:100%;height:auto}
+@media print{header.site,footer.site,.related,button{display:none}}
+</style>
+</head>
+<body>
+<header class="site"><div class="bar">
+<a class="brand" href="/">ToolFacto<span>ry</span></a>
+<nav aria-label="Categories"><a href="/calculators/" aria-current="page">Calculators</a><a href="/converters/">Converters</a><a href="/formatters/">Formatters</a><a href="/generators/">Generators</a><a href="/checkers/">Checkers</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Calculators</span></nav>
+<h1>Free online calculators</h1>
+<p class="lede">76 calculators that run entirely in your browser — free, no signup, no tracking. Part of the Finance &amp; Math group.</p>
+<ul class="hub"><li><a href="/tools/age-calculator/">Age Calculator</a><span>Age Calculator — free online tool. Counted the way a calendar counts: the leap days and month lengths are handled, so the years/months/days answer is what you would write on a form. Works on mobile and offline.</span></li>
+<li><a href="/tools/percentage-calculator/">Percentage Calculator</a><span>Percentage Calculator — free online tool. This is the everyday percentage case: GST on a price, a tip, a discount, a salary hike. Works on mobile and offline.</span></li>
+<li><a href="/tools/emi-calculator/">EMI Calculator</a><span>EMI Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.</span></li>
+<li><a href="/tools/gst-calculator/">GST Calculator</a><span>GST Calculator — free online tool. Use Add GST when you know the pre-tax price, and Remove GST when the bill already includes tax — the two directions give different answers, which is the most common GST arithmetic mistake. Works on mobile and offline.</span></li>
+<li><a href="/tools/sip-calculator/">SIP Calculator</a><span>SIP Calculator — free online tool. The result depends entirely on how long you stay invested, not on timing the market. Works on mobile and offline.</span></li>
+<li><a href="/tools/bmi-calculator/">BMI Calculator</a><span>Calculate your BMI using your weight and height. Understand your weight category: underweight, normal, overweight, or obese.</span></li>
+<li><a href="/tools/date-difference-calculator/">Date Difference Calculator</a><span>Find the difference between two dates. This calculator provides the total days, and the breakdown in years, months, and days.</span></li>
+<li><a href="/tools/discount-calculator/">Discount Calculator</a><span>Use this free discount calculator to find the final price of an item after a discount. Enter the original price and the discount percentage.</span></li>
+<li><a href="/tools/simple-interest-calculator/">Simple Interest Calculator</a><span>Calculate simple interest. Enter principal, annual interest rate, and time in years to find interest and total amount.</span></li>
+<li><a href="/tools/compound-interest-calculator/">Compound Interest Calculator</a><span>Compound Interest Calculator — free online tool. Interest on interest is the whole story here. Works on mobile and offline.</span></li>
+<li><a href="/tools/loan-eligibility-calculator/">Loan Eligibility Calculator</a><span>Loan Eligibility Calculator — free online tool. Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Works on mobile and offline.</span></li>
+<li><a href="/tools/random-number-generator/">Random Number Generator</a><span>Random Number Generator — free online tool. Both the minimum and maximum can come up, and every whole number between them is equally likely. Works on mobile and offline.</span></li>
+<li><a href="/tools/fuel-cost-calculator/">Fuel Cost Calculator</a><span>Fuel Cost Calculator — free online tool. Real-world mileage is usually 10–15% lower than the claimed figure, especially in city traffic with the air-conditioner on. Works on mobile and offline.</span></li>
+<li><a href="/tools/tip-calculator/">Tip Calculator</a><span>Tip Calculator — free online tool. Splitting happens after the tip is added, and the per-person figure already includes both. Works on mobile and offline.</span></li>
+<li><a href="/tools/days-until-calculator/">Days Until Calculator</a><span>Days Until Calculator — free online tool. Both dates are normalised to midnight, so the answer does not shift depending on what time of day you check. Works on mobile and offline.</span></li>
+<li><a href="/tools/percentage-difference-calculator/">Percentage Difference Calculator</a><span>Percentage Difference Calculator — free online tool. Percentage difference compares two values with neither treated as the starting point, and it is not the same as percentage change. Works on mobile and offline.</span></li>
+<li><a href="/tools/aspect-ratio-calculator/">Aspect Ratio Calculator</a><span>Aspect Ratio Calculator — free online tool. Enter either dimension to get the matching one without distortion. Works on mobile and offline.</span></li>
+<li><a href="/tools/sales-tax-calculator/">Sales Tax Calculator</a><span>Sales Tax Calculator — free online tool. Use it for VAT, sales tax, service tax or a state-level cess. Works on mobile and offline.</span></li>
+<li><a href="/tools/fd-calculator/">FD Calculator</a><span>FD Calculator — free online tool. Quarterly compounding pays noticeably more than yearly on the same rate. Works on mobile and offline.</span></li>
+<li><a href="/tools/ppf-calculator/">PPF Calculator</a><span>PPF Calculator — free online tool. PPF is compounded annually and the interest is tax-free under EEE. Works on mobile and offline.</span></li>
+<li><a href="/tools/lumpsum-calculator/">Lumpsum Calculator</a><span>Lumpsum Calculator — free online tool. A lumpsum grows on the whole amount from day one, so it beats a staggered monthly plan when markets rise steadily. Works on mobile and offline.</span></li>
+<li><a href="/tools/swp-calculator/">SWP Calculator</a><span>SWP Calculator — free online tool. A SWP survives when the withdrawal rate stays below the return rate: ₹30,000/month from ₹50L needs only 7. Works on mobile and offline.</span></li>
+<li><a href="/tools/gratuity-calculator/">Gratuity Calculator</a><span>Gratuity Calculator — free online tool. Gratuity needs at least five years of continuous service, and the statutory exemption stops at ₹20 lakh. Works on mobile and offline.</span></li>
+<li><a href="/tools/hra-exemption-calculator/">HRA Exemption Calculator</a><span>HRA Exemption Calculator — free online tool. HRA exemption only applies under the old tax regime. Works on mobile and offline.</span></li>
+<li><a href="/tools/income-tax-calculator/">Income Tax Calculator</a><span>Income Tax Calculator — free online tool. Both regimes are computed so you can compare — the cheaper one depends almost entirely on how large your deductions are. Works on mobile and offline.</span></li>
+<li><a href="/tools/salary-in-hand-calculator/">Salary In-Hand Calculator</a><span>Salary In-Hand Calculator — free online tool. The gap between CTC and in-hand comes from PF, gratuity, insurance and the variable part that is not guaranteed. Works on mobile and offline.</span></li>
+<li><a href="/tools/home-loan-emi-calculator/">Home Loan EMI Calculator</a><span>Home Loan EMI Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.</span></li>
+<li><a href="/tools/gst-calculator-reverse-charge/">GST Calculator Reverse Charge</a><span>GST Calculator Reverse Charge — free online tool. Use Add GST when you know the pre-tax price, and Remove GST when the bill already includes tax — the two directions give different answers, which is the most common GST arithmetic mistake. Works on mobile and offline.</span></li>
+<li><a href="/tools/pan-card-validator/">PAN Card Validator</a><span>PAN Card Validator — free online tool. The validator reads the structure rather than a government database, so a format-valid PAN may still be cancelled or inactive. Works on mobile and offline.</span></li>
+<li><a href="/tools/what-is-x-percent-of-y/">What is X Percent of Y</a><span>What is X Percent of Y — free online tool. This is the everyday percentage case: GST on a price, a tip, a discount, a salary hike. Works on mobile and offline.</span></li>
+<li><a href="/tools/aadhaar-number-validator/">Aadhaar Number Validator</a><span>Aadhaar Number Validator — free online tool. The checksum catches the common mistakes — a mistyped digit or two swapped digits — without any database lookup. Works on mobile and offline.</span></li>
+<li><a href="/tools/gstin-validator/">GSTIN Validator</a><span>GSTIN Validator — free online tool. The last character is a checksum computed from the other fourteen, so a single mistyped character is caught immediately. Works on mobile and offline.</span></li>
+<li><a href="/tools/ifsc-code-validator/">IFSC Code Validator</a><span>IFSC Code Validator — free online tool. Format validation catches the everyday errors: a missing 0 in the middle, a lowercase letter, or a swapped branch code. Works on mobile and offline.</span></li>
+<li><a href="/tools/indian-mobile-number-validator/">Indian Mobile Number Validator</a><span>Indian Mobile Number Validator — free online tool. Numbers starting 1–5 are landlines or special services, which is the most common fake-number giveaway in forms. Works on mobile and offline.</span></li>
+<li><a href="/tools/pin-code-validator/">PIN Code Validator</a><span>PIN Code Validator — free online tool. The first digit alone narrows the address to a region — 1 for Delhi–Punjab, 4 for Maharashtra, 6 for Tamil Nadu–Kerala. Works on mobile and offline.</span></li>
+<li><a href="/tools/vehicle-number-validator/">Vehicle Number Validator</a><span>Vehicle Number Validator — free online tool. The decoder reads which state and RTO office issued the plate. Works on mobile and offline.</span></li>
+<li><a href="/tools/land-area-converter-india/">Land Area Converter (India)</a><span>Land Area Converter (India) — free online tool. Land units are genuinely regional in India: a bigha in Bihar is roughly half of the pucca bigha used here, and parts of Bengal use a smaller one again. Works on mobile and offline.</span></li>
+<li><a href="/tools/numerology-number-calculator/">Numerology Number Calculator</a><span>Numerology Number Calculator — free online tool. This is the classic Pythagorean system used by most numerology charts. Works on mobile and offline.</span></li>
+<li><a href="/tools/upi-payment-link-generator/">UPI Payment Link Generator</a><span>UPI Payment Link Generator — free online tool. The link is a web standard that any UPI app — GPay, PhonePe, Paytm, BHIM — understands. Works on mobile and offline.</span></li>
+<li><a href="/tools/imei-validator/">IMEI Validator</a><span>IMEI Validator — free online tool. The Luhn check catches every single-digit typo and most transpositions. Works on mobile and offline.</span></li>
+<li><a href="/tools/number-to-words/">Number to Words</a><span>Number to Words — free online tool. The two systems group digits differently, which is why 1,50,00,000 and 15,000,000 are the same number written two ways. Works on mobile and offline.</span></li>
+<li><a href="/tools/event-countdown-calculator/">Event Countdown Calculator</a><span>Event Countdown Calculator — free online tool. The countdown is calendar-accurate across months and leap years. Works on mobile and offline.</span></li>
+<li><a href="/tools/income-tax-calculator-new-regime/">Income Tax Calculator New Regime</a><span>Income Tax Calculator New Regime — free online tool. Both regimes are computed so you can compare — the cheaper one depends almost entirely on how large your deductions are. Works on mobile and offline.</span></li>
+<li><a href="/tools/age-calculator-in-months/">Age Calculator in Months</a><span>Age Calculator in Months — free online tool. Counted the way a calendar counts: the leap days and month lengths are handled, so the years/months/days answer is what you would write on a form. Works on mobile and offline.</span></li>
+<li><a href="/tools/bmr-calculator/">BMR Calculator</a><span>BMR Calculator — free online tool. BMR is the energy you would burn lying still all day. Works on mobile and offline.</span></li>
+<li><a href="/tools/percentage-to-marks-calculator/">Percentage to Marks Calculator</a><span>Percentage to Marks Calculator — free online tool. This is the everyday percentage case: GST on a price, a tip, a discount, a salary hike. Works on mobile and offline.</span></li>
+<li><a href="/tools/gst-number-checker/">GST Number Checker</a><span>GST Number Checker — free online tool. The last character is a checksum computed from the other fourteen, so a single mistyped character is caught immediately. Works on mobile and offline.</span></li>
+<li><a href="/tools/instagram-engagement-rate-calculator/">Instagram Engagement Rate Calculator</a><span>Calculate your Instagram engagement rate. Input likes, comments, shares, and followers to get your post&#39;s performance.</span></li>
+<li><a href="/tools/affiliate-commission-calculator/">Affiliate Commission Calculator</a><span>Affiliate Commission Calculator — free online tool. This is the everyday percentage case: GST on a price, a tip, a discount, a salary hike. Works on mobile and offline.</span></li>
+<li><a href="/tools/car-loan-emi-calculator/">Car Loan EMI Calculator</a><span>Car Loan EMI Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.</span></li>
+<li><a href="/tools/gst-inclusive-calculator/">GST Inclusive Calculator</a><span>GST Inclusive Calculator — free online tool. Use Add GST when you know the pre-tax price, and Remove GST when the bill already includes tax — the two directions give different answers, which is the most common GST arithmetic mistake. Works on mobile and offline.</span></li>
+<li><a href="/tools/income-tax-calculator-old-regime/">Income Tax Calculator Old Regime</a><span>Income Tax Calculator Old Regime — free online tool. Both regimes are computed so you can compare — the cheaper one depends almost entirely on how large your deductions are. Works on mobile and offline.</span></li>
+<li><a href="/tools/x-is-what-percent-of-y/">X is What Percent of Y</a><span>X is What Percent of Y — free online tool. Use this when you know the two numbers and want the ratio as a percentage — test scores, conversion rates, what share of revenue a product brings in. Works on mobile and offline.</span></li>
+<li><a href="/tools/age-difference-calculator/">Age Difference Calculator</a><span>Age Difference Calculator — free online tool. Counted the way a calendar counts: the leap days and month lengths are handled, so the years/months/days answer is what you would write on a form. Works on mobile and offline.</span></li>
+<li><a href="/tools/bmr-calculator-female/">BMR Calculator Female</a><span>BMR Calculator Female — free online tool. BMR is the energy you would burn lying still all day. Works on mobile and offline.</span></li>
+<li><a href="/tools/test-score-calculator/">Test Score Calculator</a><span>Test Score Calculator — free online tool. Use this when you know the two numbers and want the ratio as a percentage — test scores, conversion rates, what share of revenue a product brings in. Works on mobile and offline.</span></li>
+<li><a href="/tools/youtube-money-calculator/">YouTube Money Calculator</a><span>Calculate your potential YouTube ad revenue. Input monthly views, CPM, monetized playback share, and your revenue share.</span></li>
+<li><a href="/tools/image-aspect-ratio-resizer/">Image Aspect Ratio Resizer</a><span>Image Aspect Ratio Resizer — free online tool. Enter either dimension to get the matching one without distortion. Works on mobile and offline.</span></li>
+<li><a href="/tools/content-freshness-calculator/">Content Freshness Calculator</a><span>Content Freshness Calculator — free online tool. Both dates are normalised to midnight, so the answer does not shift depending on what time of day you check. Works on mobile and offline.</span></li>
+<li><a href="/tools/personal-loan-emi-calculator/">Personal Loan EMI Calculator</a><span>Personal Loan EMI Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.</span></li>
+<li><a href="/tools/gst-calculator-5-percent/">GST Calculator 5 Percent</a><span>GST Calculator 5 Percent — free online tool. Use Add GST when you know the pre-tax price, and Remove GST when the bill already includes tax — the two directions give different answers, which is the most common GST arithmetic mistake. Works on mobile and offline.</span></li>
+<li><a href="/tools/percentage-increase-calculator/">Percentage Increase Calculator</a><span>Percentage Increase Calculator — free online tool. The base is always the old value, so a rise and a following fall of the same percent do not cancel out. Works on mobile and offline.</span></li>
+<li><a href="/tools/age-calculator-by-date-of-birth/">Age Calculator by Date of Birth</a><span>Age Calculator by Date of Birth — free online tool. Counted the way a calendar counts: the leap days and month lengths are handled, so the years/months/days answer is what you would write on a form. Works on mobile and offline.</span></li>
+<li><a href="/tools/ideal-weight-calculator/">Ideal Weight Calculator</a><span>Ideal Weight Calculator — free online tool. The Devine formula gives a single reference number for drug dosing and clinical use, so it is narrow by design. Works on mobile and offline.</span></li>
+<li><a href="/tools/cut-off-mark-calculator/">Cut Off Mark Calculator</a><span>Cut Off Mark Calculator — free online tool. This is the everyday percentage case: GST on a price, a tip, a discount, a salary hike. Works on mobile and offline.</span></li>
+<li><a href="/tools/hsl-to-hex-converter/">HSL to HEX Converter</a><span>HSL to HEX Converter — free online tool. Fast, private, no signup. Works on mobile and offline.</span></li>
+<li><a href="/tools/youtube-rpm-calculator/">YouTube RPM Calculator</a><span>Calculate your YouTube RPM and estimated ad revenue. Enter views, CPM, monetized playback share, and creator revenue split to get exact earnings.</span></li>
+<li><a href="/tools/image-dpi-calculator/">Image DPI Calculator</a><span>Image DPI Calculator — free online tool. The same 1920 px image is a sharp 6×4-inch print at 300 DPI and a blurry A3 poster. Works on mobile and offline.</span></li>
+<li><a href="/tools/education-loan-emi-calculator/">Education Loan EMI Calculator</a><span>Education Loan EMI Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.</span></li>
+<li><a href="/tools/gst-calculator-28-percent/">GST Calculator 28 Percent</a><span>Calculate 28% GST for any amount. Add 28% GST to a base value or remove 28% GST from a gross value. Fast, accurate, and free.</span></li>
+<li><a href="/tools/percentage-decrease-calculator/">Percentage Decrease Calculator</a><span>Use this percentage decrease calculator to find the percentage reduction between an old value and a new value. Get results fast.</span></li>
+<li><a href="/tools/retirement-age-calculator/">Retirement Age Calculator</a><span>Use the Retirement Age Calculator to determine your precise age on a past, present, or future date. Enter your birth date and a target date.</span></li>
+<li><a href="/tools/ideal-weight-calculator-female/">Ideal Weight Calculator Female</a><span>Determine your ideal weight using the Devine formula. This calculator considers your height and sex for an accurate estimate.</span></li>
+<li><a href="/tools/exam-countdown-calculator/">Exam Countdown Calculator</a><span>The Exam Countdown Calculator determines the number of days, hours, minutes, and seconds until your specified exam date.</span></li>
+<li><a href="/tools/rgb-to-cmyk-converter/">RGB to CMYK Converter</a><span>RGB to CMYK Converter — free online tool. Fast, private, no signup. Works on mobile and offline.</span></li>
+<li><a href="/tools/youtube-earnings-estimator-india/">YouTube Earnings Estimator India</a><span>Calculate your potential YouTube ad earnings in India. Input monthly views, CPM, and revenue shares to estimate income.</span></li></ul>
+
+<section><h2>Other categories</h2><ul class="hub"><li><a href="/converters/">Converters</a><span>Unit &amp; Data</span></li><li><a href="/formatters/">Formatters</a><span>Text &amp; Code</span></li><li><a href="/generators/">Generators</a><span>Security &amp; Web</span></li><li><a href="/checkers/">Checkers</a><span>Validation &amp; Stats</span></li></ul></section>
+</main>
+<footer class="site"><div class="wrap"><div class="cols">
+<div><h3>Tools</h3><ul><li><a href="/calculators/">Calculators</a></li><li><a href="/converters/">Converters</a></li><li><a href="/formatters/">Formatters</a></li><li><a href="/generators/">Generators</a></li><li><a href="/checkers/">Checkers</a></li></ul></div>
+<div><h3>Site</h3><ul>
+<li><a href="/tools/">All tools</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/contact/">Contact</a></li>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/terms/">Terms</a></li>
+</ul></div>
+<div><h3>ToolFactory</h3><p>Free online tools that just work. Fast, private, no signup.</p>
+<p class="note">Free tools, no signup, no tracking. Everything runs in your browser.</p></div>
+</div>
+<p class="note" style="margin-top:16px">&copy; 2026 ToolFactory. All rights reserved.</p>
+</div></footer>
+</body>
+</html>

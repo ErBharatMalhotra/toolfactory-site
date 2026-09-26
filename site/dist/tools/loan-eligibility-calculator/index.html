@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loan Eligibility Calculator | ToolFactory</title>
+<meta name="description" content="Loan Eligibility Calculator — free online tool. Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Works on mobile…">
+<meta name="keywords" content="loan eligibility calculator, free loan eligibility calculator, loan eligibility calculation">
+<link rel="canonical" href="https://toolfactory.pages.dev/tools/loan-eligibility-calculator/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Loan Eligibility Calculator | ToolFactory">
+<meta property="og:description" content="Loan Eligibility Calculator — free online tool. Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Works on mobile…">
+<meta property="og:url" content="https://toolfactory.pages.dev/tools/loan-eligibility-calculator/">
+<meta property="og:site_name" content="ToolFactory">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Loan Eligibility Calculator","url":"https://toolfactory.pages.dev/tools/loan-eligibility-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Loan Eligibility Calculator — free online tool. Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Works on mobile…"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What formula does the Loan Eligibility Calculator use?","acceptedAnswer":{"@type":"Answer","text":"It uses Eligible loan = EMI capacity × ((1 + r)^n − 1) / (r × (1 + r)^n), where r is the monthly rate = annual rate ÷ 12; n is the tenure in months; EMI capacity is the 50% of income minus existing EMIs (FOIR rule)."}},{"@type":"Question","name":"Is the Loan Eligibility Calculator free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no signup, no usage limit and no watermark — the calculator runs entirely in your browser."}},{"@type":"Question","name":"How do I read the result?","acceptedAnswer":{"@type":"Answer","text":"Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Existing loans, credit-card EMIs and a low CIBIL score all cut the amount a bank will actually sanction."}},{"@type":"Question","name":"Does the Loan Eligibility Calculator store or send my data?","acceptedAnswer":{"@type":"Answer","text":"No. Every calculation happens locally in the page, so the numbers you type are never uploaded or logged."}},{"@type":"Question","name":"Does it work on a phone and offline?","acceptedAnswer":{"@type":"Answer","text":"Yes — the page is a single lightweight file that adapts to any screen size. Once it has loaded it keeps working without a network connection."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolfactory.pages.dev/"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://toolfactory.pages.dev/calculators/"},{"@type":"ListItem","position":3,"name":"Loan Eligibility Calculator","item":"https://toolfactory.pages.dev/tools/loan-eligibility-calculator/"}]}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f7f8fb; --panel:#fff; --ink:#131720; --muted:#5b6478; --line:#e2e6ef;
+  --accent:#2f6df6; --accent-ink:#fff; --ok:#0f8a4d; --warn:#b45309; --bad:#c02626;
+  --radius:12px; --wrap:860px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0e1017;--panel:#161a24;--ink:#eef1f7;--muted:#9aa4bb;--line:#252b39;--accent:#6f9bff;}
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;z-index:9;background:var(--panel);padding:8px 12px;border-radius:8px}
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;
+  max-width:var(--wrap);margin:0 auto;padding:12px 16px}
+.brand{font-weight:700;font-size:18px;color:var(--ink)}
+.brand span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:12px;font-size:14px}
+main{padding:20px 0 48px}
+h1{font-size:1.75rem;line-height:1.25;margin:8px 0 6px}
+h2{font-size:1.2rem;margin:28px 0 8px}
+h3{font-size:1rem;margin:18px 0 6px}
+p{margin:8px 0}
+.lede{color:var(--muted);margin:0 0 16px}
+.crumbs{font-size:13px;color:var(--muted);margin:0 0 4px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;margin:0 0 8px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+label{display:block;font-size:13px;font-weight:600;margin:0 0 4px}
+input,select,textarea{width:100%;padding:9px 10px;border:1px solid var(--line);
+  border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:15px}
+textarea{min-height:132px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+button{font:inherit;font-weight:600;cursor:pointer;border:1px solid var(--accent);
+  background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:8px}
+button.ghost{background:transparent;color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+.result{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.big{font-size:2rem;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.big .unit{font-size:1rem;font-weight:600;color:var(--muted);margin-left:6px}
+.outs{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+.outs th,.outs td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+.outs td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+table.data{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+table.data th,table.data td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left}
+table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-width:96px}
+.stat b{display:block;font-size:1.25rem;line-height:1.2}
+.stat span{font-size:12px;color:var(--muted)}
+.verdict{font-weight:700}
+.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
+  border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
+.err{color:var(--bad);font-size:14px;margin-top:8px}
+.related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
+.related li span,.hub li span{display:block;color:var(--muted);font-size:13px}
+.faq dt{font-weight:600;margin-top:14px}
+.faq dd{margin:4px 0 0;color:var(--ink)}
+.note{font-size:13px;color:var(--muted)}
+.cta{display:inline-block;margin-top:8px}
+footer.site{border-top:1px solid var(--line);background:var(--panel);padding:20px 0;font-size:14px;color:var(--muted)}
+footer.site .cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+footer.site h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px}
+footer.site ul{list-style:none;padding:0;margin:0;columns:2;column-gap:16px}
+footer.site li{margin:3px 0}
+.legal h2{margin-top:26px}
+.qr{image-rendering:pixelated;background:#fff;padding:12px;border-radius:10px;max-width:100%;height:auto}
+@media print{header.site,footer.site,.related,button{display:none}}
+</style>
+</head>
+<body>
+<header class="site"><div class="bar">
+<a class="brand" href="/">ToolFacto<span>ry</span></a>
+<nav aria-label="Categories"><a href="/calculators/" aria-current="page">Calculators</a><a href="/converters/">Converters</a><a href="/formatters/">Formatters</a><a href="/generators/">Generators</a><a href="/checkers/">Checkers</a></nav>
+</div></header>
+<main class="wrap">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/calculators/">Calculators</a> › <span>Loan Eligibility Calculator</span></nav>
+<h1>Loan Eligibility Calculator</h1>
+<p class="lede">Loan Eligibility Calculator: free, instant and private. Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income.</p>
+<section id="tool" class="card">
+  <form id="toolform" autocomplete="off">
+    <div class="grid">
+      <div><label for="f_income">Monthly income</label><input type="number" inputmode="decimal" id="f_income" name="income" min="5000" step="1000" required value="80000"></div>
+      <div><label for="f_obligations">Existing EMIs (monthly)</label><input type="number" inputmode="decimal" id="f_obligations" name="obligations" min="0" step="500" required value="15000"></div>
+      <div><label for="f_rate">Interest rate (% p.a.)</label><input type="number" inputmode="decimal" id="f_rate" name="rate" min="1" max="30" step="0.1" required value="10"></div>
+      <div><label for="f_years">Tenure (years)</label><input type="number" inputmode="decimal" id="f_years" name="years" min="1" max="30" step="1" required value="5"></div>
+    </div>
+    <div class="row">
+      <button type="submit">Calculate</button>
+      <button type="button" class="ghost" id="resetbtn">Reset</button>
+      
+    </div>
+  </form>
+  <div class="result" id="result" aria-live="polite"></div>
+  <p class="err" id="err" hidden></p>
+</section>
+<section id="how"><h2>How the Loan Eligibility Calculator works</h2><p>The Loan Eligibility Calculator takes <strong>Monthly income</strong>, <strong>Existing EMIs (monthly)</strong>, <strong>Interest rate (% p.a.)</strong>, <strong>Tenure (years)</strong> and returns the answer instantly — no button to hunt for, no page reload. Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Existing loans, credit-card EMIs and a low CIBIL score all cut the amount a bank will actually sanction.</p>
+<p>Enter your own numbers to replace the example values; the result panel updates as you type. Everything runs in this single page, so nothing you enter leaves your device.</p></section>
+<section id="formula"><h2>Formula used</h2><p><code>Eligible loan = EMI capacity × ((1 + r)^n − 1) / (r × (1 + r)^n)</code></p>
+<table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>r</td><td style="text-align:left">monthly rate = annual rate ÷ 12</td></tr><tr><td>n</td><td style="text-align:left">tenure in months</td></tr><tr><td>EMI capacity</td><td style="text-align:left">50% of income minus existing EMIs (FOIR rule)</td></tr></tbody></table>
+<p>Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Existing loans, credit-card EMIs and a low CIBIL score all cut the amount a bank will actually sanction.</p>
+<p class="note">Inputs used: Monthly income, Existing EMIs (monthly), Interest rate (% p.a.), Tenure (years).</p></section>
+<section id="example"><h2>Worked example</h2><p>Take the default example — monthly income of <strong>80000</strong>, existing emis (monthly) of <strong>15000</strong>, interest rate (% p.a.) of <strong>10</strong>, tenure (years) of <strong>5</strong>:</p><ul><li>Eligible loan amount: 1,176,634.23</li><li>Max EMI capacity: 25,000</li></ul></section>
+<section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What formula does the Loan Eligibility Calculator use?</dt><dd>It uses <strong>Eligible loan = EMI capacity × ((1 + r)^n − 1) / (r × (1 + r)^n)</strong>, where r is the monthly rate = annual rate ÷ 12; n is the tenure in months; EMI capacity is the 50% of income minus existing EMIs (FOIR rule).</dd>
+<dt>Is the Loan Eligibility Calculator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the calculator runs entirely in your browser.</dd>
+<dt>How do I read the result?</dt><dd>Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Existing loans, credit-card EMIs and a low CIBIL score all cut the amount a bank will actually sanction.</dd>
+<dt>Does the Loan Eligibility Calculator store or send my data?</dt><dd>No. Every calculation happens locally in the page, so the numbers you type are never uploaded or logged.</dd>
+<dt>Does it work on a phone and offline?</dt><dd>Yes — the page is a single lightweight file that adapts to any screen size. Once it has loaded it keeps working without a network connection.</dd></dl></section>
+<section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/car-loan-emi-calculator/">Car Loan EMI Calculator</a><span>Calculators</span></li>
+<li><a href="/tools/education-loan-emi-calculator/">Education Loan EMI Calculator</a><span>Calculators</span></li>
+<li><a href="/tools/home-loan-emi-calculator/">Home Loan EMI Calculator</a><span>Calculators</span></li>
+<li><a href="/tools/personal-loan-emi-calculator/">Personal Loan EMI Calculator</a><span>Calculators</span></li>
+<li><a href="/tools/base64-encoder/">Base64 Encoder</a><span>Converters</span></li>
+<li><a href="/tools/binary-decoder/">Binary Decoder</a><span>Converters</span></li></ul></section>
+</main>
+<footer class="site"><div class="wrap"><div class="cols">
+<div><h3>Tools</h3><ul><li><a href="/calculators/">Calculators</a></li><li><a href="/converters/">Converters</a></li><li><a href="/formatters/">Formatters</a></li><li><a href="/generators/">Generators</a></li><li><a href="/checkers/">Checkers</a></li></ul></div>
+<div><h3>Site</h3><ul>
+<li><a href="/tools/">All tools</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/contact/">Contact</a></li>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/terms/">Terms</a></li>
+</ul></div>
+<div><h3>ToolFactory</h3><p>Free online tools that just work. Fast, private, no signup.</p>
+<p class="note">Free tools, no signup, no tracking. Everything runs in your browser.</p></div>
+</div>
+<p class="note" style="margin-top:16px">&copy; 2026 ToolFactory. All rights reserved.</p>
+</div></footer>
+<script>
+var round2 = (n) => Math.round(n * 100) / 100;
+var TOOL = {"id":"loan-eligibility-calculator","mode":"calc","kind":"loanEligibility","fields":[{"key":"income","label":"Monthly income","type":"number","min":5000,"step":1000},{"key":"obligations","label":"Existing EMIs (monthly)","type":"number","min":0,"step":500},{"key":"rate","label":"Interest rate (% p.a.)","type":"number","min":1,"max":30,"step":0.1},{"key":"years","label":"Tenure (years)","type":"number","min":1,"max":30,"step":1}],"defaults":{"income":80000,"obligations":15000,"rate":10,"years":5},"outputs":[{"key":"eligibleLoan","label":"Eligible loan amount","primary":true},{"key":"emiCapacity","label":"Max EMI capacity"}],"statsKeys":[],"qr":false,"units":null,"domain":null,"unitFormulas":null};
+var FN = ({ income, obligations, rate, years }) => {
+      // FOIR: max 50% of income can go to EMIs
+      const capacity = Math.max(0, income * 0.5 - obligations);
+      const n = years * 12;
+      const r = rate / 12 / 100;
+      let eligible;
+      if (r === 0) eligible = capacity * n;
+      else {
+        const f = Math.pow(1 + r, n);
+        eligible = (capacity * (f - 1)) / (r * f);
+      }
+      return { emiCapacity: round2(capacity), eligibleLoan: round2(eligible) };
+    };
+
+var $ = function (s) { return document.querySelector(s); };
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+function fmtNum(v, mode) {
+  if (typeof v !== 'number' || !isFinite(v)) return String(v);
+  var o;
+  if (mode === 'sig') o = { maximumSignificantDigits: 8 };
+  else if (mode === 'money') o = { minimumFractionDigits: 2, maximumFractionDigits: 2 };
+  else if (mode === 'int') o = { maximumFractionDigits: 0 };
+  else o = { maximumFractionDigits: 2 };
+  return v.toLocaleString('en-US', o);
+}
+function fmt(v, mode) {
+  if (typeof v === 'number') return fmtNum(v, mode || 'auto');
+  if (v === null || v === undefined) return '\u2014';
+  return String(v);
+}
+function readInputs() {
+  var out = {};
+  TOOL.fields.forEach(function (f) {
+    var el = $('#f_' + f.key);
+    if (!el || !el.value && f.type !== 'textarea') { if (el) out[f.key] = ''; return; }
+    var raw = el.value;
+    out[f.key] = el.type === 'number' ? (raw === '' ? null : Number(raw)) : raw;
+  });
+  return out;
+}
+function showError(msg) {
+  var e = $('#err');
+  e.textContent = msg || '';
+  e.hidden = !msg;
+}
+function renderCalc(res) {
+  var primary = TOOL.outputs.filter(function (o) { return o.primary; })[0];
+  var rest = TOOL.outputs.filter(function (o) { return !o.primary; });
+  var html = '';
+  if (primary && res[primary.key] !== undefined) {
+    html += '<div class="big">' + esc(String(fmt(res[primary.key], primary.fmt))) +
+      (primary.unit ? '<span class="unit">' + esc(primary.unit) + '</span>' : '') + '</div>';
+  }
+  rest = rest.filter(function (o) { return res[o.key] !== undefined; });
+  if (rest.length) {
+    html += '<table class="outs"><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>';
+    rest.forEach(function (o) {
+      html += '<tr><th scope="row">' + esc(o.label) + '</th><td>' + esc(String(fmt(res[o.key], o.fmt))) + '</td></tr>';
+    });
+    html += '</tbody></table>';
+  }
+  $('#result').innerHTML = html;
+}
+function renderUnit(res) {
+  var html = '<div class="big">' + esc(String(fmt(res.value, 'sig'))) +
+    '<span class="unit">' + esc(res.toLabel) + '</span></div>';
+  html += '<table class="outs"><tbody>' +
+    '<tr><th scope="row">Input</th><td>' + esc(String(fmt(res.input, 'sig'))) + ' ' + esc(res.fromLabel) + '</td></tr>' +
+    '<tr><th scope="row">Formula</th><td>' + esc(res.formula) + '</td></tr>' +
+    '</tbody></table>';
+  if (res.table && res.table.length > 2) {
+    html += '<h3>Also equals</h3><table class="data"><thead><tr><th>Unit</th><th>Value</th></tr></thead><tbody>';
+    res.table.forEach(function (r) {
+      html += '<tr><td>' + esc(r.label) + '</td><td>' + esc(String(fmt(r.value, 'sig'))) + '</td></tr>';
+    });
+    html += '</tbody></table>';
+  }
+  $('#result').innerHTML = html;
+}
+function renderText(res) {
+  var out = TOOL.resultText ? TOOL.resultText(res) : String(res.output !== undefined ? res.output : '');
+  var skip = { chars: 1, charsNoSpaces: 1, length: 1, count: 1, valid: 1 };
+  var extra = Object.keys(res).filter(function (k) {
+    return typeof res[k] === 'number' && !skip[k] && !(TOOL.statsKeys || []).length;
+  });
+  var html = '<pre class="out" id="outbox">' + esc(out) + '</pre>';
+  if (extra.length) {
+    html += '<table class="outs"><tbody>';
+    extra.forEach(function (k) {
+      var label = k.replace(/([A-Z])/g, ' $1').replace(/^./, function (c) { return c.toUpperCase(); });
+      html += '<tr><th scope="row">' + esc(label) + '</th><td>' + esc(String(fmt(res[k]))) + '</td></tr>';
+    });
+    html += '</tbody></table>';
+  }
+  $('#result').innerHTML = html;
+}
+function verdict(ok, label) {
+  return '<div class="verdict ' + (ok ? 'ok' : 'bad') + '">' + esc(label) + '</div>';
+}
+function renderCheck(res) {
+  var html = '';
+  var content = false;
+  if (typeof res.valid === 'boolean') html += verdict(res.valid, res.valid ? 'Valid' : 'Invalid');
+  if (res.error) html += '<div class="err">' + esc(res.error) + '</div>';
+  if (TOOL.kind === 'markdown' && res.html !== undefined) {
+    html += '<div class="card" style="margin-top:10px">' + res.html + '</div>';
+    content = true;
+  } else if (res.list && res.list.length) {
+    html += '<pre class="out">' + esc(Array.isArray(res.list) ? res.list.join('\n') : res.list) + '</pre>';
+    content = true;
+  } else if (res.matches && res.matches.length) {
+    html += '<pre class="out">' + esc(res.matches.join('\n')) + '</pre>';
+    content = true;
+  }
+  // Counters have no verdict or payload — lead with the number instead.
+  if (!content && TOOL.resultText) html += '<div class="big">' + esc(TOOL.resultText(res)) + '</div>';
+  $('#result').innerHTML = html;
+}
+var STAT_LABELS = { chars: 'Characters', charsNoSpaces: 'No spaces', words: 'Words', lines: 'Lines', sentences: 'Sentences', paragraphs: 'Paragraphs' };
+function renderStats(res) {
+  var keys = TOOL.statsKeys || [];
+  var box = $('#stats');
+  if (!box || !keys.length) return;
+  box.innerHTML = keys.filter(function (k) { return res[k] !== undefined; })
+    .map(function (k) {
+      return '<div class="stat"><b>' + esc(String(fmt(res[k], 'int'))) + '</b><span>' + esc(STAT_LABELS[k] || k) + '</span></div>';
+    }).join('');
+}
+function renderQR(payload, size) {
+  var box = $('#qrbox');
+  if (!box || typeof qrMatrix !== 'function') return;
+  if (!payload) { box.innerHTML = '<p class="note">Enter text or a URL to generate a QR code.</p>'; return; }
+  var extra = box.querySelectorAll('canvas, button');
+  for (var i = 0; i < extra.length; i++) extra[i].remove();
+  try {
+    var m = qrMatrix(payload, 'M');
+    var n = m.length, scale = Math.max(1, Math.floor(size / (n + 8))), quiet = 4;
+    var px = (n + quiet * 2) * scale;
+    var c = document.createElement('canvas');
+    c.width = px; c.height = px;
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, px, px);
+    ctx.fillStyle = '#000';
+    for (var y = 0; y < n; y++) for (var x = 0; x < n; x++) {
+      if (m[y][x]) ctx.fillRect((x + quiet) * scale, (y + quiet) * scale, scale, scale);
+    }
+    c.className = 'qr';
+    c.setAttribute('role', 'img');
+    c.setAttribute('aria-label', 'QR code for the entered text');
+    box.appendChild(c);
+    var a = document.createElement('a');
+    a.href = c.toDataURL('image/png');
+    a.download = 'qrcode.png';
+    a.className = 'cta';
+    a.textContent = 'Download PNG';
+    box.appendChild(a);
+  } catch (e) {
+    box.innerHTML = '<p class="err">' + esc('Could not encode: ' + e.message) + '</p>';
+  }
+}
+function run() {
+  var inputs, res;
+  try { inputs = readInputs(); } catch (e) { showError(e.message); return; }
+  var call = FN;
+  if (TOOL.browser && TOOL.fileIds && TOOL.fileIds.length) {
+    var picks = TOOL.fileIds.map(function (id) { return document.getElementById(id); })
+      .filter(function (el) { return el && el.files && el.files.length; })
+      .map(function (el) { return el.files[0]; });
+    call = function () { return FN(picks, inputs); };
+  }
+  try { res = call(inputs); } catch (e) {
+    showError(e && e.message ? e.message : String(e));
+    $('#result').innerHTML = '';
+    return;
+  }
+  Promise.resolve(res).then(function (done) {
+    showError('');
+    renderResult(done);
+  }).catch(function (e) {
+    showError(e && e.message ? e.message : String(e));
+  });
+}
+function renderResult(res) {
+  if (TOOL.mode === 'unit') return renderUnit(res);
+  if (TOOL.mode === 'gen') {
+    renderText(res);
+    if (TOOL.qr) renderQR(TOOL.lastPayload || '', Number(TOOL.lastSize) || 256);
+    return;
+  }
+  if (TOOL.mode === 'chk') { renderCheck(res); renderStats(res); return; }
+  if (TOOL.mode === 'fmt') return renderText(res);
+  renderCalc(res);
+}
+function copyResult() {
+  var box = $('#outbox') || $('#result');
+  var txt = box ? box.innerText : '';
+  if (!txt) return;
+  if (navigator.clipboard) navigator.clipboard.writeText(txt);
+  else {
+    var t = document.createElement('textarea');
+    t.value = txt; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove();
+  }
+  var btn = $('#copybtn');
+  if (btn) { var old = btn.textContent; btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = old; }, 1200); }
+}
+function fillUnits(domain) {
+  var d = TOOL.units[domain];
+  var fromSel = $('#f_from'), toSel = $('#f_to');
+  var keys = Object.keys(d.units);
+  function opts() {
+    return keys.map(function (k) { return '<option value="' + esc(k) + '">' + esc(d.units[k].label) + '</option>'; }).join('');
+  }
+  var pf = fromSel.value, pt = toSel.value;
+  fromSel.innerHTML = opts();
+  toSel.innerHTML = opts();
+  fromSel.value = d.units[pf] ? pf : (TOOL.defaults.from && d.units[TOOL.defaults.from] ? TOOL.defaults.from : keys[0]);
+  toSel.value = d.units[pt] && pt !== fromSel.value ? pt : (TOOL.defaults.to && d.units[TOOL.defaults.to] ? TOOL.defaults.to : keys[1] || keys[0]);
+  TOOL.domain = domain;
+  if (TOOL.unitFormulas) TOOL.formulaNow = TOOL.unitFormulas[fromSel.value + '_' + toSel.value] || '';
+}
+function boot() {
+  if (TOOL.mode === 'unit') {
+    var domainSel = $('#f_domain');
+    if (domainSel) {
+      domainSel.addEventListener('change', function () { fillUnits(domainSel.value); run(); });
+    }
+    fillUnits(TOOL.domain);
+    var fromSel = $('#f_from'), toSel = $('#f_to');
+    fromSel.addEventListener('change', function () {
+      if (TOOL.unitFormulas) TOOL.unitFormulas.now = '';
+      run();
+    });
+    toSel.addEventListener('change', run);
+  }
+  // Every field recalculates on input — the pages promise "no button to hunt
+  // for", and at these payload sizes a keystroke-level recompute is instant.
+  TOOL.fields.forEach(function (f) {
+    var el = $('#f_' + f.key);
+    if (!el) return;
+    el.addEventListener('input', run);
+    el.addEventListener('change', run);
+  });
+  var form = $('#toolform');
+  if (form) form.addEventListener('submit', function (e) { e.preventDefault(); run(); });
+  var cb = $('#copybtn'); if (cb) cb.addEventListener('click', copyResult);
+  var reset = $('#resetbtn');
+  if (reset) reset.addEventListener('click', function () {
+    TOOL.fields.forEach(function (f) {
+      var el = $('#f_' + f.key);
+      if (!el) return;
+      if (el.tagName === 'SELECT') el.selectedIndex = 0;
+      else el.value = TOOL.defaults[f.key] === undefined || TOOL.defaults[f.key] === null ? '' : TOOL.defaults[f.key];
+    });
+    if (TOOL.mode === 'unit') fillUnits(TOOL.domain);
+    run();
+  });
+  run();
+}
+document.addEventListener('DOMContentLoaded', boot);
+
+</script>
+</body>
+</html>

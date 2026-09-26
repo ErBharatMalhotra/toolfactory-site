@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /data/
+Disallow: /*?q=
+
+Sitemap: https://toolfactory.pages.dev/sitemap.xml

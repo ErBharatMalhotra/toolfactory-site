@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ToolFactory">
+  <rect width="64" height="64" rx="14" fill="#2f6df6"/>
+  <path d="M20 18h8v28h-8z" fill="#fff"/>
+  <path d="M32 18h6.5l5.5 14 5.5-14H56l-9.5 22h-5L32 18z" fill="#dbe7ff"/>
+  <circle cx="50" cy="50" r="5" fill="#fff"/>
+</svg>

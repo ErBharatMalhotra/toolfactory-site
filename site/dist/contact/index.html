@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | ToolFactory</title>
+<meta name="description" content="Contact — Free online tools that just work. Fast, private, no signup.">
+
+<link rel="canonical" href="https://toolfactory.pages.dev/contact/">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact | ToolFactory">
+<meta property="og:description" content="Contact — Free online tools that just work. Fast, private, no signup.">
+<meta property="og:url" content="https://toolfactory.pages.dev/contact/">
+<meta property="og:site_name" content="ToolFactory">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ToolFactory","url":"https://toolfactory.pages.dev/","description":"Free online tools that just work. Fast, private, no signup.","potentialAction":{"@type":"SearchAction","target":"https://toolfactory.pages.dev/tools/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f7f8fb; --panel:#fff; --ink:#131720; --muted:#5b6478; --line:#e2e6ef;
+  --accent:#2f6df6; --accent-ink:#fff; --ok:#0f8a4d; --warn:#b45309; --bad:#c02626;
+  --radius:12px; --wrap:860px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0e1017;--panel:#161a24;--ink:#eef1f7;--muted:#9aa4bb;--line:#252b39;--accent:#6f9bff;}
+}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;z-index:9;background:var(--panel);padding:8px 12px;border-radius:8px}
+header.site{border-bottom:1px solid var(--line);background:var(--panel)}
+header.site .bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;
+  max-width:var(--wrap);margin:0 auto;padding:12px 16px}
+.brand{font-weight:700;font-size:18px;color:var(--ink)}
+.brand span{color:var(--accent)}
+header.site nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:12px;font-size:14px}
+main{padding:20px 0 48px}
+h1{font-size:1.75rem;line-height:1.25;margin:8px 0 6px}
+h2{font-size:1.2rem;margin:28px 0 8px}
+h3{font-size:1rem;margin:18px 0 6px}
+p{margin:8px 0}
+.lede{color:var(--muted);margin:0 0 16px}
+.crumbs{font-size:13px;color:var(--muted);margin:0 0 4px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px;margin:0 0 8px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+label{display:block;font-size:13px;font-weight:600;margin:0 0 4px}
+input,select,textarea{width:100%;padding:9px 10px;border:1px solid var(--line);
+  border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;font-size:15px}
+textarea{min-height:132px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+button{font:inherit;font-weight:600;cursor:pointer;border:1px solid var(--accent);
+  background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:8px}
+button.ghost{background:transparent;color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+.result{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+.big{font-size:2rem;font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.big .unit{font-size:1rem;font-weight:600;color:var(--muted);margin-left:6px}
+.outs{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+.outs th,.outs td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}
+.outs td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+table.data{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+table.data th,table.data td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:left}
+table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.stat{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 12px;min-width:96px}
+.stat b{display:block;font-size:1.25rem;line-height:1.2}
+.stat span{font-size:12px;color:var(--muted)}
+.verdict{font-weight:700}
+.verdict.ok{color:var(--ok)}.verdict.bad{color:var(--bad)}
+pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
+  border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
+.err{color:var(--bad);font-size:14px;margin-top:8px}
+.related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
+.related li span,.hub li span{display:block;color:var(--muted);font-size:13px}
+.faq dt{font-weight:600;margin-top:14px}
+.faq dd{margin:4px 0 0;color:var(--ink)}
+.note{font-size:13px;color:var(--muted)}
+.cta{display:inline-block;margin-top:8px}
+footer.site{border-top:1px solid var(--line);background:var(--panel);padding:20px 0;font-size:14px;color:var(--muted)}
+footer.site .cols{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+footer.site h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 6px}
+footer.site ul{list-style:none;padding:0;margin:0;columns:2;column-gap:16px}
+footer.site li{margin:3px 0}
+.legal h2{margin-top:26px}
+.qr{image-rendering:pixelated;background:#fff;padding:12px;border-radius:10px;max-width:100%;height:auto}
+@media print{header.site,footer.site,.related,button{display:none}}
+</style>
+</head>
+<body>
+<header class="site"><div class="bar">
+<a class="brand" href="/">ToolFacto<span>ry</span></a>
+<nav aria-label="Categories"><a href="/calculators/">Calculators</a><a href="/converters/">Converters</a><a href="/formatters/">Formatters</a><a href="/generators/">Generators</a><a href="/checkers/">Checkers</a></nav>
+</div></header>
+<main class="wrap legal">
+<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › <span>Contact</span></nav>
+<h1>Contact</h1>
+
+<p>Found a bug, a wrong result, or want a tool that does not exist yet? Send it across — requests decide what gets built next.</p>
+<h2>Email</h2>
+<p><a href="mailto:hello@example.com">hello@example.com</a></p>
+<h2>What helps</h2>
+<ul>
+<li><strong>Wrong result:</strong> the tool name, the exact inputs you used, the output you got and the output you expected.</li>
+<li><strong>Tool request:</strong> the task in one line, plus an example of the input and the output you want.</li>
+<li><strong>Bug:</strong> your browser and device, and what you tapped or typed just before it happened.</li>
+</ul>
+<p class="note">We read everything. We cannot promise a reply to every message, but every accurate bug report gets fixed.</p>
+</main>
+<footer class="site"><div class="wrap"><div class="cols">
+<div><h3>Tools</h3><ul><li><a href="/calculators/">Calculators</a></li><li><a href="/converters/">Converters</a></li><li><a href="/formatters/">Formatters</a></li><li><a href="/generators/">Generators</a></li><li><a href="/checkers/">Checkers</a></li></ul></div>
+<div><h3>Site</h3><ul>
+<li><a href="/tools/">All tools</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/contact/">Contact</a></li>
+<li><a href="/privacy/">Privacy</a></li>
+<li><a href="/terms/">Terms</a></li>
+</ul></div>
+<div><h3>ToolFactory</h3><p>Free online tools that just work. Fast, private, no signup.</p>
+<p class="note">Free tools, no signup, no tracking. Everything runs in your browser.</p></div>
+</div>
+<p class="note" style="margin-top:16px">&copy; 2026 ToolFactory. All rights reserved.</p>
+</div></footer>
+</body>
+</html>
