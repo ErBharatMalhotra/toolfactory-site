@@ -79,6 +79,10 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;touch-action:none;cursor:crosshair;display:block}
+.sigpad-wrap{display:flex;flex-direction:column;gap:6px}
+.sigclear{align-self:flex-start}
 .related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
@@ -125,15 +129,15 @@ footer.site li{margin:3px 0}
 <section id="how"><h2>How the Memorable Password Generator works</h2><p>The Memorable Password Generator works on <strong>Words</strong>, <strong>Separator</strong>, <strong>Capitalise words</strong> and shows the result as you type. The same input always gives the same answer — refresh the page and you will see exactly the same figure.</p></section>
 <section id="formula"><h2>Formula used</h2><p><code>Memorable Password Generator is computed by the formula below, using the inputs you provide.</code></p>
 <p class="note">Inputs used: Words, Separator, Capitalise words.</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — words of <strong>1500</strong>, separator set to <strong>Dash</strong>, capitalise words set to <strong>yes</strong>:</p><ul><li>passphrase: Whom-Step-Less-Race-None-Know-Will-Nine-Bird-Lose</li><li>words: 10</li><li>entropyBits: 91</li></ul></section>
+<section id="example"><h2>Worked example</h2><p>Take the default example — words of <strong>1500</strong>, separator set to <strong>Dash</strong>, capitalise words set to <strong>yes</strong>:</p><ul><li>passphrase: Peak-Road-Plan-Door-Cook-Hero-Rock-Cook-Near-Self</li><li>words: 10</li><li>entropyBits: 91</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>Is the Memorable Password Generator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>Does the Memorable Password Generator store or send my data?</dt><dd>No. Every calculation happens locally in the page, so the numbers you type are never uploaded or logged.</dd>
 <dt>Does it work on a phone and offline?</dt><dd>Yes — the page is a single lightweight file that adapts to any screen size. Once it has loaded it keeps working without a network connection.</dd>
 <dt>What inputs does the Memorable Password Generator need?</dt><dd><strong>Words</strong>, <strong>Separator</strong>, <strong>Capitalise words</strong>. Change any of them and the result updates instantly.</dd></dl></section>
-<section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/image-resizer/">Image Resizer</a><span>Generators</span></li>
-<li><a href="/tools/instagram-bio-generator/">Instagram Bio Generator</a><span>Generators</span></li>
-<li><a href="/tools/jpg-to-pdf/">JPG to PDF</a><span>Generators</span></li>
-<li><a href="/tools/meta-description-generator/">Meta Description Generator</a><span>Generators</span></li>
+<section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/4-digit-pin-generator/">4 Digit PIN Generator</a><span>Generators</span></li>
+<li><a href="/tools/add-page-numbers-to-pdf/">Add Page Numbers to PDF</a><span>Generators</span></li>
+<li><a href="/tools/image-compressor/">Image Compressor</a><span>Generators</span></li>
+<li><a href="/tools/image-resizer/">Image Resizer</a><span>Generators</span></li>
 <li><a href="/tools/affiliate-commission-calculator/">Affiliate Commission Calculator</a><span>Calculators</span></li>
 <li><a href="/tools/age-calculator/">Age Calculator</a><span>Calculators</span></li></ul></section>
 </main>
@@ -152,7 +156,7 @@ footer.site li{margin:3px 0}
 <p class="note" style="margin-top:16px">&copy; 2026 ToolFactory. All rights reserved.</p>
 </div></footer>
 <script>
-var TOOL = {"id":"memorable-password-generator","mode":"gen","kind":"passphrase","fields":[{"key":"words","label":"Words","type":"number","min":3,"max":10},{"key":"separator","label":"Separator","type":"select","options":["-",".","_"," "],"labels":["Dash","Dot","Underscore","Space"]},{"key":"capitalise","label":"Capitalise words","type":"select","options":["yes","no"]}],"defaults":{"words":1500,"separator":"-","capitalise":"yes"},"outputs":[],"statsKeys":[],"qr":false,"units":null,"domain":null,"unitFormulas":null};
+var TOOL = {"id":"memorable-password-generator","mode":"gen","kind":"passphrase","fields":[{"key":"words","label":"Words","type":"number","min":3,"max":10},{"key":"separator","label":"Separator","type":"select","options":["-",".","_"," "],"labels":["Dash","Dot","Underscore","Space"]},{"key":"capitalise","label":"Capitalise words","type":"select","options":["yes","no"]}],"defaults":{"words":1500,"separator":"-","capitalise":"yes"},"outputs":[],"statsKeys":[],"browser":false,"fileIds":null,"qr":false,"units":null,"domain":null,"unitFormulas":null};
 var FN = (inputs) => {
       const LIST = ('able acid aged also area army away baby back ball band bank base bath bear beat been beer bell belt bend best bird blow blue boat body bomb bond bone book boot born boss both bowl bulk burn bush busy cage cake call calm came camp card care case cash cast cell chat chip city club coal coast coat code cold come cook cool cope copy core corn cost crew crop dark data date dawn days dead deal dear debt deep deny desk dial diet disk does done door dose down draw drew drop drug dual dull dust duty each earn ease east easy edge else even ever exit face fact fail fair fall farm fast fate fear feed feel feet fell felt file fill film find fine fire firm fish five flat flow fold folk food foot force ford form fort four free from fuel full fund gain game gate gave gear gift girl give glad goal goes gold golf gone good gown gray grew grey grow gulf hair half hall hand hang hard harm hate have head hear heat held hell help here hero high hill hire hold hole holy home hope host hour huge hung hunt hurt idea inch into iron item join joke jump june jury just keen keep kept kick kind king knee knew know lack lady laid lake land lane last late lead left less life lift like line link list live load loan lock logo long look lord lose loss lost love luck made mail main make male many mark mass mate meal mean meat meet menu mere mile milk mind mine miss mode mood more most move much must myth nail name navy near neat neck need news next nice nine none nose note once only onto open oral over pace pack page paid pain pair park part pass past path peak pick pile pine pink pipe plan play plot plug plus poem poet pole poll pool poor port pose post pour pull pure push quiz race rack rage rail rain rank rare rate read real rear rely rent rest rice rich ride ring rise risk road roar rock role roll roof room root rope rose rule rush safe said sail sale salt same sand save seat seek seem seen self sell send sent sets ship shop shot show shut side sign silk sing sink site size skin slip slot slow snap snow soap soil sold sole some song soon sort soul soup spin spot spun star stay step stop such suit sure surf swap tail take tale talk tank tape task taxi team tear tech tell tend tent term test text than that them then they thin this thus tick tide tidy time tiny tips tire toad toes told tone took tool torn tour town toys tram trap tray tree trim trip true tube tune turn twin type unit upon used user vary vast very view vote wage wait wake walk wall want ward warm wash wave weak wear weed week well went were west what when whom wide wife wild will wind wine wing wins wire wise wish with wolf wood wool word wore work worm worn wrap yard yarn yeah year your zero zone').split(' ');
       const n = Math.max(3, Math.min(10, Math.round(Number(inputs.words) || 4)));
@@ -186,6 +190,11 @@ function fmt(v, mode) {
 function readInputs() {
   var out = {};
   TOOL.fields.forEach(function (f) {
+    if (f.type === 'signature') {
+      var c = document.getElementById('f_' + f.key);
+      out[f.key] = c && c.__tfSigState ? c.__tfSigState().dataUrl : null;
+      return;
+    }
     var el = $('#f_' + f.key);
     if (!el || !el.value && f.type !== 'textarea') { if (el) out[f.key] = ''; return; }
     var raw = el.value;
@@ -317,10 +326,11 @@ function run() {
   var inputs, res;
   try { inputs = readInputs(); } catch (e) { showError(e.message); return; }
   var call = FN;
-  if (TOOL.browser && TOOL.fileIds && TOOL.fileIds.length) {
-    var picks = TOOL.fileIds.map(function (id) { return document.getElementById(id); })
+  if (TOOL.browser) {
+    var picks = (TOOL.fileIds || []).map(function (id) { return document.getElementById(id); })
       .filter(function (el) { return el && el.files && el.files.length; })
-      .map(function (el) { return el.files[0]; });
+      .map(function (el) { return el.multiple ? Array.from(el.files) : el.files[0]; })
+      .flat();
     call = function () { return FN(picks, inputs); };
   }
   try { res = call(inputs); } catch (e) {
@@ -389,11 +399,48 @@ function boot() {
   }
   // Every field recalculates on input — the pages promise "no button to hunt
   // for", and at these payload sizes a keystroke-level recompute is instant.
+  // Fields marked live:false (signature tools create files, not figures) only
+  // run from the Generate/Calculate button.
   TOOL.fields.forEach(function (f) {
+    if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
     el.addEventListener('input', run);
     el.addEventListener('change', run);
+  });
+  // Signature pads: pointer drawing into the canvas, dataURL read at run time.
+  TOOL.fields.forEach(function (f) {
+    if (f.type !== 'signature') return;
+    var c = document.getElementById('f_' + f.key);
+    if (!c || c.dataset.sigReady) return;
+    c.dataset.sigReady = '1';
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.strokeStyle = '#111827';
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    var drawing = false, dirty = false;
+    var pos = function (ev) {
+      var r = c.getBoundingClientRect();
+      return { x: (ev.clientX - r.left) * (c.width / r.width), y: (ev.clientY - r.top) * (c.height / r.height) };
+    };
+    // strokes only mark the pad dirty — the tool runs when the user presses
+    // Generate, never mid-signature (an auto-download per stroke is hostile)
+    var stop = function () { drawing = false; };
+    c.addEventListener('pointerdown', function (ev) { drawing = true; dirty = true; var p = pos(ev); ctx.beginPath(); ctx.moveTo(p.x, p.y); try { c.setPointerCapture(ev.pointerId); } catch (e2) { /* synthetic or already-released pointer — drawing still works */ } ev.preventDefault(); });
+    c.addEventListener('pointermove', function (ev) { if (!drawing) return; var p = pos(ev); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+    c.addEventListener('pointerup', stop);
+    c.addEventListener('pointerleave', stop);
+    c.addEventListener('pointercancel', stop);
+    var clr = document.getElementById('f_' + f.key + '_clear');
+    if (clr) clr.addEventListener('click', function () {
+      ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = '#ffffff';
+      dirty = false;
+    });
+    c.__tfSigState = function () { return { dataUrl: dirty ? c.toDataURL('image/png') : null }; };
   });
   var form = $('#toolform');
   if (form) form.addEventListener('submit', function (e) { e.preventDefault(); run(); });

@@ -79,6 +79,10 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;touch-action:none;cursor:crosshair;display:block}
+.sigpad-wrap{display:flex;flex-direction:column;gap:6px}
+.sigclear{align-self:flex-start}
 .related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
@@ -127,20 +131,20 @@ footer.site li{margin:3px 0}
 <table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>paragraphs</td><td style="text-align:left">how many paragraphs to produce</td></tr><tr><td>start with</td><td style="text-align:left">begin with the traditional "Lorem ipsum" opening</td></tr></tbody></table>
 <p>Placeholder text should look like real prose so you can judge line lengths, leading and text-wrap behaviour. Latin is used deliberately: nobody reads it, so reviewers focus on the layout instead of the wording.</p>
 <p class="note">Inputs used: Paragraphs, Start with "Lorem ipsum".</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — paragraphs of <strong>3</strong>, start with "lorem ipsum" set to <strong>Yes</strong>:</p><ul><li>output: Lorem ipsum dolor sit amet, enim commodo veniam nostrud in elit consequat lorem eiusmod nisi elit elit. Minim voluptate dolor aute ea tempor amet lorem ex irure nostrud fugiat dolor. Ut ullamco amet lorem consequat esse.
+<section id="example"><h2>Worked example</h2><p>Take the default example — paragraphs of <strong>3</strong>, start with "lorem ipsum" set to <strong>Yes</strong>:</p><ul><li>output: Lorem ipsum dolor sit amet, nostrud elit aliqua ut sit nulla labore laboris tempor ut ullamco consectetur. Aute aute fugiat lorem fugiat nulla sit nisi. Adipiscing magna consequat minim incididunt labore commodo amet magna reprehenderit minim pariatur tempor dolore ad. Ipsum aliqua laboris tempor elit aliquip et nisi ipsum fugiat voluptate tempor exercitation. Reprehenderit ad et ex in fugiat aliquip adipiscing duis.
 
-Esse fugiat in nulla ipsum fugiat ullamco pariatur eiusmod nulla consectetur consectetur ut elit irure et aliqua. Labore cillum ea esse laboris nulla magna dolore quis irure duis lorem ea esse eu laboris. Ullamco nostrud lorem nulla dolor elit aliqua incididunt ut magna. Ipsum nisi voluptate dolor ut consequat sed.
+Reprehenderit et quis amet ad eu. Lorem sed adipiscing do pariatur irure eiusmod tempor irure labore. Ipsum minim reprehenderit dolor aute adipiscing aliquip nulla ullamco irure dolor esse. Ullamco aute duis enim aute magna nostrud commodo. Amet aliquip magna dolor aute in.
 
-Cillum irure velit sed adipiscing magna. Et ut aliqua veniam consequat tempor cillum adipiscing aute incididunt sit laboris. Consectetur duis cillum velit reprehenderit laboris consectetur nostrud eiusmod voluptate. Velit veniam adipiscing dolor magna laboris reprehenderit minim lorem.</li></ul></section>
+Fugiat dolor do quis tempor minim voluptate nostrud pariatur adipiscing reprehenderit reprehenderit ipsum duis ad aute ex. Duis nostrud sit nulla irure aute ut. Ea consectetur dolor ex dolor magna cillum consectetur consequat adipiscing aliquip. Labore lorem ea consequat magna enim fugiat minim.</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What formula does the Lorem Ipsum Generator use?</dt><dd>It uses <strong>sampled words from the classic lorem ipsum passage, sentence-cased</strong>, where paragraphs is the how many paragraphs to produce; start with is the begin with the traditional &quot;Lorem ipsum&quot; opening.</dd>
 <dt>Is the Lorem Ipsum Generator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>How do I read the result?</dt><dd>Placeholder text should look like real prose so you can judge line lengths, leading and text-wrap behaviour. Latin is used deliberately: nobody reads it, so reviewers focus on the layout instead of the wording.</dd>
 <dt>Does the Lorem Ipsum Generator store or send my data?</dt><dd>No. Every calculation happens locally in the page, so the numbers you type are never uploaded or logged.</dd>
 <dt>Does it work on a phone and offline?</dt><dd>Yes — the page is a single lightweight file that adapts to any screen size. Once it has loaded it keeps working without a network connection.</dd></dl></section>
 <section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/slug-generator/">Slug Generator</a><span>Generators</span></li>
+<li><a href="/tools/url-slug-from-title/">URL Slug from Title</a><span>Generators</span></li>
+<li><a href="/tools/capitalize-words/">Capitalize Words</a><span>Formatters</span></li>
 <li><a href="/tools/case-converter/">Case Converter</a><span>Formatters</span></li>
-<li><a href="/tools/duplicate-line-remover/">Duplicate Line Remover</a><span>Formatters</span></li>
-<li><a href="/tools/lowercase-converter/">Lowercase Converter</a><span>Formatters</span></li>
 <li><a href="/tools/aadhaar-number-validator/">Aadhaar Number Validator</a><span>Calculators</span></li>
 <li><a href="/tools/affiliate-commission-calculator/">Affiliate Commission Calculator</a><span>Calculators</span></li></ul></section>
 </main>
@@ -159,7 +163,7 @@ Cillum irure velit sed adipiscing magna. Et ut aliqua veniam consequat tempor ci
 <p class="note" style="margin-top:16px">&copy; 2026 ToolFactory. All rights reserved.</p>
 </div></footer>
 <script>
-var TOOL = {"id":"lorem-ipsum-generator","mode":"gen","kind":"lorem","fields":[{"key":"paragraphs","label":"Paragraphs","type":"number","min":1,"max":10,"step":1},{"key":"startWith","label":"Start with \"Lorem ipsum\"","type":"select","options":["yes","no"],"labels":["Yes","No"]}],"defaults":{"paragraphs":3,"startWith":"yes"},"outputs":[],"statsKeys":[],"qr":false,"units":null,"domain":null,"unitFormulas":null};
+var TOOL = {"id":"lorem-ipsum-generator","mode":"gen","kind":"lorem","fields":[{"key":"paragraphs","label":"Paragraphs","type":"number","min":1,"max":10,"step":1},{"key":"startWith","label":"Start with \"Lorem ipsum\"","type":"select","options":["yes","no"],"labels":["Yes","No"]}],"defaults":{"paragraphs":3,"startWith":"yes"},"outputs":[],"statsKeys":[],"browser":false,"fileIds":null,"qr":false,"units":null,"domain":null,"unitFormulas":null};
 var FN = (inputs) => {
       const words = 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam quis nostrud exercitation ullamco laboris nisi aliquip ex ea commodo consequat duis aute irure in reprehenderit voluptate velit esse cillum eu fugiat nulla pariatur'.split(' ');
       const rand = (n) => Math.floor(Math.random() * n);
@@ -197,6 +201,11 @@ function fmt(v, mode) {
 function readInputs() {
   var out = {};
   TOOL.fields.forEach(function (f) {
+    if (f.type === 'signature') {
+      var c = document.getElementById('f_' + f.key);
+      out[f.key] = c && c.__tfSigState ? c.__tfSigState().dataUrl : null;
+      return;
+    }
     var el = $('#f_' + f.key);
     if (!el || !el.value && f.type !== 'textarea') { if (el) out[f.key] = ''; return; }
     var raw = el.value;
@@ -328,10 +337,11 @@ function run() {
   var inputs, res;
   try { inputs = readInputs(); } catch (e) { showError(e.message); return; }
   var call = FN;
-  if (TOOL.browser && TOOL.fileIds && TOOL.fileIds.length) {
-    var picks = TOOL.fileIds.map(function (id) { return document.getElementById(id); })
+  if (TOOL.browser) {
+    var picks = (TOOL.fileIds || []).map(function (id) { return document.getElementById(id); })
       .filter(function (el) { return el && el.files && el.files.length; })
-      .map(function (el) { return el.files[0]; });
+      .map(function (el) { return el.multiple ? Array.from(el.files) : el.files[0]; })
+      .flat();
     call = function () { return FN(picks, inputs); };
   }
   try { res = call(inputs); } catch (e) {
@@ -400,11 +410,48 @@ function boot() {
   }
   // Every field recalculates on input — the pages promise "no button to hunt
   // for", and at these payload sizes a keystroke-level recompute is instant.
+  // Fields marked live:false (signature tools create files, not figures) only
+  // run from the Generate/Calculate button.
   TOOL.fields.forEach(function (f) {
+    if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
     el.addEventListener('input', run);
     el.addEventListener('change', run);
+  });
+  // Signature pads: pointer drawing into the canvas, dataURL read at run time.
+  TOOL.fields.forEach(function (f) {
+    if (f.type !== 'signature') return;
+    var c = document.getElementById('f_' + f.key);
+    if (!c || c.dataset.sigReady) return;
+    c.dataset.sigReady = '1';
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.strokeStyle = '#111827';
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    var drawing = false, dirty = false;
+    var pos = function (ev) {
+      var r = c.getBoundingClientRect();
+      return { x: (ev.clientX - r.left) * (c.width / r.width), y: (ev.clientY - r.top) * (c.height / r.height) };
+    };
+    // strokes only mark the pad dirty — the tool runs when the user presses
+    // Generate, never mid-signature (an auto-download per stroke is hostile)
+    var stop = function () { drawing = false; };
+    c.addEventListener('pointerdown', function (ev) { drawing = true; dirty = true; var p = pos(ev); ctx.beginPath(); ctx.moveTo(p.x, p.y); try { c.setPointerCapture(ev.pointerId); } catch (e2) { /* synthetic or already-released pointer — drawing still works */ } ev.preventDefault(); });
+    c.addEventListener('pointermove', function (ev) { if (!drawing) return; var p = pos(ev); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+    c.addEventListener('pointerup', stop);
+    c.addEventListener('pointerleave', stop);
+    c.addEventListener('pointercancel', stop);
+    var clr = document.getElementById('f_' + f.key + '_clear');
+    if (clr) clr.addEventListener('click', function () {
+      ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = '#ffffff';
+      dirty = false;
+    });
+    c.__tfSigState = function () { return { dataUrl: dirty ? c.toDataURL('image/png') : null }; };
   });
   var form = $('#toolform');
   if (form) form.addEventListener('submit', function (e) { e.preventDefault(); run(); });

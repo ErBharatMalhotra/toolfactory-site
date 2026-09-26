@@ -79,6 +79,10 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;touch-action:none;cursor:crosshair;display:block}
+.sigpad-wrap{display:flex;flex-direction:column;gap:6px}
+.sigclear{align-self:flex-start}
 .related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
@@ -134,12 +138,12 @@ footer.site li{margin:3px 0}
 <dt>Is there a limit to the amount of text I can encode?</dt><dd>Yes, QR codes have a data capacity limit. For optimal scanning, keep the encoded text or URL concise.</dd>
 <dt>What formula does the QR Code Generator use?</dt><dd>It uses <strong>QR byte mode with Reed–Solomon error correction (level M)</strong>, where text is the the text, link or Wi-Fi details to encode; size is the rendered image size in pixels.</dd>
 <dt>How do I read the result?</dt><dd>The pattern is generated in your browser and drawn to a canvas — nothing is uploaded. Level M error correction keeps the code readable even if a fifth of it is damaged or covered.</dd></dl></section>
-<section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/bulk-uuid-generator/">Bulk UUID Generator</a><span>Generators</span></li>
+<section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/qr-code-for-url/">QR Code for URL</a><span>Generators</span></li>
 <li><a href="/tools/numeric-password-generator/">Numeric Password Generator</a><span>Generators</span></li>
 <li><a href="/tools/password-generator/">Password Generator</a><span>Generators</span></li>
 <li><a href="/tools/strong-password-generator/">Strong Password Generator</a><span>Generators</span></li>
-<li><a href="/tools/color-code-picker/">Color Code Picker</a><span>Converters</span></li>
-<li><a href="/tools/ifsc-code-validator/">IFSC Code Validator</a><span>Calculators</span></li></ul></section>
+<li><a href="/tools/ifsc-code-validator/">IFSC Code Validator</a><span>Calculators</span></li>
+<li><a href="/tools/pin-code-validator/">PIN Code Validator</a><span>Calculators</span></li></ul></section>
 </main>
 <footer class="site"><div class="wrap"><div class="cols">
 <div><h3>Tools</h3><ul><li><a href="/calculators/">Calculators</a></li><li><a href="/converters/">Converters</a></li><li><a href="/formatters/">Formatters</a></li><li><a href="/generators/">Generators</a></li><li><a href="/checkers/">Checkers</a></li></ul></div>
@@ -513,7 +517,7 @@ function qrMatrix(text, ecl = 'M') {
 
 // Exported for the test suite and for anyone auditing the encoder.
 
-var TOOL = {"id":"qr-code-generator","mode":"gen","kind":"qr","fields":[{"key":"text","label":"Text or URL","type":"textarea"},{"key":"size","label":"Size (px)","type":"number","min":128,"max":1024,"step":32}],"defaults":{"text":"https://toolfactory.pages.dev","size":256},"outputs":[],"statsKeys":[],"qr":true,"units":null,"domain":null,"unitFormulas":null};
+var TOOL = {"id":"qr-code-generator","mode":"gen","kind":"qr","fields":[{"key":"text","label":"Text or URL","type":"textarea"},{"key":"size","label":"Size (px)","type":"number","min":128,"max":1024,"step":32}],"defaults":{"text":"https://toolfactory.pages.dev","size":256},"outputs":[],"statsKeys":[],"browser":false,"fileIds":null,"qr":true,"units":null,"domain":null,"unitFormulas":null};
 var FN = (inputs) => ({ payload: String(inputs.text ?? ''), size: Number(inputs.size) || 256 });
 TOOL.resultText = ((r) => `QR (${r.size}px) for: ${r.payload}`);
 
@@ -538,6 +542,11 @@ function fmt(v, mode) {
 function readInputs() {
   var out = {};
   TOOL.fields.forEach(function (f) {
+    if (f.type === 'signature') {
+      var c = document.getElementById('f_' + f.key);
+      out[f.key] = c && c.__tfSigState ? c.__tfSigState().dataUrl : null;
+      return;
+    }
     var el = $('#f_' + f.key);
     if (!el || !el.value && f.type !== 'textarea') { if (el) out[f.key] = ''; return; }
     var raw = el.value;
@@ -669,10 +678,11 @@ function run() {
   var inputs, res;
   try { inputs = readInputs(); } catch (e) { showError(e.message); return; }
   var call = FN;
-  if (TOOL.browser && TOOL.fileIds && TOOL.fileIds.length) {
-    var picks = TOOL.fileIds.map(function (id) { return document.getElementById(id); })
+  if (TOOL.browser) {
+    var picks = (TOOL.fileIds || []).map(function (id) { return document.getElementById(id); })
       .filter(function (el) { return el && el.files && el.files.length; })
-      .map(function (el) { return el.files[0]; });
+      .map(function (el) { return el.multiple ? Array.from(el.files) : el.files[0]; })
+      .flat();
     call = function () { return FN(picks, inputs); };
   }
   try { res = call(inputs); } catch (e) {
@@ -741,11 +751,48 @@ function boot() {
   }
   // Every field recalculates on input — the pages promise "no button to hunt
   // for", and at these payload sizes a keystroke-level recompute is instant.
+  // Fields marked live:false (signature tools create files, not figures) only
+  // run from the Generate/Calculate button.
   TOOL.fields.forEach(function (f) {
+    if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
     el.addEventListener('input', run);
     el.addEventListener('change', run);
+  });
+  // Signature pads: pointer drawing into the canvas, dataURL read at run time.
+  TOOL.fields.forEach(function (f) {
+    if (f.type !== 'signature') return;
+    var c = document.getElementById('f_' + f.key);
+    if (!c || c.dataset.sigReady) return;
+    c.dataset.sigReady = '1';
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.strokeStyle = '#111827';
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    var drawing = false, dirty = false;
+    var pos = function (ev) {
+      var r = c.getBoundingClientRect();
+      return { x: (ev.clientX - r.left) * (c.width / r.width), y: (ev.clientY - r.top) * (c.height / r.height) };
+    };
+    // strokes only mark the pad dirty — the tool runs when the user presses
+    // Generate, never mid-signature (an auto-download per stroke is hostile)
+    var stop = function () { drawing = false; };
+    c.addEventListener('pointerdown', function (ev) { drawing = true; dirty = true; var p = pos(ev); ctx.beginPath(); ctx.moveTo(p.x, p.y); try { c.setPointerCapture(ev.pointerId); } catch (e2) { /* synthetic or already-released pointer — drawing still works */ } ev.preventDefault(); });
+    c.addEventListener('pointermove', function (ev) { if (!drawing) return; var p = pos(ev); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+    c.addEventListener('pointerup', stop);
+    c.addEventListener('pointerleave', stop);
+    c.addEventListener('pointercancel', stop);
+    var clr = document.getElementById('f_' + f.key + '_clear');
+    if (clr) clr.addEventListener('click', function () {
+      ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = '#ffffff';
+      dirty = false;
+    });
+    c.__tfSigState = function () { return { dataUrl: dirty ? c.toDataURL('image/png') : null }; };
   });
   var form = $('#toolform');
   if (form) form.addEventListener('submit', function (e) { e.preventDefault(); run(); });

@@ -79,6 +79,10 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;touch-action:none;cursor:crosshair;display:block}
+.sigpad-wrap{display:flex;flex-direction:column;gap:6px}
+.sigclear{align-self:flex-start}
 .related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
@@ -127,7 +131,7 @@ footer.site li{margin:3px 0}
 <table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>length</td><td style="text-align:left">number of characters</td></tr><tr><td>character set</td><td style="text-align:left">letters, letters + digits, or all three classes</td></tr></tbody></table>
 <p>Length matters more than symbol variety: every extra character multiplies the search space. Randomness comes from the operating system’s cryptographic generator, never from Math.random.</p>
 <p class="note">Inputs used: Length, Character set.</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — length of <strong>12</strong>, character set set to <strong>Letters + digits</strong>:</p><ul><li>password: nGD03UunoCxV</li><li>length: 12</li></ul></section>
+<section id="example"><h2>Worked example</h2><p>Take the default example — length of <strong>12</strong>, character set set to <strong>Letters + digits</strong>:</p><ul><li>password: hvXWMyTGo7qU</li><li>length: 12</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What formula does the Numeric Password Generator use?</dt><dd>It uses <strong>each character drawn from a set of 26–90 symbols using your OS’s CSPRNG</strong>, where length is the number of characters; character set is the letters, letters + digits, or all three classes.</dd>
 <dt>Is the Numeric Password Generator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>How do I read the result?</dt><dd>Length matters more than symbol variety: every extra character multiplies the search space. Randomness comes from the operating system’s cryptographic generator, never from Math.random.</dd>
@@ -135,7 +139,7 @@ footer.site li{margin:3px 0}
 <dt>Does it work on a phone and offline?</dt><dd>Yes — the page is a single lightweight file that adapts to any screen size. Once it has loaded it keeps working without a network connection.</dd></dl></section>
 <section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/password-generator/">Password Generator</a><span>Generators</span></li>
 <li><a href="/tools/strong-password-generator/">Strong Password Generator</a><span>Generators</span></li>
-<li><a href="/tools/bulk-uuid-generator/">Bulk UUID Generator</a><span>Generators</span></li>
+<li><a href="/tools/qr-code-for-url/">QR Code for URL</a><span>Generators</span></li>
 <li><a href="/tools/qr-code-generator/">QR Code Generator</a><span>Generators</span></li>
 <li><a href="/tools/aadhaar-number-validator/">Aadhaar Number Validator</a><span>Calculators</span></li>
 <li><a href="/tools/affiliate-commission-calculator/">Affiliate Commission Calculator</a><span>Calculators</span></li></ul></section>
@@ -155,7 +159,7 @@ footer.site li{margin:3px 0}
 <p class="note" style="margin-top:16px">&copy; 2026 ToolFactory. All rights reserved.</p>
 </div></footer>
 <script>
-var TOOL = {"id":"numeric-password-generator","mode":"gen","kind":"password","fields":[{"key":"length","label":"Length","type":"number","min":6,"max":64,"step":1},{"key":"set","label":"Character set","type":"select","options":["all","alnum","letters"],"labels":["Letters + digits + symbols","Letters + digits","Letters only"]}],"defaults":{"length":12,"set":"alnum"},"outputs":[],"statsKeys":[],"qr":false,"units":null,"domain":null,"unitFormulas":null};
+var TOOL = {"id":"numeric-password-generator","mode":"gen","kind":"password","fields":[{"key":"length","label":"Length","type":"number","min":6,"max":64,"step":1},{"key":"set","label":"Character set","type":"select","options":["all","alnum","letters"],"labels":["Letters + digits + symbols","Letters + digits","Letters only"]}],"defaults":{"length":12,"set":"alnum"},"outputs":[],"statsKeys":[],"browser":false,"fileIds":null,"qr":false,"units":null,"domain":null,"unitFormulas":null};
 var FN = (inputs) => {
       const sets = {
         all: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+',
@@ -193,6 +197,11 @@ function fmt(v, mode) {
 function readInputs() {
   var out = {};
   TOOL.fields.forEach(function (f) {
+    if (f.type === 'signature') {
+      var c = document.getElementById('f_' + f.key);
+      out[f.key] = c && c.__tfSigState ? c.__tfSigState().dataUrl : null;
+      return;
+    }
     var el = $('#f_' + f.key);
     if (!el || !el.value && f.type !== 'textarea') { if (el) out[f.key] = ''; return; }
     var raw = el.value;
@@ -324,10 +333,11 @@ function run() {
   var inputs, res;
   try { inputs = readInputs(); } catch (e) { showError(e.message); return; }
   var call = FN;
-  if (TOOL.browser && TOOL.fileIds && TOOL.fileIds.length) {
-    var picks = TOOL.fileIds.map(function (id) { return document.getElementById(id); })
+  if (TOOL.browser) {
+    var picks = (TOOL.fileIds || []).map(function (id) { return document.getElementById(id); })
       .filter(function (el) { return el && el.files && el.files.length; })
-      .map(function (el) { return el.files[0]; });
+      .map(function (el) { return el.multiple ? Array.from(el.files) : el.files[0]; })
+      .flat();
     call = function () { return FN(picks, inputs); };
   }
   try { res = call(inputs); } catch (e) {
@@ -396,11 +406,48 @@ function boot() {
   }
   // Every field recalculates on input — the pages promise "no button to hunt
   // for", and at these payload sizes a keystroke-level recompute is instant.
+  // Fields marked live:false (signature tools create files, not figures) only
+  // run from the Generate/Calculate button.
   TOOL.fields.forEach(function (f) {
+    if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
     el.addEventListener('input', run);
     el.addEventListener('change', run);
+  });
+  // Signature pads: pointer drawing into the canvas, dataURL read at run time.
+  TOOL.fields.forEach(function (f) {
+    if (f.type !== 'signature') return;
+    var c = document.getElementById('f_' + f.key);
+    if (!c || c.dataset.sigReady) return;
+    c.dataset.sigReady = '1';
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.strokeStyle = '#111827';
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    var drawing = false, dirty = false;
+    var pos = function (ev) {
+      var r = c.getBoundingClientRect();
+      return { x: (ev.clientX - r.left) * (c.width / r.width), y: (ev.clientY - r.top) * (c.height / r.height) };
+    };
+    // strokes only mark the pad dirty — the tool runs when the user presses
+    // Generate, never mid-signature (an auto-download per stroke is hostile)
+    var stop = function () { drawing = false; };
+    c.addEventListener('pointerdown', function (ev) { drawing = true; dirty = true; var p = pos(ev); ctx.beginPath(); ctx.moveTo(p.x, p.y); try { c.setPointerCapture(ev.pointerId); } catch (e2) { /* synthetic or already-released pointer — drawing still works */ } ev.preventDefault(); });
+    c.addEventListener('pointermove', function (ev) { if (!drawing) return; var p = pos(ev); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+    c.addEventListener('pointerup', stop);
+    c.addEventListener('pointerleave', stop);
+    c.addEventListener('pointercancel', stop);
+    var clr = document.getElementById('f_' + f.key + '_clear');
+    if (clr) clr.addEventListener('click', function () {
+      ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = '#ffffff';
+      dirty = false;
+    });
+    c.__tfSigState = function () { return { dataUrl: dirty ? c.toDataURL('image/png') : null }; };
   });
   var form = $('#toolform');
   if (form) form.addEventListener('submit', function (e) { e.preventDefault(); run(); });

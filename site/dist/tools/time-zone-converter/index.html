@@ -79,6 +79,10 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;touch-action:none;cursor:crosshair;display:block}
+.sigpad-wrap{display:flex;flex-direction:column;gap:6px}
+.sigclear{align-self:flex-start}
 .related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
@@ -138,8 +142,8 @@ footer.site li{margin:3px 0}
 <li><a href="/tools/iso-date-converter/">ISO Date Converter</a><span>Converters</span></li>
 <li><a href="/tools/unix-timestamp-milliseconds/">Unix Timestamp Milliseconds</a><span>Converters</span></li>
 <li><a href="/tools/age-calculator/">Age Calculator</a><span>Calculators</span></li>
-<li><a href="/tools/aadhaar-number-validator/">Aadhaar Number Validator</a><span>Calculators</span></li>
-<li><a href="/tools/affiliate-commission-calculator/">Affiliate Commission Calculator</a><span>Calculators</span></li></ul></section>
+<li><a href="/tools/nap-planner/">Nap Planner</a><span>Calculators</span></li>
+<li><a href="/tools/4-digit-pin-generator/">4 Digit PIN Generator</a><span>Generators</span></li></ul></section>
 </main>
 <footer class="site"><div class="wrap"><div class="cols">
 <div><h3>Tools</h3><ul><li><a href="/calculators/">Calculators</a></li><li><a href="/converters/">Converters</a></li><li><a href="/formatters/">Formatters</a></li><li><a href="/generators/">Generators</a></li><li><a href="/checkers/">Checkers</a></li></ul></div>
@@ -173,7 +177,7 @@ var tzOffsetMs = function tzOffsetMs(date, tz) {
   const asUTC = Date.parse(`${map.year}-${map.month}-${map.day}T${hour}:${map.minute}:${map.second}Z`);
   return asUTC - date.getTime();
 };
-var TOOL = {"id":"time-zone-converter","mode":"conv","kind":"timezone","fields":[{"key":"dt","label":"Date & time (local to From zone)","type":"datetime-local"},{"key":"from","label":"From zone","type":"select","options":["Asia/Kolkata","UTC","America/New_York","America/Los_Angeles","Europe/London","Europe/Berlin","Asia/Dubai","Asia/Singapore","Asia/Tokyo","Australia/Sydney"]},{"key":"to","label":"To zone","type":"select","options":["Asia/Kolkata","UTC","America/New_York","America/Los_Angeles","Europe/London","Europe/Berlin","Asia/Dubai","Asia/Singapore","Asia/Tokyo","Australia/Sydney"]}],"defaults":{"dt":"2026-01-01T09:00","from":"Asia/Kolkata","to":"America/New_York"},"outputs":[{"key":"converted","label":"Converted time","primary":true},{"key":"fromZone","label":"From"},{"key":"toZone","label":"To"}],"statsKeys":[],"qr":false,"units":null,"domain":null,"unitFormulas":null};
+var TOOL = {"id":"time-zone-converter","mode":"conv","kind":"timezone","fields":[{"key":"dt","label":"Date & time (local to From zone)","type":"datetime-local"},{"key":"from","label":"From zone","type":"select","options":["Asia/Kolkata","UTC","America/New_York","America/Los_Angeles","Europe/London","Europe/Berlin","Asia/Dubai","Asia/Singapore","Asia/Tokyo","Australia/Sydney"]},{"key":"to","label":"To zone","type":"select","options":["Asia/Kolkata","UTC","America/New_York","America/Los_Angeles","Europe/London","Europe/Berlin","Asia/Dubai","Asia/Singapore","Asia/Tokyo","Australia/Sydney"]}],"defaults":{"dt":"2026-01-01T09:00","from":"Asia/Kolkata","to":"America/New_York"},"outputs":[{"key":"converted","label":"Converted time","primary":true},{"key":"fromZone","label":"From"},{"key":"toZone","label":"To"}],"statsKeys":[],"browser":false,"fileIds":null,"qr":false,"units":null,"domain":null,"unitFormulas":null};
 var FN = ({ dt, from, to }) => {
       // dt = wall-clock "YYYY-MM-DDTHH:mm" in `from` zone → render in `to` zone
       const asUTC = Date.parse(`${dt}Z`); // treat input as if it were UTC
@@ -208,6 +212,11 @@ function fmt(v, mode) {
 function readInputs() {
   var out = {};
   TOOL.fields.forEach(function (f) {
+    if (f.type === 'signature') {
+      var c = document.getElementById('f_' + f.key);
+      out[f.key] = c && c.__tfSigState ? c.__tfSigState().dataUrl : null;
+      return;
+    }
     var el = $('#f_' + f.key);
     if (!el || !el.value && f.type !== 'textarea') { if (el) out[f.key] = ''; return; }
     var raw = el.value;
@@ -339,10 +348,11 @@ function run() {
   var inputs, res;
   try { inputs = readInputs(); } catch (e) { showError(e.message); return; }
   var call = FN;
-  if (TOOL.browser && TOOL.fileIds && TOOL.fileIds.length) {
-    var picks = TOOL.fileIds.map(function (id) { return document.getElementById(id); })
+  if (TOOL.browser) {
+    var picks = (TOOL.fileIds || []).map(function (id) { return document.getElementById(id); })
       .filter(function (el) { return el && el.files && el.files.length; })
-      .map(function (el) { return el.files[0]; });
+      .map(function (el) { return el.multiple ? Array.from(el.files) : el.files[0]; })
+      .flat();
     call = function () { return FN(picks, inputs); };
   }
   try { res = call(inputs); } catch (e) {
@@ -411,11 +421,48 @@ function boot() {
   }
   // Every field recalculates on input — the pages promise "no button to hunt
   // for", and at these payload sizes a keystroke-level recompute is instant.
+  // Fields marked live:false (signature tools create files, not figures) only
+  // run from the Generate/Calculate button.
   TOOL.fields.forEach(function (f) {
+    if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
     el.addEventListener('input', run);
     el.addEventListener('change', run);
+  });
+  // Signature pads: pointer drawing into the canvas, dataURL read at run time.
+  TOOL.fields.forEach(function (f) {
+    if (f.type !== 'signature') return;
+    var c = document.getElementById('f_' + f.key);
+    if (!c || c.dataset.sigReady) return;
+    c.dataset.sigReady = '1';
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.strokeStyle = '#111827';
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    var drawing = false, dirty = false;
+    var pos = function (ev) {
+      var r = c.getBoundingClientRect();
+      return { x: (ev.clientX - r.left) * (c.width / r.width), y: (ev.clientY - r.top) * (c.height / r.height) };
+    };
+    // strokes only mark the pad dirty — the tool runs when the user presses
+    // Generate, never mid-signature (an auto-download per stroke is hostile)
+    var stop = function () { drawing = false; };
+    c.addEventListener('pointerdown', function (ev) { drawing = true; dirty = true; var p = pos(ev); ctx.beginPath(); ctx.moveTo(p.x, p.y); try { c.setPointerCapture(ev.pointerId); } catch (e2) { /* synthetic or already-released pointer — drawing still works */ } ev.preventDefault(); });
+    c.addEventListener('pointermove', function (ev) { if (!drawing) return; var p = pos(ev); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+    c.addEventListener('pointerup', stop);
+    c.addEventListener('pointerleave', stop);
+    c.addEventListener('pointercancel', stop);
+    var clr = document.getElementById('f_' + f.key + '_clear');
+    if (clr) clr.addEventListener('click', function () {
+      ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = '#ffffff';
+      dirty = false;
+    });
+    c.__tfSigState = function () { return { dataUrl: dirty ? c.toDataURL('image/png') : null }; };
   });
   var form = $('#toolform');
   if (form) form.addEventListener('submit', function (e) { e.preventDefault(); run(); });

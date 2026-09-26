@@ -79,6 +79,10 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;touch-action:none;cursor:crosshair;display:block}
+.sigpad-wrap{display:flex;flex-direction:column;gap:6px}
+.sigclear{align-self:flex-start}
 .related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
@@ -109,7 +113,7 @@ footer.site li{margin:3px 0}
 <section id="tool" class="card">
   <form id="toolform" autocomplete="off">
     <div class="grid">
-      <div><label for="f_files">Choose file</label><select id="f_files" name="files"></select></div>
+      <div><label for="f_files">Choose file</label><input type="file" id="f_files" name="files" accept=".txt,.md,text/plain,text/markdown"></div>
       <div><label for="f_pageSize">Page size</label><select id="f_pageSize" name="pageSize"><option value="a4" selected>A4</option><option value="letter">Letter</option></select></div>
       <div><label for="f_fontSize">Font size</label><select id="f_fontSize" name="fontSize"><option value="10">10pt</option><option value="11" selected>11pt</option><option value="12">12pt</option></select></div>
       <div><label for="f_text">Or paste text instead of a file</label><textarea id="f_text" name="text">ToolFactory</textarea></div>
@@ -139,12 +143,12 @@ footer.site li{margin:3px 0}
 <dt>What font sizes can I use?</dt><dd>The tool supports &#39;10&#39;, &#39;11&#39;, and &#39;12&#39; point font sizes for the text in your PDF.</dd>
 <dt>Does this tool support all text file types?</dt><dd>The tool is designed for standard plain text files. Complex text files with special formatting might not render as expected.</dd>
 <dt>What formula does the Text to PDF use?</dt><dd>It uses <strong>text → layout engine → PDF 1.4 byte stream (Type 1 Courier, DCT-free)</strong>, where page size is the A4 or Letter; font size is the 10–12 pt monospaced; margins is the 56 pt on all sides.</dd></dl></section>
-<section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/jpg-to-pdf/">JPG to PDF</a><span>Generators</span></li>
-<li><a href="/tools/image-resizer/">Image Resizer</a><span>Generators</span></li>
-<li><a href="/tools/instagram-bio-generator/">Instagram Bio Generator</a><span>Generators</span></li>
-<li><a href="/tools/memorable-password-generator/">Memorable Password Generator</a><span>Generators</span></li>
-<li><a href="/tools/binary-encoder/">Binary Encoder</a><span>Converters</span></li>
-<li><a href="/tools/binary-to-text-converter/">Binary to Text Converter</a><span>Converters</span></li></ul></section>
+<section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/add-page-numbers-to-pdf/">Add Page Numbers to PDF</a><span>Generators</span></li>
+<li><a href="/tools/images-to-pdf/">Images to PDF</a><span>Generators</span></li>
+<li><a href="/tools/jpg-to-pdf/">JPG to PDF</a><span>Generators</span></li>
+<li><a href="/tools/pdf-compress/">PDF Compress</a><span>Generators</span></li>
+<li><a href="/tools/binary-to-text-converter/">Binary to Text Converter</a><span>Converters</span></li>
+<li><a href="/tools/text-cleaner/">Text Cleaner</a><span>Formatters</span></li></ul></section>
 </main>
 <footer class="site"><div class="wrap"><div class="cols">
 <div><h3>Tools</h3><ul><li><a href="/calculators/">Calculators</a></li><li><a href="/converters/">Converters</a></li><li><a href="/formatters/">Formatters</a></li><li><a href="/generators/">Generators</a></li><li><a href="/checkers/">Checkers</a></li></ul></div>
@@ -275,7 +279,7 @@ var PDFKIT = { textPdfBytes: function textPdfBytes(text, { pageSize = 'a4', font
   }
   throw new Error('Could not read image dimensions — the file may be corrupt');
 } };
-var TOOL = {"id":"text-to-pdf","mode":"file","kind":"textToPdf","fields":[{"key":"files","label":"Choose file","type":"file","accept":".txt,.md,text/plain,text/markdown","multiple":false,"optional":true},{"key":"pageSize","label":"Page size","type":"select","options":["a4","letter"],"labels":["A4","Letter"],"optional":true},{"key":"fontSize","label":"Font size","type":"select","options":["10","11","12"],"labels":["10pt","11pt","12pt"],"optional":true},{"key":"text","label":"Or paste text instead of a file","type":"textarea","optional":true}],"defaults":{"pageSize":"a4","fontSize":"11","text":"ToolFactory"},"outputs":[{"key":"fileName","label":"Downloaded","primary":true},{"key":"pages","label":"Pages"},{"key":"size","label":"PDF size (bytes)"}],"statsKeys":[],"qr":false,"units":null,"domain":null,"unitFormulas":null};
+var TOOL = {"id":"text-to-pdf","mode":"file","kind":"textToPdf","fields":[{"key":"files","label":"Choose file","type":"file","accept":".txt,.md,text/plain,text/markdown","multiple":false,"optional":true},{"key":"pageSize","label":"Page size","type":"select","options":["a4","letter"],"labels":["A4","Letter"],"optional":true},{"key":"fontSize","label":"Font size","type":"select","options":["10","11","12"],"labels":["10pt","11pt","12pt"],"optional":true},{"key":"text","label":"Or paste text instead of a file","type":"textarea","optional":true}],"defaults":{"pageSize":"a4","fontSize":"11","text":"ToolFactory"},"outputs":[{"key":"fileName","label":"Downloaded","primary":true},{"key":"pages","label":"Pages"},{"key":"size","label":"PDF size (bytes)"}],"statsKeys":[],"browser":true,"fileIds":["f_files"],"qr":false,"units":null,"domain":null,"unitFormulas":null};
 var FN = async (files, inputs) => {
       const useFile = files && files.length && files[0].size;
       const text = useFile ? await files[0].text() : String(inputs.text || '');
@@ -317,6 +321,11 @@ function fmt(v, mode) {
 function readInputs() {
   var out = {};
   TOOL.fields.forEach(function (f) {
+    if (f.type === 'signature') {
+      var c = document.getElementById('f_' + f.key);
+      out[f.key] = c && c.__tfSigState ? c.__tfSigState().dataUrl : null;
+      return;
+    }
     var el = $('#f_' + f.key);
     if (!el || !el.value && f.type !== 'textarea') { if (el) out[f.key] = ''; return; }
     var raw = el.value;
@@ -448,10 +457,11 @@ function run() {
   var inputs, res;
   try { inputs = readInputs(); } catch (e) { showError(e.message); return; }
   var call = FN;
-  if (TOOL.browser && TOOL.fileIds && TOOL.fileIds.length) {
-    var picks = TOOL.fileIds.map(function (id) { return document.getElementById(id); })
+  if (TOOL.browser) {
+    var picks = (TOOL.fileIds || []).map(function (id) { return document.getElementById(id); })
       .filter(function (el) { return el && el.files && el.files.length; })
-      .map(function (el) { return el.files[0]; });
+      .map(function (el) { return el.multiple ? Array.from(el.files) : el.files[0]; })
+      .flat();
     call = function () { return FN(picks, inputs); };
   }
   try { res = call(inputs); } catch (e) {
@@ -520,11 +530,48 @@ function boot() {
   }
   // Every field recalculates on input — the pages promise "no button to hunt
   // for", and at these payload sizes a keystroke-level recompute is instant.
+  // Fields marked live:false (signature tools create files, not figures) only
+  // run from the Generate/Calculate button.
   TOOL.fields.forEach(function (f) {
+    if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
     el.addEventListener('input', run);
     el.addEventListener('change', run);
+  });
+  // Signature pads: pointer drawing into the canvas, dataURL read at run time.
+  TOOL.fields.forEach(function (f) {
+    if (f.type !== 'signature') return;
+    var c = document.getElementById('f_' + f.key);
+    if (!c || c.dataset.sigReady) return;
+    c.dataset.sigReady = '1';
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.strokeStyle = '#111827';
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    var drawing = false, dirty = false;
+    var pos = function (ev) {
+      var r = c.getBoundingClientRect();
+      return { x: (ev.clientX - r.left) * (c.width / r.width), y: (ev.clientY - r.top) * (c.height / r.height) };
+    };
+    // strokes only mark the pad dirty — the tool runs when the user presses
+    // Generate, never mid-signature (an auto-download per stroke is hostile)
+    var stop = function () { drawing = false; };
+    c.addEventListener('pointerdown', function (ev) { drawing = true; dirty = true; var p = pos(ev); ctx.beginPath(); ctx.moveTo(p.x, p.y); try { c.setPointerCapture(ev.pointerId); } catch (e2) { /* synthetic or already-released pointer — drawing still works */ } ev.preventDefault(); });
+    c.addEventListener('pointermove', function (ev) { if (!drawing) return; var p = pos(ev); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+    c.addEventListener('pointerup', stop);
+    c.addEventListener('pointerleave', stop);
+    c.addEventListener('pointercancel', stop);
+    var clr = document.getElementById('f_' + f.key + '_clear');
+    if (clr) clr.addEventListener('click', function () {
+      ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = '#ffffff';
+      dirty = false;
+    });
+    c.__tfSigState = function () { return { dataUrl: dirty ? c.toDataURL('image/png') : null }; };
   });
   var form = $('#toolform');
   if (form) form.addEventListener('submit', function (e) { e.preventDefault(); run(); });

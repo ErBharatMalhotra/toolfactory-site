@@ -79,6 +79,10 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
+  border-radius:8px;touch-action:none;cursor:crosshair;display:block}
+.sigpad-wrap{display:flex;flex-direction:column;gap:6px}
+.sigclear{align-self:flex-start}
 .related ul,.hub{list-style:none;padding:0;margin:8px 0;display:grid;gap:8px;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .related li,.hub li{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--panel)}
@@ -136,10 +140,10 @@ footer.site li{margin:3px 0}
 <dt>What types of units can be converted?</dt><dd>This tool can convert units for categories such as length, weight, temperature, data, speed, area, volume, and time.</dd>
 <dt>What formula does the Unit Converter use?</dt><dd>It uses <strong>value in target unit = value in source unit × (source factor ÷ target factor)</strong>, where factor is the how many base units one unit equals.</dd>
 <dt>How do I read the result?</dt><dd>Every unit is first converted to a common base, then to the target unit, so accuracy stays intact no matter which pair you pick. For temperature the conversion uses offsets rather than plain multiplication.</dd></dl></section>
-<section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/aadhaar-number-validator/">Aadhaar Number Validator</a><span>Calculators</span></li>
-<li><a href="/tools/bulk-email-validator/">Bulk Email Validator</a><span>Checkers</span></li>
-<li><a href="/tools/cron-expression-builder/">Cron Expression Builder</a><span>Checkers</span></li>
-<li><a href="/tools/crontab-generator/">Crontab Generator</a><span>Checkers</span></li>
+<section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/jpg-to-webp-converter/">JPG to WebP Converter</a><span>Converters</span></li>
+<li><a href="/tools/png-to-jpg-converter/">PNG to JPG Converter</a><span>Converters</span></li>
+<li><a href="/tools/4-digit-pin-generator/">4 Digit PIN Generator</a><span>Generators</span></li>
+<li><a href="/tools/aadhaar-number-validator/">Aadhaar Number Validator</a><span>Calculators</span></li>
 <li><a href="/tools/affiliate-commission-calculator/">Affiliate Commission Calculator</a><span>Calculators</span></li>
 <li><a href="/tools/age-calculator/">Age Calculator</a><span>Calculators</span></li></ul></section>
 </main>
@@ -173,7 +177,7 @@ var FUNCS = {
   }
 };
 var round6 = (n) => Math.round(n * 1e6) / 1e6;
-var TOOL = {"id":"unit-converter","mode":"unit","kind":"unit","fields":[{"key":"domain","label":"Conversion category","type":"select","options":["length","weight","temperature","data","speed","area","volume","time"],"labels":["Length","Weight","Temperature","Data Size","Speed","Area","Volume","Time"]},{"key":"value","label":"Value to convert","type":"number"},{"key":"from","label":"From unit","type":"select"},{"key":"to","label":"To unit","type":"select"}],"defaults":{"domain":"length","value":1,"from":"m","to":"km"},"outputs":[{"key":"value","label":"Converted value","primary":true,"fmt":"sig"}],"statsKeys":[],"qr":false,"units":{"length":{"label":"Length","units":{"mm":{"label":"Millimeter","factor":0.001},"cm":{"label":"Centimeter","factor":0.01},"m":{"label":"Meter","factor":1},"km":{"label":"Kilometer","factor":1000},"in":{"label":"Inch","factor":0.0254},"ft":{"label":"Foot","factor":0.3048},"yd":{"label":"Yard","factor":0.9144},"mi":{"label":"Mile","factor":1609.344}}},"weight":{"label":"Weight","units":{"mg":{"label":"Milligram","factor":0.000001},"g":{"label":"Gram","factor":0.001},"kg":{"label":"Kilogram","factor":1},"t":{"label":"Tonne","factor":1000},"oz":{"label":"Ounce","factor":0.0283495231},"lb":{"label":"Pound","factor":0.45359237},"st":{"label":"Stone","factor":6.35029318}}},"temperature":{"label":"Temperature","units":{"c":{"label":"Celsius","factor":1},"f":{"label":"Fahrenheit","factor":1},"k":{"label":"Kelvin","factor":1}},"hasCustom":true},"data":{"label":"Data Size","units":{"b":{"label":"Bit","factor":0.125},"B":{"label":"Byte","factor":1},"KB":{"label":"Kilobyte","factor":1024},"MB":{"label":"Megabyte","factor":1048576},"GB":{"label":"Gigabyte","factor":1073741824},"TB":{"label":"Terabyte","factor":1099511627776}}},"speed":{"label":"Speed","units":{"ms":{"label":"Meter/second","factor":1},"kmh":{"label":"Kilometer/hour","factor":0.277777778},"mph":{"label":"Mile/hour","factor":0.44704},"kn":{"label":"Knot","factor":0.514444444}}},"area":{"label":"Area","units":{"sqcm":{"label":"Sq centimeter","factor":0.0001},"sqm":{"label":"Sq meter","factor":1},"sqkm":{"label":"Sq kilometer","factor":1000000},"sqft":{"label":"Sq foot","factor":0.09290304},"sqyd":{"label":"Sq yard","factor":0.83612736},"acre":{"label":"Acre","factor":4046.8564224},"hectare":{"label":"Hectare","factor":10000}}},"volume":{"label":"Volume","units":{"ml":{"label":"Millilitre","factor":0.001},"l":{"label":"Litre","factor":1},"m3":{"label":"Cubic meter","factor":1000},"tsp":{"label":"Teaspoon (US)","factor":0.00492892},"tbsp":{"label":"Tablespoon (US)","factor":0.0147868},"cup":{"label":"Cup (US)","factor":0.2365882},"pt":{"label":"Pint (US)","factor":0.4731765},"qt":{"label":"Quart (US)","factor":0.946353},"gal":{"label":"Gallon (US)","factor":3.785412}}},"time":{"label":"Time","units":{"ms":{"label":"Millisecond","factor":0.001},"s":{"label":"Second","factor":1},"min":{"label":"Minute","factor":60},"h":{"label":"Hour","factor":3600},"day":{"label":"Day","factor":86400},"week":{"label":"Week","factor":604800},"month":{"label":"Month (avg)","factor":2629800},"year":{"label":"Year","factor":31557600}}}},"domain":"length","unitFormulas":{"c_c":"Same unit — no conversion.","c_f":"F = C × 9/5 + 32","c_k":"K = C + 273.15","f_f":"Same unit — no conversion.","f_c":"C = (F − 32) × 5/9","f_k":"K = (F − 32) × 5/9 + 273.15","k_k":"Same unit — no conversion.","k_c":"C = K − 273.15","k_f":"F = (K − 273.15) × 9/5 + 32"}};
+var TOOL = {"id":"unit-converter","mode":"unit","kind":"unit","fields":[{"key":"domain","label":"Conversion category","type":"select","options":["length","weight","temperature","data","speed","area","volume","time"],"labels":["Length","Weight","Temperature","Data Size","Speed","Area","Volume","Time"]},{"key":"value","label":"Value to convert","type":"number"},{"key":"from","label":"From unit","type":"select"},{"key":"to","label":"To unit","type":"select"}],"defaults":{"domain":"length","value":1,"from":"m","to":"km"},"outputs":[{"key":"value","label":"Converted value","primary":true,"fmt":"sig"}],"statsKeys":[],"browser":false,"fileIds":null,"qr":false,"units":{"length":{"label":"Length","units":{"mm":{"label":"Millimeter","factor":0.001},"cm":{"label":"Centimeter","factor":0.01},"m":{"label":"Meter","factor":1},"km":{"label":"Kilometer","factor":1000},"in":{"label":"Inch","factor":0.0254},"ft":{"label":"Foot","factor":0.3048},"yd":{"label":"Yard","factor":0.9144},"mi":{"label":"Mile","factor":1609.344}}},"weight":{"label":"Weight","units":{"mg":{"label":"Milligram","factor":0.000001},"g":{"label":"Gram","factor":0.001},"kg":{"label":"Kilogram","factor":1},"t":{"label":"Tonne","factor":1000},"oz":{"label":"Ounce","factor":0.0283495231},"lb":{"label":"Pound","factor":0.45359237},"st":{"label":"Stone","factor":6.35029318}}},"temperature":{"label":"Temperature","units":{"c":{"label":"Celsius","factor":1},"f":{"label":"Fahrenheit","factor":1},"k":{"label":"Kelvin","factor":1}},"hasCustom":true},"data":{"label":"Data Size","units":{"b":{"label":"Bit","factor":0.125},"B":{"label":"Byte","factor":1},"KB":{"label":"Kilobyte","factor":1024},"MB":{"label":"Megabyte","factor":1048576},"GB":{"label":"Gigabyte","factor":1073741824},"TB":{"label":"Terabyte","factor":1099511627776}}},"speed":{"label":"Speed","units":{"ms":{"label":"Meter/second","factor":1},"kmh":{"label":"Kilometer/hour","factor":0.277777778},"mph":{"label":"Mile/hour","factor":0.44704},"kn":{"label":"Knot","factor":0.514444444}}},"area":{"label":"Area","units":{"sqcm":{"label":"Sq centimeter","factor":0.0001},"sqm":{"label":"Sq meter","factor":1},"sqkm":{"label":"Sq kilometer","factor":1000000},"sqft":{"label":"Sq foot","factor":0.09290304},"sqyd":{"label":"Sq yard","factor":0.83612736},"acre":{"label":"Acre","factor":4046.8564224},"hectare":{"label":"Hectare","factor":10000}}},"volume":{"label":"Volume","units":{"ml":{"label":"Millilitre","factor":0.001},"l":{"label":"Litre","factor":1},"m3":{"label":"Cubic meter","factor":1000},"tsp":{"label":"Teaspoon (US)","factor":0.00492892},"tbsp":{"label":"Tablespoon (US)","factor":0.0147868},"cup":{"label":"Cup (US)","factor":0.2365882},"pt":{"label":"Pint (US)","factor":0.4731765},"qt":{"label":"Quart (US)","factor":0.946353},"gal":{"label":"Gallon (US)","factor":3.785412}}},"time":{"label":"Time","units":{"ms":{"label":"Millisecond","factor":0.001},"s":{"label":"Second","factor":1},"min":{"label":"Minute","factor":60},"h":{"label":"Hour","factor":3600},"day":{"label":"Day","factor":86400},"week":{"label":"Week","factor":604800},"month":{"label":"Month (avg)","factor":2629800},"year":{"label":"Year","factor":31557600}}}},"domain":"length","unitFormulas":{"c_c":"Same unit — no conversion.","c_f":"F = C × 9/5 + 32","c_k":"K = C + 273.15","f_f":"Same unit — no conversion.","f_c":"C = (F − 32) × 5/9","f_k":"K = (F − 32) × 5/9 + 273.15","k_k":"Same unit — no conversion.","k_c":"C = K − 273.15","k_f":"F = (K − 273.15) × 9/5 + 32"}};
 var FN = function (inputs) {
   var round6 = function (n) { return Math.round(n * 1e6) / 1e6; };
   var d = TOOL.units[TOOL.domain];
@@ -213,6 +217,11 @@ function fmt(v, mode) {
 function readInputs() {
   var out = {};
   TOOL.fields.forEach(function (f) {
+    if (f.type === 'signature') {
+      var c = document.getElementById('f_' + f.key);
+      out[f.key] = c && c.__tfSigState ? c.__tfSigState().dataUrl : null;
+      return;
+    }
     var el = $('#f_' + f.key);
     if (!el || !el.value && f.type !== 'textarea') { if (el) out[f.key] = ''; return; }
     var raw = el.value;
@@ -344,10 +353,11 @@ function run() {
   var inputs, res;
   try { inputs = readInputs(); } catch (e) { showError(e.message); return; }
   var call = FN;
-  if (TOOL.browser && TOOL.fileIds && TOOL.fileIds.length) {
-    var picks = TOOL.fileIds.map(function (id) { return document.getElementById(id); })
+  if (TOOL.browser) {
+    var picks = (TOOL.fileIds || []).map(function (id) { return document.getElementById(id); })
       .filter(function (el) { return el && el.files && el.files.length; })
-      .map(function (el) { return el.files[0]; });
+      .map(function (el) { return el.multiple ? Array.from(el.files) : el.files[0]; })
+      .flat();
     call = function () { return FN(picks, inputs); };
   }
   try { res = call(inputs); } catch (e) {
@@ -416,11 +426,48 @@ function boot() {
   }
   // Every field recalculates on input — the pages promise "no button to hunt
   // for", and at these payload sizes a keystroke-level recompute is instant.
+  // Fields marked live:false (signature tools create files, not figures) only
+  // run from the Generate/Calculate button.
   TOOL.fields.forEach(function (f) {
+    if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
     el.addEventListener('input', run);
     el.addEventListener('change', run);
+  });
+  // Signature pads: pointer drawing into the canvas, dataURL read at run time.
+  TOOL.fields.forEach(function (f) {
+    if (f.type !== 'signature') return;
+    var c = document.getElementById('f_' + f.key);
+    if (!c || c.dataset.sigReady) return;
+    c.dataset.sigReady = '1';
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.strokeStyle = '#111827';
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    var drawing = false, dirty = false;
+    var pos = function (ev) {
+      var r = c.getBoundingClientRect();
+      return { x: (ev.clientX - r.left) * (c.width / r.width), y: (ev.clientY - r.top) * (c.height / r.height) };
+    };
+    // strokes only mark the pad dirty — the tool runs when the user presses
+    // Generate, never mid-signature (an auto-download per stroke is hostile)
+    var stop = function () { drawing = false; };
+    c.addEventListener('pointerdown', function (ev) { drawing = true; dirty = true; var p = pos(ev); ctx.beginPath(); ctx.moveTo(p.x, p.y); try { c.setPointerCapture(ev.pointerId); } catch (e2) { /* synthetic or already-released pointer — drawing still works */ } ev.preventDefault(); });
+    c.addEventListener('pointermove', function (ev) { if (!drawing) return; var p = pos(ev); ctx.lineTo(p.x, p.y); ctx.stroke(); });
+    c.addEventListener('pointerup', stop);
+    c.addEventListener('pointerleave', stop);
+    c.addEventListener('pointercancel', stop);
+    var clr = document.getElementById('f_' + f.key + '_clear');
+    if (clr) clr.addEventListener('click', function () {
+      ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, c.width, c.height);
+      ctx.fillStyle = '#ffffff';
+      dirty = false;
+    });
+    c.__tfSigState = function () { return { dataUrl: dirty ? c.toDataURL('image/png') : null }; };
   });
   var form = $('#toolform');
   if (form) form.addEventListener('submit', function (e) { e.preventDefault(); run(); });
