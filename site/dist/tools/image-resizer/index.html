@@ -79,6 +79,9 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.big{overflow-wrap:anywhere;word-break:break-word}
+.big .unit{overflow-wrap:normal}
+li,dd,td{overflow-wrap:anywhere}
 .sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
   border-radius:8px;touch-action:none;cursor:crosshair;display:block}
 .sigpad-wrap{display:flex;flex-direction:column;gap:6px}
@@ -113,7 +116,7 @@ footer.site li{margin:3px 0}
 <section id="tool" class="card">
   <form id="toolform" autocomplete="off">
     <div class="grid">
-      <div><label for="f_files">Choose file</label><input type="file" id="f_files" name="files" required accept="image/*"></div>
+      <div><label for="f_files">Choose file</label><input type="file" id="f_files" name="files" accept="image/*"></div>
       <div><label for="f_maxWidth">Max width (px, optional)</label><input type="number" inputmode="decimal" id="f_maxWidth" name="maxWidth" min="16" step="1" value=""></div>
       <div><label for="f_maxHeight">Max height (px, optional)</label><input type="number" inputmode="decimal" id="f_maxHeight" name="maxHeight" min="16" step="1" value=""></div>
       <div><label for="f_format">Output format</label><select id="f_format" name="format"><option value="jpeg" selected>JPG (smaller)</option><option value="png">PNG (lossless)</option><option value="webp">WebP (smallest)</option></select></div>
@@ -380,6 +383,11 @@ function renderUnit(res) {
   $('#result').innerHTML = html;
 }
 function renderText(res) {
+  // QR tools: remember what was encoded so renderQR can draw the real payload
+  if (TOOL.qr && res && typeof res === 'object') {
+    if (res.payload !== undefined) TOOL.lastPayload = res.payload;
+    if (res.size !== undefined) TOOL.lastSize = res.size;
+  }
   var out = TOOL.resultText ? TOOL.resultText(res) : String(res.output !== undefined ? res.output : '');
   var skip = { chars: 1, charsNoSpaces: 1, length: 1, count: 1, valid: 1 };
   var extra = Object.keys(res).filter(function (k) {
@@ -432,7 +440,7 @@ function renderQR(payload, size) {
   var box = $('#qrbox');
   if (!box || typeof qrMatrix !== 'function') return;
   if (!payload) { box.innerHTML = '<p class="note">Enter text or a URL to generate a QR code.</p>'; return; }
-  var extra = box.querySelectorAll('canvas, button');
+  var extra = box.querySelectorAll('canvas, button, a');
   for (var i = 0; i < extra.length; i++) extra[i].remove();
   try {
     var m = qrMatrix(payload, 'M');

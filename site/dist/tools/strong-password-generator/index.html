@@ -79,6 +79,9 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.big{overflow-wrap:anywhere;word-break:break-word}
+.big .unit{overflow-wrap:normal}
+li,dd,td{overflow-wrap:anywhere}
 .sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
   border-radius:8px;touch-action:none;cursor:crosshair;display:block}
 .sigpad-wrap{display:flex;flex-direction:column;gap:6px}
@@ -131,7 +134,7 @@ footer.site li{margin:3px 0}
 <table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>length</td><td style="text-align:left">number of characters</td></tr><tr><td>character set</td><td style="text-align:left">letters, letters + digits, or all three classes</td></tr></tbody></table>
 <p>Length matters more than symbol variety: every extra character multiplies the search space. Randomness comes from the operating system’s cryptographic generator, never from Math.random.</p>
 <p class="note">Inputs used: Length, Character set.</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — length of <strong>20</strong>, character set set to <strong>Letters + digits + symbols</strong>:</p><ul><li>password: =mYWpKBvh4DrHDMNGxTi</li><li>length: 20</li></ul></section>
+<section id="example"><h2>Worked example</h2><p>Take the default example — length of <strong>20</strong>, character set set to <strong>Letters + digits + symbols</strong>:</p><ul><li>password: a@rvJNhRIXOVN1*Mk!1Y</li><li>length: 20</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What formula does the Strong Password Generator use?</dt><dd>It uses <strong>each character drawn from a set of 26–90 symbols using your OS’s CSPRNG</strong>, where length is the number of characters; character set is the letters, letters + digits, or all three classes.</dd>
 <dt>Is the Strong Password Generator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>How do I read the result?</dt><dd>Length matters more than symbol variety: every extra character multiplies the search space. Randomness comes from the operating system’s cryptographic generator, never from Math.random.</dd>
@@ -249,6 +252,11 @@ function renderUnit(res) {
   $('#result').innerHTML = html;
 }
 function renderText(res) {
+  // QR tools: remember what was encoded so renderQR can draw the real payload
+  if (TOOL.qr && res && typeof res === 'object') {
+    if (res.payload !== undefined) TOOL.lastPayload = res.payload;
+    if (res.size !== undefined) TOOL.lastSize = res.size;
+  }
   var out = TOOL.resultText ? TOOL.resultText(res) : String(res.output !== undefined ? res.output : '');
   var skip = { chars: 1, charsNoSpaces: 1, length: 1, count: 1, valid: 1 };
   var extra = Object.keys(res).filter(function (k) {
@@ -301,7 +309,7 @@ function renderQR(payload, size) {
   var box = $('#qrbox');
   if (!box || typeof qrMatrix !== 'function') return;
   if (!payload) { box.innerHTML = '<p class="note">Enter text or a URL to generate a QR code.</p>'; return; }
-  var extra = box.querySelectorAll('canvas, button');
+  var extra = box.querySelectorAll('canvas, button, a');
   for (var i = 0; i < extra.length; i++) extra[i].remove();
   try {
     var m = qrMatrix(payload, 'M');

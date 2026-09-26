@@ -79,6 +79,9 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.big{overflow-wrap:anywhere;word-break:break-word}
+.big .unit{overflow-wrap:normal}
+li,dd,td{overflow-wrap:anywhere}
 .sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
   border-radius:8px;touch-action:none;cursor:crosshair;display:block}
 .sigpad-wrap{display:flex;flex-direction:column;gap:6px}
@@ -131,11 +134,11 @@ footer.site li{margin:3px 0}
 <table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>count</td><td style="text-align:left">how many identifiers to generate</td></tr><tr><td>version</td><td style="text-align:left">v4 — random, no MAC address or timestamp leaks</td></tr></tbody></table>
 <p>UUID v4 is random rather than sequential, so it does not reveal creation order or machine identity, and collision odds are negligible for any realistic dataset. Ideal for database keys, test fixtures and request tracing.</p>
 <p class="note">Inputs used: How many, Version.</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — how many of <strong>5</strong>, version set to <strong>UUID v4</strong>:</p><ul><li>list: c649fd96-be1c-465b-9417-14f1b629792a
-34d1b2ab-f043-4f86-bacc-8118c30f244d
-15f2a3bc-8041-46d8-ab02-46352fb239fc
-89ea7284-6f52-4893-a2ee-232fed26668d
-1b996102-8bcd-44dd-bf70-3e7933ed7317</li><li>count: 5</li></ul></section>
+<section id="example"><h2>Worked example</h2><p>Take the default example — how many of <strong>5</strong>, version set to <strong>UUID v4</strong>:</p><ul><li>list: 2c2501ec-cced-4ab4-a34d-ed13b0e623a4
+07863399-0a9f-4364-a03c-d9ce97dbbfc6
+7bd6d522-843b-4f8b-9810-fb7f18b84882
+ae16f4ec-b838-460d-bdb8-75751a0c5f0a
+7721422a-bcc5-48fd-bb41-0fd962868bc6</li><li>count: 5</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What formula does the UUID Generator use?</dt><dd>It uses <strong>128 random bits, with version and variant bits set (RFC 4122 v4)</strong>, where count is the how many identifiers to generate; version is the v4 — random, no MAC address or timestamp leaks.</dd>
 <dt>Is the UUID Generator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>How do I read the result?</dt><dd>UUID v4 is random rather than sequential, so it does not reveal creation order or machine identity, and collision odds are negligible for any realistic dataset. Ideal for database keys, test fixtures and request tracing.</dd>
@@ -252,6 +255,11 @@ function renderUnit(res) {
   $('#result').innerHTML = html;
 }
 function renderText(res) {
+  // QR tools: remember what was encoded so renderQR can draw the real payload
+  if (TOOL.qr && res && typeof res === 'object') {
+    if (res.payload !== undefined) TOOL.lastPayload = res.payload;
+    if (res.size !== undefined) TOOL.lastSize = res.size;
+  }
   var out = TOOL.resultText ? TOOL.resultText(res) : String(res.output !== undefined ? res.output : '');
   var skip = { chars: 1, charsNoSpaces: 1, length: 1, count: 1, valid: 1 };
   var extra = Object.keys(res).filter(function (k) {
@@ -304,7 +312,7 @@ function renderQR(payload, size) {
   var box = $('#qrbox');
   if (!box || typeof qrMatrix !== 'function') return;
   if (!payload) { box.innerHTML = '<p class="note">Enter text or a URL to generate a QR code.</p>'; return; }
-  var extra = box.querySelectorAll('canvas, button');
+  var extra = box.querySelectorAll('canvas, button, a');
   for (var i = 0; i < extra.length; i++) extra[i].remove();
   try {
     var m = qrMatrix(payload, 'M');

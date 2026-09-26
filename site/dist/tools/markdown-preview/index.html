@@ -79,6 +79,9 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.big{overflow-wrap:anywhere;word-break:break-word}
+.big .unit{overflow-wrap:normal}
+li,dd,td{overflow-wrap:anywhere}
 .sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
   border-radius:8px;touch-action:none;cursor:crosshair;display:block}
 .sigpad-wrap{display:flex;flex-direction:column;gap:6px}
@@ -113,7 +116,7 @@ footer.site li{margin:3px 0}
 <section id="tool" class="card">
   <form id="toolform" autocomplete="off">
     <div class="grid">
-      <div><label for="f_input">Markdown</label><textarea id="f_input" name="input" required># ToolFactory
+      <div><label for="f_input">Markdown</label><textarea id="f_input" name="input" required>## ToolFactory
 
 **Free** tools that *just work*.
 
@@ -138,14 +141,14 @@ Everything here runs in your browser.</textarea></div>
 <table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>input</td><td style="text-align:left">the Markdown source</td></tr></tbody></table>
 <p>Rendering is limited to a safe subset, and raw HTML is escaped rather than executed so pasted markup can never run scripts. Handy for checking a README or a blog post before publishing.</p>
 <p class="note">Inputs used: Markdown.</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — markdown of <strong># ToolFactory
+<section id="example"><h2>Worked example</h2><p>Take the default example — markdown of <strong>## ToolFactory
 
 </strong>Free** tools that *just work*.
 
 - No signup
 - No tracking
 
-Everything here runs in your browser.**:</p><ul><li>chars: 113</li></ul></section>
+Everything here runs in your browser.**:</p><ul><li>chars: 114</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What formula does the Markdown Preview use?</dt><dd>It uses <strong>line-based parsing of headings, lists, bold/italic, code and links</strong>, where input is the the Markdown source.</dd>
 <dt>Is the Markdown Preview free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the formatter runs entirely in your browser.</dd>
 <dt>How do I read the result?</dt><dd>Rendering is limited to a safe subset, and raw HTML is escaped rather than executed so pasted markup can never run scripts. Handy for checking a README or a blog post before publishing.</dd>
@@ -173,7 +176,7 @@ Everything here runs in your browser.**:</p><ul><li>chars: 113</li></ul></sectio
 <p class="note" style="margin-top:16px">&copy; 2026 ToolFactory. All rights reserved.</p>
 </div></footer>
 <script>
-var TOOL = {"id":"markdown-preview","mode":"chk","kind":"markdown","fields":[{"key":"input","label":"Markdown","type":"textarea"}],"defaults":{"input":"# ToolFactory\n\n**Free** tools that *just work*.\n\n- No signup\n- No tracking\n\nEverything here runs in your browser."},"outputs":[],"statsKeys":[],"browser":false,"fileIds":null,"qr":false,"units":null,"domain":null,"unitFormulas":null};
+var TOOL = {"id":"markdown-preview","mode":"chk","kind":"markdown","fields":[{"key":"input","label":"Markdown","type":"textarea"}],"defaults":{"input":"## ToolFactory\n\n**Free** tools that *just work*.\n\n- No signup\n- No tracking\n\nEverything here runs in your browser."},"outputs":[],"statsKeys":[],"browser":false,"fileIds":null,"qr":false,"units":null,"domain":null,"unitFormulas":null};
 var FN = function (inputs) { return ((input) => {
       const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
       const lines = String(input.input ?? '').split(/\r?\n/);
@@ -304,6 +307,11 @@ function renderUnit(res) {
   $('#result').innerHTML = html;
 }
 function renderText(res) {
+  // QR tools: remember what was encoded so renderQR can draw the real payload
+  if (TOOL.qr && res && typeof res === 'object') {
+    if (res.payload !== undefined) TOOL.lastPayload = res.payload;
+    if (res.size !== undefined) TOOL.lastSize = res.size;
+  }
   var out = TOOL.resultText ? TOOL.resultText(res) : String(res.output !== undefined ? res.output : '');
   var skip = { chars: 1, charsNoSpaces: 1, length: 1, count: 1, valid: 1 };
   var extra = Object.keys(res).filter(function (k) {
@@ -356,7 +364,7 @@ function renderQR(payload, size) {
   var box = $('#qrbox');
   if (!box || typeof qrMatrix !== 'function') return;
   if (!payload) { box.innerHTML = '<p class="note">Enter text or a URL to generate a QR code.</p>'; return; }
-  var extra = box.querySelectorAll('canvas, button');
+  var extra = box.querySelectorAll('canvas, button, a');
   for (var i = 0; i < extra.length; i++) extra[i].remove();
   try {
     var m = qrMatrix(payload, 'M');

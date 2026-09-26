@@ -3,7 +3,12 @@ name: weekly-release
 on:
   schedule:
     - cron: "30 1 * * 1" # Monday 07:00 IST (01:30 UTC)
-  workflow_dispatch: {} # manual run from the Actions tab
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Promote the next weekly batch (turn off for rebuild-only runs)"
+        type: boolean
+        default: true
 
 permissions:
   contents: write
@@ -40,6 +45,7 @@ jobs:
 
       - name: Publish next weekly batch
         working-directory: core
+        if: ${{ github.event_name == 'schedule' || inputs.publish }}
         env:
           GEMINI_KEYS: ""
           GEMINI_API_KEY: ""
@@ -60,12 +66,14 @@ jobs:
         working-directory: core
         run: |
           node engine/tests.mjs --all-live
+          node scripts/ux-audit.mjs
           node scripts/runtime-check.mjs
           node scripts/default-invalid-check.mjs
 
       - name: Push updated state back to core
         working-directory: core
         run: |
+          git fetch --unshallow origin 2>/dev/null || git fetch origin 2>/dev/null || true
           git config user.name "Bharat Malhotra"
           git config user.email "mr.bharatmalhotra@gmail.com"
           git add data/backlog.json data/pool.json data/live-tools.json data/last-publish.json

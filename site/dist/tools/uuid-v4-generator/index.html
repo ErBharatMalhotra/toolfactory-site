@@ -79,6 +79,9 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.big{overflow-wrap:anywhere;word-break:break-word}
+.big .unit{overflow-wrap:normal}
+li,dd,td{overflow-wrap:anywhere}
 .sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
   border-radius:8px;touch-action:none;cursor:crosshair;display:block}
 .sigpad-wrap{display:flex;flex-direction:column;gap:6px}
@@ -133,7 +136,7 @@ footer.site li{margin:3px 0}
 <table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>count</td><td style="text-align:left">how many identifiers to generate</td></tr><tr><td>version</td><td style="text-align:left">v4 — random, no MAC address or timestamp leaks</td></tr></tbody></table>
 <p>UUID v4 is random rather than sequential, so it does not reveal creation order or machine identity, and collision odds are negligible for any realistic dataset. Ideal for database keys, test fixtures and request tracing.</p>
 <p class="note">Inputs used: How many, Version.</p></section>
-<section id="example"><h2>Worked example</h2><p>Here is an example of generating a single UUID v4.</p><ul><li>Enter '1' in the "How many" field.</li><li>Ensure the "Version" field is set to 'v4'.</li><li>The tool will generate one UUID, such as: c0a93956-050e-4b1d-8a9f-1894eacff1fc.</li></ul><p><strong>Result:</strong></p><ul><li>list: d3818b4f-8ccd-4a69-93ea-a319337a7391</li><li>count: 1</li></ul></section>
+<section id="example"><h2>Worked example</h2><p>Here is an example of generating a single UUID v4.</p><ul><li>Enter '1' in the "How many" field.</li><li>Ensure the "Version" field is set to 'v4'.</li><li>The tool will generate one UUID, such as: c0a93956-050e-4b1d-8a9f-1894eacff1fc.</li></ul><p><strong>Result:</strong></p><ul><li>list: 917952ec-63aa-486e-80f9-5eb96e756717</li><li>count: 1</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What is a UUID v4?</dt><dd>A UUID v4 is a universally unique identifier generated using random numbers. It is a 128-bit number used to uniquely identify information in computer systems.</dd>
 <dt>Are UUID v4s truly unique?</dt><dd>The probability of two randomly generated UUID v4s being identical is extremely low. For practical purposes, they are considered unique.</dd>
 <dt>When should I use a UUID v4?</dt><dd>Use UUID v4s when you need a unique identifier that does not reveal information about its creation time or the machine that generated it, such as for database primary keys or distributed system IDs.</dd>
@@ -251,6 +254,11 @@ function renderUnit(res) {
   $('#result').innerHTML = html;
 }
 function renderText(res) {
+  // QR tools: remember what was encoded so renderQR can draw the real payload
+  if (TOOL.qr && res && typeof res === 'object') {
+    if (res.payload !== undefined) TOOL.lastPayload = res.payload;
+    if (res.size !== undefined) TOOL.lastSize = res.size;
+  }
   var out = TOOL.resultText ? TOOL.resultText(res) : String(res.output !== undefined ? res.output : '');
   var skip = { chars: 1, charsNoSpaces: 1, length: 1, count: 1, valid: 1 };
   var extra = Object.keys(res).filter(function (k) {
@@ -303,7 +311,7 @@ function renderQR(payload, size) {
   var box = $('#qrbox');
   if (!box || typeof qrMatrix !== 'function') return;
   if (!payload) { box.innerHTML = '<p class="note">Enter text or a URL to generate a QR code.</p>'; return; }
-  var extra = box.querySelectorAll('canvas, button');
+  var extra = box.querySelectorAll('canvas, button, a');
   for (var i = 0; i < extra.length; i++) extra[i].remove();
   try {
     var m = qrMatrix(payload, 'M');

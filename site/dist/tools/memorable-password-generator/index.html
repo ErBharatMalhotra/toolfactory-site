@@ -79,6 +79,9 @@ table.data td:not(:first-child){text-align:right;font-variant-numeric:tabular-nu
 pre.out{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);
   border-radius:8px;padding:12px;margin:10px 0 0;font-size:14px;max-height:420px;overflow:auto}
 .err{color:var(--bad);font-size:14px;margin-top:8px}
+.big{overflow-wrap:anywhere;word-break:break-word}
+.big .unit{overflow-wrap:normal}
+li,dd,td{overflow-wrap:anywhere}
 .sigpad{width:100%;max-width:480px;height:160px;background:#fff;border:1px solid var(--line);
   border-radius:8px;touch-action:none;cursor:crosshair;display:block}
 .sigpad-wrap{display:flex;flex-direction:column;gap:6px}
@@ -129,7 +132,7 @@ footer.site li{margin:3px 0}
 <section id="how"><h2>How the Memorable Password Generator works</h2><p>The Memorable Password Generator works on <strong>Words</strong>, <strong>Separator</strong>, <strong>Capitalise words</strong> and shows the result as you type. The same input always gives the same answer — refresh the page and you will see exactly the same figure.</p></section>
 <section id="formula"><h2>Formula used</h2><p><code>Memorable Password Generator is computed by the formula below, using the inputs you provide.</code></p>
 <p class="note">Inputs used: Words, Separator, Capitalise words.</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — words of <strong>1500</strong>, separator set to <strong>Dash</strong>, capitalise words set to <strong>yes</strong>:</p><ul><li>passphrase: Male-Exit-Does-Keen-Dead-Wine-Nine-Read-Bone-Sent</li><li>words: 10</li><li>entropyBits: 91</li></ul></section>
+<section id="example"><h2>Worked example</h2><p>Take the default example — words of <strong>1500</strong>, separator set to <strong>Dash</strong>, capitalise words set to <strong>yes</strong>:</p><ul><li>passphrase: Test-Lake-Role-Past-Down-Lake-Push-Test-Dual-Peak</li><li>words: 10</li><li>entropyBits: 91</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>Is the Memorable Password Generator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>Does the Memorable Password Generator store or send my data?</dt><dd>No. Every calculation happens locally in the page, so the numbers you type are never uploaded or logged.</dd>
 <dt>Does it work on a phone and offline?</dt><dd>Yes — the page is a single lightweight file that adapts to any screen size. Once it has loaded it keeps working without a network connection.</dd>
@@ -242,6 +245,11 @@ function renderUnit(res) {
   $('#result').innerHTML = html;
 }
 function renderText(res) {
+  // QR tools: remember what was encoded so renderQR can draw the real payload
+  if (TOOL.qr && res && typeof res === 'object') {
+    if (res.payload !== undefined) TOOL.lastPayload = res.payload;
+    if (res.size !== undefined) TOOL.lastSize = res.size;
+  }
   var out = TOOL.resultText ? TOOL.resultText(res) : String(res.output !== undefined ? res.output : '');
   var skip = { chars: 1, charsNoSpaces: 1, length: 1, count: 1, valid: 1 };
   var extra = Object.keys(res).filter(function (k) {
@@ -294,7 +302,7 @@ function renderQR(payload, size) {
   var box = $('#qrbox');
   if (!box || typeof qrMatrix !== 'function') return;
   if (!payload) { box.innerHTML = '<p class="note">Enter text or a URL to generate a QR code.</p>'; return; }
-  var extra = box.querySelectorAll('canvas, button');
+  var extra = box.querySelectorAll('canvas, button, a');
   for (var i = 0; i < extra.length; i++) extra[i].remove();
   try {
     var m = qrMatrix(payload, 'M');
