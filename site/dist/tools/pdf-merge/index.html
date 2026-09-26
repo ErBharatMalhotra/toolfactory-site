@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"PDF Merge","url":"https://toolfactory.pages.dev/tools/pdf-merge/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"PDF Merge — free online tool. Fast, private, no signup. Works on mobile and offline."}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the PDF Merge free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser."}},{"@type":"Question","name":"Does the PDF Merge store or send my data?","acceptedAnswer":{"@type":"Answer","text":"No. Every calculation happens locally in the page, so the numbers you type are never uploaded or logged."}},{"@type":"Question","name":"Does it work on a phone and offline?","acceptedAnswer":{"@type":"Answer","text":"Yes — the page is a single lightweight file that adapts to any screen size. Once it has loaded it keeps working without a network connection."}},{"@type":"Question","name":"What inputs does the PDF Merge need?","acceptedAnswer":{"@type":"Answer","text":"Choose file, Keep upload order (files merge top to bottom). Change any of them and the result updates instantly."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the PDF Merge free?","acceptedAnswer":{"@type":"Answer","text":"Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser."}},{"@type":"Question","name":"Does the PDF Merge store or send my data?","acceptedAnswer":{"@type":"Answer","text":"No. Every calculation happens locally in the page, so the numbers you type are never uploaded or logged."}},{"@type":"Question","name":"Does it work on a phone and offline?","acceptedAnswer":{"@type":"Answer","text":"Yes — the page is a single lightweight file that adapts to any screen size. Once it has loaded it keeps working without a network connection."}},{"@type":"Question","name":"What inputs does the PDF Merge need?","acceptedAnswer":{"@type":"Answer","text":"Choose file. Change any of them and the result updates instantly."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://toolfactory.pages.dev/"},{"@type":"ListItem","position":2,"name":"Generators","item":"https://toolfactory.pages.dev/generators/"},{"@type":"ListItem","position":3,"name":"PDF Merge","item":"https://toolfactory.pages.dev/tools/pdf-merge/"}]}</script>
 <style>
 *,*::before,*::after{box-sizing:border-box}
@@ -114,10 +114,9 @@ footer.site li{margin:3px 0}
   <form id="toolform" autocomplete="off">
     <div class="grid">
       <div><label for="f_files">Choose file</label><input type="file" id="f_files" name="files" required accept="application/pdf" multiple></div>
-      <div><label for="f_order">Keep upload order (files merge top to bottom)</label><input type="text" id="f_order" name="order" value=""></div>
     </div>
     <div class="row">
-      <button type="submit">Calculate</button>
+      <button type="submit">PDF Merge</button>
       <button type="button" class="ghost" id="resetbtn">Reset</button>
       
     </div>
@@ -125,14 +124,14 @@ footer.site li{margin:3px 0}
   <div class="result" id="result" aria-live="polite"></div>
   <p class="err" id="err" hidden></p>
 </section>
-<section id="how"><h2>How the PDF Merge works</h2><p>The PDF Merge works on <strong>Choose file</strong>, <strong>Keep upload order (files merge top to bottom)</strong> and shows the result as you type. The same input always gives the same answer — refresh the page and you will see exactly the same figure, and nothing you type is sent anywhere.</p></section>
+<section id="how"><h2>How the PDF Merge works</h2><p>The PDF Merge works on <strong>Choose file</strong> and shows the result as you type. The same input always gives the same answer — refresh the page and you will see exactly the same figure, and nothing you type is sent anywhere.</p></section>
 <section id="formula"><h2>Formula used</h2><p><code>PDF Merge is computed by the formula below, using the inputs you provide.</code></p>
-<p class="note">Inputs used: Choose file, Keep upload order (files merge top to bottom).</p></section>
+<p class="note">Inputs used: Choose file.</p></section>
 <section id="example"><h2>Worked example</h2><p>Run the tool above with your own file — the result is a direct download, so there are no numbers to show here.</p></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>Is the PDF Merge free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>Does the PDF Merge store or send my data?</dt><dd>No. Every calculation happens locally in the page, so the numbers you type are never uploaded or logged.</dd>
 <dt>Does it work on a phone and offline?</dt><dd>Yes — the page is a single lightweight file that adapts to any screen size. Once it has loaded it keeps working without a network connection.</dd>
-<dt>What inputs does the PDF Merge need?</dt><dd><strong>Choose file</strong>, <strong>Keep upload order (files merge top to bottom)</strong>. Change any of them and the result updates instantly.</dd></dl></section>
+<dt>What inputs does the PDF Merge need?</dt><dd><strong>Choose file</strong>. Change any of them and the result updates instantly.</dd></dl></section>
 <section id="related" class="related"><h2>Related tools</h2><ul><li><a href="/tools/add-page-numbers-to-pdf/">Add Page Numbers to PDF</a><span>Generators</span></li>
 <li><a href="/tools/images-to-pdf/">Images to PDF</a><span>Generators</span></li>
 <li><a href="/tools/jpg-to-pdf/">JPG to PDF</a><span>Generators</span></li>
@@ -352,7 +351,7 @@ window.addPdfWatermark = window.__tfPdfWatermark;
 window.compressPdfLite = window.__tfCompressPdf;
 window.imagesToPdf = window.__tfImagesToPdf;
 
-var TOOL = {"id":"pdf-merge","mode":"file","kind":"pdfMerge","fields":[{"key":"files","label":"Choose file","type":"file","accept":"application/pdf","multiple":true,"optional":false},{"key":"order","label":"Keep upload order (files merge top to bottom)","type":"text","optional":true}],"defaults":{"order":""},"outputs":[{"key":"fileName","label":"Downloaded","primary":true},{"key":"files","label":"Files merged"},{"key":"size","label":"PDF size (bytes)"}],"statsKeys":[],"browser":true,"fileIds":["f_files"],"qr":false,"units":null,"domain":null,"unitFormulas":null};
+var TOOL = {"id":"pdf-merge","mode":"file","kind":"pdfMerge","fields":[{"key":"files","label":"Choose file","type":"file","accept":"application/pdf","multiple":true,"optional":false}],"defaults":{},"outputs":[{"key":"fileName","label":"Downloaded","primary":true},{"key":"files","label":"Files merged"},{"key":"size","label":"PDF size (bytes)"}],"statsKeys":[],"browser":true,"fileIds":["f_files"],"qr":false,"units":null,"domain":null,"unitFormulas":null};
 var FN = async (files) => {
       if (!files || files.length < 2) throw new Error('Choose at least two PDF files');
       const PDFLib = window.PDFLib;
@@ -598,11 +597,12 @@ function boot() {
     });
     toSel.addEventListener('change', run);
   }
-  // Every field recalculates on input — the pages promise "no button to hunt
-  // for", and at these payload sizes a keystroke-level recompute is instant.
-  // Fields marked live:false (signature tools create files, not figures) only
-  // run from the Generate/Calculate button.
+  // Files-first tools: the user drives the run with the button. No auto-run
+  // on file pick, none while typing, none at page load — auto-runs here would
+  // fire downloads the user never asked for.
+  var fileMode = TOOL.mode === 'file' && TOOL.browser;
   TOOL.fields.forEach(function (f) {
+    if (fileMode) return;
     if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
@@ -655,9 +655,13 @@ function boot() {
       else el.value = TOOL.defaults[f.key] === undefined || TOOL.defaults[f.key] === null ? '' : TOOL.defaults[f.key];
     });
     if (TOOL.mode === 'unit') fillUnits(TOOL.domain);
-    run();
+    var fileModeR = TOOL.mode === 'file' && TOOL.browser;
+    if (!fileModeR) run();
+    var box = $('#result'), err = $('#err');
+    if (fileModeR && box) box.innerHTML = '';
+    if (fileModeR && err) { err.hidden = true; err.textContent = ''; }
   });
-  run();
+  if (!(TOOL.mode === 'file' && TOOL.browser)) run();
 }
 document.addEventListener('DOMContentLoaded', boot);
 

@@ -131,7 +131,7 @@ footer.site li{margin:3px 0}
 <table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>length</td><td style="text-align:left">number of characters</td></tr><tr><td>character set</td><td style="text-align:left">letters, letters + digits, or all three classes</td></tr></tbody></table>
 <p>Length matters more than symbol variety: every extra character multiplies the search space. Randomness comes from the operating system’s cryptographic generator, never from Math.random.</p>
 <p class="note">Inputs used: Length, Character set.</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — length of <strong>20</strong>, character set set to <strong>Letters + digits + symbols</strong>:</p><ul><li>password: Ye!Tc%pNU0ih%t&amp;9e0Xz</li><li>length: 20</li></ul></section>
+<section id="example"><h2>Worked example</h2><p>Take the default example — length of <strong>20</strong>, character set set to <strong>Letters + digits + symbols</strong>:</p><ul><li>password: =mYWpKBvh4DrHDMNGxTi</li><li>length: 20</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What formula does the Strong Password Generator use?</dt><dd>It uses <strong>each character drawn from a set of 26–90 symbols using your OS’s CSPRNG</strong>, where length is the number of characters; character set is the letters, letters + digits, or all three classes.</dd>
 <dt>Is the Strong Password Generator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>How do I read the result?</dt><dd>Length matters more than symbol variety: every extra character multiplies the search space. Randomness comes from the operating system’s cryptographic generator, never from Math.random.</dd>
@@ -404,11 +404,12 @@ function boot() {
     });
     toSel.addEventListener('change', run);
   }
-  // Every field recalculates on input — the pages promise "no button to hunt
-  // for", and at these payload sizes a keystroke-level recompute is instant.
-  // Fields marked live:false (signature tools create files, not figures) only
-  // run from the Generate/Calculate button.
+  // Files-first tools: the user drives the run with the button. No auto-run
+  // on file pick, none while typing, none at page load — auto-runs here would
+  // fire downloads the user never asked for.
+  var fileMode = TOOL.mode === 'file' && TOOL.browser;
   TOOL.fields.forEach(function (f) {
+    if (fileMode) return;
     if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
@@ -461,9 +462,13 @@ function boot() {
       else el.value = TOOL.defaults[f.key] === undefined || TOOL.defaults[f.key] === null ? '' : TOOL.defaults[f.key];
     });
     if (TOOL.mode === 'unit') fillUnits(TOOL.domain);
-    run();
+    var fileModeR = TOOL.mode === 'file' && TOOL.browser;
+    if (!fileModeR) run();
+    var box = $('#result'), err = $('#err');
+    if (fileModeR && box) box.innerHTML = '';
+    if (fileModeR && err) { err.hidden = true; err.textContent = ''; }
   });
-  run();
+  if (!(TOOL.mode === 'file' && TOOL.browser)) run();
 }
 document.addEventListener('DOMContentLoaded', boot);
 

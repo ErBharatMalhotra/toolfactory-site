@@ -129,7 +129,7 @@ footer.site li{margin:3px 0}
 <section id="how"><h2>How the Memorable Password Generator works</h2><p>The Memorable Password Generator works on <strong>Words</strong>, <strong>Separator</strong>, <strong>Capitalise words</strong> and shows the result as you type. The same input always gives the same answer — refresh the page and you will see exactly the same figure.</p></section>
 <section id="formula"><h2>Formula used</h2><p><code>Memorable Password Generator is computed by the formula below, using the inputs you provide.</code></p>
 <p class="note">Inputs used: Words, Separator, Capitalise words.</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — words of <strong>1500</strong>, separator set to <strong>Dash</strong>, capitalise words set to <strong>yes</strong>:</p><ul><li>passphrase: Peak-Road-Plan-Door-Cook-Hero-Rock-Cook-Near-Self</li><li>words: 10</li><li>entropyBits: 91</li></ul></section>
+<section id="example"><h2>Worked example</h2><p>Take the default example — words of <strong>1500</strong>, separator set to <strong>Dash</strong>, capitalise words set to <strong>yes</strong>:</p><ul><li>passphrase: Male-Exit-Does-Keen-Dead-Wine-Nine-Read-Bone-Sent</li><li>words: 10</li><li>entropyBits: 91</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>Is the Memorable Password Generator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>Does the Memorable Password Generator store or send my data?</dt><dd>No. Every calculation happens locally in the page, so the numbers you type are never uploaded or logged.</dd>
 <dt>Does it work on a phone and offline?</dt><dd>Yes — the page is a single lightweight file that adapts to any screen size. Once it has loaded it keeps working without a network connection.</dd>
@@ -397,11 +397,12 @@ function boot() {
     });
     toSel.addEventListener('change', run);
   }
-  // Every field recalculates on input — the pages promise "no button to hunt
-  // for", and at these payload sizes a keystroke-level recompute is instant.
-  // Fields marked live:false (signature tools create files, not figures) only
-  // run from the Generate/Calculate button.
+  // Files-first tools: the user drives the run with the button. No auto-run
+  // on file pick, none while typing, none at page load — auto-runs here would
+  // fire downloads the user never asked for.
+  var fileMode = TOOL.mode === 'file' && TOOL.browser;
   TOOL.fields.forEach(function (f) {
+    if (fileMode) return;
     if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
@@ -454,9 +455,13 @@ function boot() {
       else el.value = TOOL.defaults[f.key] === undefined || TOOL.defaults[f.key] === null ? '' : TOOL.defaults[f.key];
     });
     if (TOOL.mode === 'unit') fillUnits(TOOL.domain);
-    run();
+    var fileModeR = TOOL.mode === 'file' && TOOL.browser;
+    if (!fileModeR) run();
+    var box = $('#result'), err = $('#err');
+    if (fileModeR && box) box.innerHTML = '';
+    if (fileModeR && err) { err.hidden = true; err.textContent = ''; }
   });
-  run();
+  if (!(TOOL.mode === 'file' && TOOL.browser)) run();
 }
 document.addEventListener('DOMContentLoaded', boot);
 

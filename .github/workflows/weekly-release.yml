@@ -63,6 +63,19 @@ jobs:
           node scripts/runtime-check.mjs
           node scripts/default-invalid-check.mjs
 
+      - name: Push updated state back to core
+        working-directory: core
+        run: |
+          git config user.name "Bharat Malhotra"
+          git config user.email "mr.bharatmalhotra@gmail.com"
+          git add data/backlog.json data/pool.json data/live-tools.json data/last-publish.json
+          if git diff --cached --quiet; then
+            echo "no state changes"
+          else
+            git commit -m "weekly release: promote batch, pool and backlog update"
+            git push
+          fi
+
       - name: Sync built site into public repo
         run: |
           rm -rf site/dist

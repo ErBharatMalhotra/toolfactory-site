@@ -402,11 +402,12 @@ function boot() {
     });
     toSel.addEventListener('change', run);
   }
-  // Every field recalculates on input — the pages promise "no button to hunt
-  // for", and at these payload sizes a keystroke-level recompute is instant.
-  // Fields marked live:false (signature tools create files, not figures) only
-  // run from the Generate/Calculate button.
+  // Files-first tools: the user drives the run with the button. No auto-run
+  // on file pick, none while typing, none at page load — auto-runs here would
+  // fire downloads the user never asked for.
+  var fileMode = TOOL.mode === 'file' && TOOL.browser;
   TOOL.fields.forEach(function (f) {
+    if (fileMode) return;
     if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
@@ -459,9 +460,13 @@ function boot() {
       else el.value = TOOL.defaults[f.key] === undefined || TOOL.defaults[f.key] === null ? '' : TOOL.defaults[f.key];
     });
     if (TOOL.mode === 'unit') fillUnits(TOOL.domain);
-    run();
+    var fileModeR = TOOL.mode === 'file' && TOOL.browser;
+    if (!fileModeR) run();
+    var box = $('#result'), err = $('#err');
+    if (fileModeR && box) box.innerHTML = '';
+    if (fileModeR && err) { err.hidden = true; err.textContent = ''; }
   });
-  run();
+  if (!(TOOL.mode === 'file' && TOOL.browser)) run();
 }
 document.addEventListener('DOMContentLoaded', boot);
 

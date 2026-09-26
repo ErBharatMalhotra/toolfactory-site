@@ -131,11 +131,11 @@ footer.site li{margin:3px 0}
 <table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>paragraphs</td><td style="text-align:left">how many paragraphs to produce</td></tr><tr><td>start with</td><td style="text-align:left">begin with the traditional "Lorem ipsum" opening</td></tr></tbody></table>
 <p>Placeholder text should look like real prose so you can judge line lengths, leading and text-wrap behaviour. Latin is used deliberately: nobody reads it, so reviewers focus on the layout instead of the wording.</p>
 <p class="note">Inputs used: Paragraphs, Start with "Lorem ipsum".</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — paragraphs of <strong>3</strong>, start with "lorem ipsum" set to <strong>Yes</strong>:</p><ul><li>output: Lorem ipsum dolor sit amet, nostrud elit aliqua ut sit nulla labore laboris tempor ut ullamco consectetur. Aute aute fugiat lorem fugiat nulla sit nisi. Adipiscing magna consequat minim incididunt labore commodo amet magna reprehenderit minim pariatur tempor dolore ad. Ipsum aliqua laboris tempor elit aliquip et nisi ipsum fugiat voluptate tempor exercitation. Reprehenderit ad et ex in fugiat aliquip adipiscing duis.
+<section id="example"><h2>Worked example</h2><p>Take the default example — paragraphs of <strong>3</strong>, start with "lorem ipsum" set to <strong>Yes</strong>:</p><ul><li>output: Lorem ipsum dolor sit amet, ex elit ullamco sed minim aliqua elit amet eu irure. Laboris reprehenderit nostrud nostrud consectetur ea esse sit nisi. Veniam eu esse eiusmod enim aliquip consequat quis esse elit in elit ut ex commodo. Eu irure exercitation sed in magna in laboris veniam eiusmod pariatur.
 
-Reprehenderit et quis amet ad eu. Lorem sed adipiscing do pariatur irure eiusmod tempor irure labore. Ipsum minim reprehenderit dolor aute adipiscing aliquip nulla ullamco irure dolor esse. Ullamco aute duis enim aute magna nostrud commodo. Amet aliquip magna dolor aute in.
+Sed sit adipiscing voluptate minim adipiscing ex ullamco. Consequat amet do exercitation esse aliquip minim. Consectetur consequat aute nisi dolor consequat.
 
-Fugiat dolor do quis tempor minim voluptate nostrud pariatur adipiscing reprehenderit reprehenderit ipsum duis ad aute ex. Duis nostrud sit nulla irure aute ut. Ea consectetur dolor ex dolor magna cillum consectetur consequat adipiscing aliquip. Labore lorem ea consequat magna enim fugiat minim.</li></ul></section>
+Elit dolor velit nisi incididunt aliqua irure sit exercitation enim duis aute reprehenderit et aliqua. Elit reprehenderit lorem et nostrud exercitation ex in sed in labore aliqua ea aliqua dolor commodo exercitation. Irure quis irure aliqua voluptate fugiat quis sit.</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What formula does the Lorem Ipsum Generator use?</dt><dd>It uses <strong>sampled words from the classic lorem ipsum passage, sentence-cased</strong>, where paragraphs is the how many paragraphs to produce; start with is the begin with the traditional &quot;Lorem ipsum&quot; opening.</dd>
 <dt>Is the Lorem Ipsum Generator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>How do I read the result?</dt><dd>Placeholder text should look like real prose so you can judge line lengths, leading and text-wrap behaviour. Latin is used deliberately: nobody reads it, so reviewers focus on the layout instead of the wording.</dd>
@@ -408,11 +408,12 @@ function boot() {
     });
     toSel.addEventListener('change', run);
   }
-  // Every field recalculates on input — the pages promise "no button to hunt
-  // for", and at these payload sizes a keystroke-level recompute is instant.
-  // Fields marked live:false (signature tools create files, not figures) only
-  // run from the Generate/Calculate button.
+  // Files-first tools: the user drives the run with the button. No auto-run
+  // on file pick, none while typing, none at page load — auto-runs here would
+  // fire downloads the user never asked for.
+  var fileMode = TOOL.mode === 'file' && TOOL.browser;
   TOOL.fields.forEach(function (f) {
+    if (fileMode) return;
     if (f.live === false) return;
     var el = $('#f_' + f.key);
     if (!el) return;
@@ -465,9 +466,13 @@ function boot() {
       else el.value = TOOL.defaults[f.key] === undefined || TOOL.defaults[f.key] === null ? '' : TOOL.defaults[f.key];
     });
     if (TOOL.mode === 'unit') fillUnits(TOOL.domain);
-    run();
+    var fileModeR = TOOL.mode === 'file' && TOOL.browser;
+    if (!fileModeR) run();
+    var box = $('#result'), err = $('#err');
+    if (fileModeR && box) box.innerHTML = '';
+    if (fileModeR && err) { err.hidden = true; err.textContent = ''; }
   });
-  run();
+  if (!(TOOL.mode === 'file' && TOOL.browser)) run();
 }
 document.addEventListener('DOMContentLoaded', boot);
 
