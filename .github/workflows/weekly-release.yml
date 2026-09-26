@@ -67,6 +67,7 @@ jobs:
         run: |
           node engine/tests.mjs --all-live
           node scripts/ux-audit.mjs
+          node scripts/render-audit-all.mjs
           node scripts/runtime-check.mjs
           node scripts/default-invalid-check.mjs
 

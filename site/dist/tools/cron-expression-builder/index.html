@@ -176,12 +176,22 @@ var FN = function (inputs) { return ((input) => {
         const raw = String(fields[i] ?? '*').trim() || '*';
         if (raw !== '*') {
           for (const part of raw.split(',')) {
-            const n = part.startsWith('*/') ? Number(part.slice(2)) : Number(part);
-            if (!isFinite(n) && !part.startsWith('*/')) {
-              return { valid: false, error: `${names[i]}: "${part}" is not a number` };
+            // each comma part is: * | n | a-b, with an optional /step on any of them
+            const m = /^(\*|\d+(?:-\d+)?)(?:\/(\d+))?$/.exec(part);
+            if (!m) {
+              return { valid: false, error: `${names[i]}: "${part}" is not a number, range or step` };
             }
-            if (isFinite(n) && (n < ranges[i][0] || n > ranges[i][1])) {
-              return { valid: false, error: `${names[i]}: ${n} is outside ${ranges[i][0]}-${ranges[i][1]}` };
+            if (m[2] !== undefined && Number(m[2]) < 1) {
+              return { valid: false, error: `${names[i]}: step must be 1 or more` };
+            }
+            if (m[1] !== '*') {
+              const segs = m[1].split('-').map(Number);
+              if (segs[0] < ranges[i][0] || segs[0] > ranges[i][1]) {
+                return { valid: false, error: `${names[i]}: ${segs[0]} is outside ${ranges[i][0]}-${ranges[i][1]}` };
+              }
+              if (segs.length > 1 && (segs[1] < segs[0] || segs[1] > ranges[i][1])) {
+                return { valid: false, error: `${names[i]}: ${segs[1]} is outside ${ranges[i][0]}-${ranges[i][1]}` };
+              }
             }
           }
         }
@@ -195,8 +205,12 @@ var FN = function (inputs) { return ((input) => {
       else human += ` at ${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
       if (expr[4] !== '*') {
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const d = Number(expr[4]);
-        if (isFinite(d)) human += ` on ${days[d]}`;
+        const seg = expr[4].split('/')[0];
+        if (/^\d+$/.test(seg) && isFinite(Number(seg))) human += ` on ${days[Number(seg)]}`;
+        else if (/^\d+-\d+$/.test(seg)) {
+          const [a, b] = seg.split('-').map(Number);
+          human += ` on ${days.slice(a, b + 1).join(', ')}`;
+        } else human += ` on weekday pattern ${expr[4]}`;
       } else if (expr[2] !== '*') human += ` on day ${expr[2]} of the month`;
       if (expr[3] !== '*') human += ` in month ${expr[3]}`;
       return { valid: true, error: '', cron, output: cron, human, fields: 5 };
