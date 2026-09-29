@@ -3,4 +3,4 @@ Allow: /
 Disallow: /data/
 Disallow: /*?q=
 
-Sitemap: https://toolfactory.pages.dev/sitemap.xml
+Sitemap: https://tools.bharatdn.com/sitemap.xml
