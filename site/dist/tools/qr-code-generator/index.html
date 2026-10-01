@@ -116,7 +116,7 @@ footer.site li{margin:3px 0}
 <section id="tool" class="card">
   <form id="toolform" autocomplete="off">
     <div class="grid">
-      <div><label for="f_text">Text or URL</label><textarea id="f_text" name="text" required>https://tools.bharatdn.com</textarea></div>
+      <div><label for="f_text">Text or URL</label><textarea id="f_text" name="text" required>https://toolfactory.pages.dev</textarea></div>
       <div><label for="f_size">Size (px)</label><input type="number" inputmode="decimal" id="f_size" name="size" min="128" max="1024" step="32" required value="256"></div>
     </div>
     <div class="row">
@@ -134,7 +134,7 @@ footer.site li{margin:3px 0}
 <table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>text</td><td style="text-align:left">the text, link or Wi-Fi details to encode</td></tr><tr><td>size</td><td style="text-align:left">rendered image size in pixels</td></tr></tbody></table>
 <p>The pattern is generated in your browser and drawn to a canvas — nothing is uploaded. Level M error correction keeps the code readable even if a fifth of it is damaged or covered.</p>
 <p class="note">Inputs used: Text or URL, Size (px).</p></section>
-<section id="example"><h2>Worked example</h2><p>Here is an example of how to generate a QR code for a website link:</p><ul><li>Enter "https://tools.bharatdn.com" into the "Text or URL" input field.</li><li>Set the "Size (px)" input to "256".</li><li>The tool will display a QR code representing the entered URL at a size of 256x256 pixels. You can then download this image.</li></ul><p><strong>Result:</strong></p><ul><li>payload: https://tools.bharatdn.com</li><li>size: 256</li></ul></section>
+<section id="example"><h2>Worked example</h2><p>Here is an example of how to generate a QR code for a website link:</p><ul><li>Enter "https://toolfactory.pages.dev" into the "Text or URL" input field.</li><li>Set the "Size (px)" input to "256".</li><li>The tool will display a QR code representing the entered URL at a size of 256x256 pixels. You can then download this image.</li></ul><p><strong>Result:</strong></p><ul><li>payload: https://toolfactory.pages.dev</li><li>size: 256</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What is a QR code?</dt><dd>A QR code is a two-dimensional barcode. It stores information that can be read by a smartphone camera or QR code scanner.</dd>
 <dt>What kind of data can a QR code store?</dt><dd>QR codes can store various types of data. This includes URLs, text, contact information, Wi-Fi network details, and SMS messages.</dd>
 <dt>Can I change the color of the QR code?</dt><dd>This tool generates standard black and white QR codes. Color customization options are not available with this generator.</dd>
@@ -520,7 +520,7 @@ function qrMatrix(text, ecl = 'M') {
 
 // Exported for the test suite and for anyone auditing the encoder.
 
-var TOOL = {"id":"qr-code-generator","mode":"gen","kind":"qr","fields":[{"key":"text","label":"Text or URL","type":"textarea"},{"key":"size","label":"Size (px)","type":"number","min":128,"max":1024,"step":32}],"defaults":{"text":"https://tools.bharatdn.com","size":256},"outputs":[],"statsKeys":[],"browser":false,"fileIds":null,"qr":true,"units":null,"domain":null,"unitFormulas":null};
+var TOOL = {"id":"qr-code-generator","mode":"gen","kind":"qr","fields":[{"key":"text","label":"Text or URL","type":"textarea"},{"key":"size","label":"Size (px)","type":"number","min":128,"max":1024,"step":32}],"defaults":{"text":"https://toolfactory.pages.dev","size":256},"outputs":[],"statsKeys":[],"browser":false,"fileIds":null,"qr":true,"units":null,"domain":null,"unitFormulas":null};
 var FN = (inputs) => ({ payload: String(inputs.text ?? ''), size: Number(inputs.size) || 256 });
 TOOL.resultText = ((r) => `QR (${r.size}px) for: ${r.payload}`);
 

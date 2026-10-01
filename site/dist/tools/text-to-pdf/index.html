@@ -168,8 +168,9 @@ footer.site li{margin:3px 0}
 <p class="note" style="margin-top:16px">&copy; 2026 ToolFactory. All rights reserved.</p>
 </div></footer>
 <script>
-var PDFKIT = { textPdfBytes: function textPdfBytes(text, { pageSize = 'a4', fontSize = 11, margin = 56, title = 'Document' } = {}) {
-  const [pw, ph] = pageSize === 'letter' ? LETTER : A4;
+var PDFKIT = {
+  textPdfBytes: function textPdfBytes(text, { pageSize = 'a4', fontSize = 11, margin = 56, title = 'Document' } = {}) {
+  const [pw, ph] = pageSize === 'letter' ? PDFKIT.LETTER : PDFKIT.A4;
   const lines = String(text ?? '').replace(/\r\n/g, '\n').split('\n');
   const lineHeight = fontSize * 1.45;
   const maxCols = Math.floor((pw - margin * 2) / (fontSize * 0.6)); // Courier is monospaced: 0.6em per char
@@ -197,7 +198,7 @@ var PDFKIT = { textPdfBytes: function textPdfBytes(text, { pageSize = 'a4', font
   for (let p = 0; p < pageCount; p++) {
     const rows = wrapped.slice(p * maxRows, (p + 1) * maxRows);
     let stream = `BT /F1 ${fontSize} Tf ${lineHeight} TL ${margin} ${ph - margin} Td\n`;
-    for (const row of rows) stream += `(${pdfEscape(row)}) Tj T*\n`;
+    for (const row of rows) stream += `(${PDFKIT.pdfEscape(row)}) Tj T*\n`;
     stream += 'ET';
     contentIds.push(addObj(`<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`));
   }
@@ -209,14 +210,15 @@ var PDFKIT = { textPdfBytes: function textPdfBytes(text, { pageSize = 'a4', font
     ));
   }
   objects[pagesId - 1] = `<< /Type /Pages /Kids [${pageIds.map((id) => `${id} 0 R`).join(' ')}] /Count ${pageCount} >>`;
-  const infoId = addObj(`<< /Title (${pdfEscape(title)}) /Producer (QuickKit) >>`);
+  const infoId = addObj(`<< /Title (${PDFKIT.pdfEscape(title)}) /Producer (QuickKit) >>`);
   const catalogId = addObj(`<< /Type /Catalog /Pages ${pagesId} 0 R >>`);
 
-  return { bytes: assemblePdf(objects, { rootId: catalogId, infoId }), pages: pageCount };
-}, jpegPdfBytes: function jpegPdfBytes(images, { pageSize = 'fit' } = {}) {
+  return { bytes: PDFKIT.assemblePdf(objects, { rootId: catalogId, infoId }), pages: pageCount };
+},
+  jpegPdfBytes: function jpegPdfBytes(images, { pageSize = 'fit' } = {}) {
   const objects = [];
   const addObj = (body) => { objects.push(body); return objects.length; };
-  const sizes = images.map((img) => jpegSize(img.bytes));
+  const sizes = images.map((img) => PDFKIT.jpegSize(img.bytes));
   const imageIds = [];
   images.forEach((img, i) => {
     imageIds.push(addObj(null)); // binary assembled below
@@ -225,7 +227,7 @@ var PDFKIT = { textPdfBytes: function textPdfBytes(text, { pageSize = 'a4', font
   const contentIds = [];
   const pageIds = [];
   images.forEach((_, i) => {
-    const [pw, ph] = pageSize === 'letter' ? LETTER : pageSize === 'a4' ? A4 : [sizes[i].width, sizes[i].height];
+    const [pw, ph] = pageSize === 'letter' ? PDFKIT.LETTER : pageSize === 'a4' ? PDFKIT.A4 : [sizes[i].width, sizes[i].height];
     let [x, y, w, h] = [0, 0, sizes[i].width, sizes[i].height];
     if (pageSize !== 'fit') {
       const scale = Math.min((pw - 56) / sizes[i].width, (ph - 56) / sizes[i].height);
@@ -251,8 +253,8 @@ var PDFKIT = { textPdfBytes: function textPdfBytes(text, { pageSize = 'a4', font
     if (imgIdx < 0) return obj;
     const img = images[imgIdx];
     const dict = `<< /Type /XObject /Subtype /Image /Width ${sizes[imgIdx].width} /Height ${sizes[imgIdx].height} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${img.bytes.length} >>\nstream\n`;
-    const pre = enc.encode(dict);
-    const post = enc.encode('\nendstream');
+    const pre = PDFKIT.enc.encode(dict);
+    const post = PDFKIT.enc.encode('\nendstream');
     const body = new Uint8Array(pre.length + img.bytes.length + post.length);
     body.set(pre, 0);
     body.set(img.bytes, pre.length);
@@ -260,14 +262,16 @@ var PDFKIT = { textPdfBytes: function textPdfBytes(text, { pageSize = 'a4', font
     return body;
   });
 
-  return { bytes: assemblePdf(finalObjects, { rootId: catalogId, infoId }), pages: images.length };
-}, fitInside: function fitInside(w, h, maxW, maxH) {
+  return { bytes: PDFKIT.assemblePdf(finalObjects, { rootId: catalogId, infoId }), pages: images.length };
+},
+  fitInside: function fitInside(w, h, maxW, maxH) {
   const scales = [1];
   if (maxW > 0) scales.push(maxW / w);
   if (maxH > 0) scales.push(maxH / h);
   const scale = Math.min(...scales);
   return { w: Math.max(1, Math.round(w * scale)), h: Math.max(1, Math.round(h * scale)) };
-}, jpegSize: function jpegSize(bytes) {
+},
+  jpegSize: function jpegSize(bytes) {
   if (!(bytes[0] === 0xff && bytes[1] === 0xd8)) throw new Error('Not a JPEG file');
   let i = 2;
   while (i < bytes.length - 9) {
@@ -281,13 +285,53 @@ var PDFKIT = { textPdfBytes: function textPdfBytes(text, { pageSize = 'a4', font
     i += 2 + len;
   }
   throw new Error('Could not read image dimensions — the file may be corrupt');
-} };
+},
+  pdfEscape: function pdfEscape(s) {
+  return String(s).replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)');
+},
+  assemblePdf: function assemblePdf(objectList, { rootId, infoId }) {
+  const header = PDFKIT.enc.encode('%PDF-1.4\n');
+  const chunks = [header];
+  const offsets = [0];
+  let pos = header.length;
+  objectList.forEach((obj, i) => {
+    const head = PDFKIT.enc.encode(`${i + 1} 0 obj\n`);
+    let body;
+    let tail;
+    if (obj instanceof Uint8Array) {
+      body = obj; // pre-rendered "N 0 obj ... endobj" including binary stream
+    } else {
+      body = PDFKIT.enc.encode(`${obj}\n`);
+    }
+    tail = PDFKIT.enc.encode('endobj\n');
+    offsets.push(pos);
+    chunks.push(head, body, tail);
+    pos += head.length + body.length + tail.length;
+  });
+  const xrefPos = pos;
+  let xref = `xref\n0 ${objectList.length + 1}\n0000000000 65535 f \n`;
+  for (let i = 1; i <= objectList.length; i++) {
+    xref += `${String(offsets[i]).padStart(10, '0')} 00000 n \n`;
+  }
+  xref += `trailer\n<< /Size ${objectList.length + 1} /Root ${rootId} 0 R /Info ${infoId} 0 R >>\nstartxref\n${xrefPos}\n%%EOF`;
+  chunks.push(PDFKIT.enc.encode(xref));
+  const total = chunks.reduce((a, c) => a + c.length, 0);
+  const out = new Uint8Array(total);
+  let p = 0;
+  for (const c of chunks) { out.set(c, p); p += c.length; }
+  return out;
+},
+  enc: new TextEncoder(),
+  A4: [595.28, 841.89],
+  LETTER: [612, 792]
+};
+
 var TOOL = {"id":"text-to-pdf","mode":"file","kind":"textToPdf","fields":[{"key":"files","label":"Choose file","type":"file","accept":".txt,.md,text/plain,text/markdown","multiple":false,"optional":true},{"key":"pageSize","label":"Page size","type":"select","options":["a4","letter"],"labels":["A4","Letter"],"optional":true},{"key":"fontSize","label":"Font size","type":"select","options":["10","11","12"],"labels":["10pt","11pt","12pt"],"optional":true},{"key":"text","label":"Or paste text instead of a file","type":"textarea","optional":true}],"defaults":{"pageSize":"a4","fontSize":"11","text":"ToolFactory"},"outputs":[{"key":"fileName","label":"Downloaded","primary":true},{"key":"pages","label":"Pages"},{"key":"size","label":"PDF size (bytes)"}],"statsKeys":[],"browser":true,"fileIds":["f_files"],"qr":false,"units":null,"domain":null,"unitFormulas":null};
 var FN = async (files, inputs) => {
       const useFile = files && files.length && files[0].size;
       const text = useFile ? await files[0].text() : String(inputs.text || '');
       if (!text.trim()) throw new Error(useFile ? 'That file looks empty' : 'Choose a .txt file or paste some text');
-      const { bytes, pages } = textPdfBytes(text, {
+      const { bytes, pages } = PDFKIT.textPdfBytes(text, {
         pageSize: inputs.pageSize || 'a4',
         fontSize: Number(inputs.fontSize) || 11,
         title: useFile ? files[0].name.replace(/\.[^.]+$/, '') : 'Document',

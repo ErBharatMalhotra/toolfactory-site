@@ -1,1 +1,1 @@
-last-sync: 2026-09-28T07:30:40Z
+last-sync: 2026-10-01T13:56:39.619Z | core: jpegPdfBytes browser fix (PDFKIT_SRC self-contained kit) + ux-audit bare-ref gate + browser-sim e2e + baseUrl tools.bharatdn.com + ISO lastmod guard + _headers no-cache /tools/* | live=200
