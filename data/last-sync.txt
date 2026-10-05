@@ -1,1 +1,1 @@
-last-sync: 2026-10-01T15:18:06.100Z | web-quality pass: og:image per page (201 PNG cards), sentence-clean descriptions, twitter large cards, ads.txt auto, og:image gate | live=200
+last-sync: 2026-10-05T07:37:46Z

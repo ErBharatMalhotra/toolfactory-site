@@ -3948,37 +3948,579 @@
         "ok formula-smoke",
         "ok internal-links"
       ]
+    },
+    {
+      "id": "reverse-text-generator",
+      "name": "Reverse Text Generator",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.reverse",
+      "priority": 233,
+      "keyword": "reverse text generator",
+      "description": "Reverse Text Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.673Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "inches-to-pixels-converter",
+      "name": "Inches to Pixels Converter",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "image.dpiCalc",
+      "priority": 234,
+      "keyword": "inches to pixels",
+      "description": "Inches to Pixels Converter — free online tool. The same 1920 px image is a sharp 6×4-inch print at 300 DPI and a blurry A3 poster. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "width": 8,
+        "inches": 300
+      },
+      "publishedAt": "2026-10-05T07:37:26.686Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "hashtag-generator",
+      "name": "Hashtag Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "social.hashtagGenerator",
+      "priority": 235,
+      "keyword": "hashtag generator",
+      "description": "Hashtag Generator — free online tool. Instagram indexes posts on 3–5 focused hashtags — the rest are reach tags, so 10–15 total is a sensible ceiling. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.692Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "password-entropy-calculator",
+      "name": "Password Entropy Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "text.passwordEntropy",
+      "priority": 235,
+      "keyword": "password entropy calculator",
+      "description": "Password Entropy Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.696Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "mac-address-validator",
+      "name": "MAC Address Validator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.macValidator",
+      "priority": 236,
+      "keyword": "mac address validator",
+      "description": "MAC Address Validator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.700Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "social-image-aspect-calculator",
+      "name": "Social Image Aspect Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.aspectRatio",
+      "priority": 237,
+      "keyword": "social image aspect ratio",
+      "description": "Social Image Aspect Calculator — free online tool. Enter either dimension to get the matching one without distortion. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "width": 1200,
+        "height": 630,
+        "newWidth": 600
+      },
+      "publishedAt": "2026-10-05T07:37:26.706Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "ulid-decoder",
+      "name": "ULID Decoder",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.ulidDecoder",
+      "priority": 237,
+      "keyword": "ulid decoder",
+      "description": "ULID Decoder — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.710Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "youtube-tag-generator",
+      "name": "YouTube Tag Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "social.tagGenerator",
+      "priority": 238,
+      "keyword": "youtube tag generator",
+      "description": "YouTube Tag Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.714Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "heading-structure-checker",
+      "name": "Heading Structure Checker",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "seo.headingChecker",
+      "priority": 239,
+      "keyword": "heading hierarchy checker",
+      "description": "Heading Structure Checker — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.718Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "color-contrast-checker",
+      "name": "Color Contrast Checker",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "image.contrastChecker",
+      "priority": 239,
+      "keyword": "contrast checker",
+      "description": "Color Contrast Checker — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.724Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "business-loan-emi-calculator",
+      "name": "Business Loan EMI Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.emi",
+      "priority": 241,
+      "keyword": "business loan emi calculator",
+      "description": "Business Loan EMI Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 1500000,
+        "rate": 15,
+        "years": 4
+      },
+      "publishedAt": "2026-10-05T07:37:26.730Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "tds-calculator",
+      "name": "TDS Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.tds",
+      "priority": 242,
+      "keyword": "tds calculator",
+      "description": "TDS Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "amount": 100000,
+        "rate": 10
+      },
+      "publishedAt": "2026-10-05T07:37:26.736Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "gratuity-tax-calculator",
+      "name": "Gratuity Tax Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.gratuity",
+      "priority": 243,
+      "keyword": "gratuity tax calculator",
+      "description": "Gratuity Tax Calculator — free online tool. Gratuity needs at least five years of continuous service, and the statutory exemption stops at ₹20 lakh. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "basic": 80000,
+        "da": 0,
+        "years": 20
+      },
+      "publishedAt": "2026-10-05T07:37:26.739Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "percentage-off-calculator",
+      "name": "Percentage Off Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.discount",
+      "priority": 245,
+      "keyword": "percent off calculator",
+      "description": "Percentage Off Calculator — free online tool. Enter the percentage off, not the final price. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "price": 1999,
+        "discount": 25
+      },
+      "publishedAt": "2026-10-05T07:37:26.744Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "calorie-needs-calculator",
+      "name": "Calorie Needs Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.tdee",
+      "priority": 245,
+      "keyword": "calorie calculator",
+      "description": "Calorie Needs Calculator — free online tool. The −500 and +300 targets aim for roughly 0. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "weight": 70,
+        "height": 170,
+        "age": 30,
+        "sex": "male",
+        "activity": "moderate"
+      },
+      "publishedAt": "2026-10-05T07:37:26.747Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "months-between-dates",
+      "name": "Months Between Dates",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "date.dateDiff",
+      "priority": 247,
+      "keyword": "months between dates",
+      "description": "Months Between Dates — free online tool. Returns both the calendar breakdown and the raw day count. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "start": "2024-01-15",
+        "end": "2026-09-24"
+      },
+      "publishedAt": "2026-10-05T07:37:26.751Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "rank-predictor-calculator",
+      "name": "Rank Predictor Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "student.percentile",
+      "priority": 247,
+      "keyword": "college rank predictor",
+      "description": "Rank Predictor Calculator — free online tool. Percentile measures position, not marks: 99%ile means you beat 99% of candidates even if you scored 60%. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "rank": 4500,
+        "total": 100000
+      },
+      "publishedAt": "2026-10-05T07:37:26.755Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "baby-age-calculator",
+      "name": "Baby Age Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "date.age",
+      "priority": 249,
+      "keyword": "baby age calculator",
+      "description": "Baby Age Calculator — free online tool. Counted the way a calendar counts: the leap days and month lengths are handled, so the years/months/days answer is what you would write on a form. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "dob": "2025-06-01"
+      },
+      "publishedAt": "2026-10-05T07:37:26.758Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "backwards-text-generator",
+      "name": "Backwards Text Generator",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.reverse",
+      "priority": 250,
+      "keyword": "backwards text generator",
+      "description": "Backwards Text Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.761Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "semester-end-date-calculator",
+      "name": "Semester End Date Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "date.dateDiff",
+      "priority": 251,
+      "keyword": "semester end calculator",
+      "description": "Semester End Date Calculator — free online tool. Returns both the calendar breakdown and the raw day count. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "start": "2026-07-01",
+        "end": "2026-12-15"
+      },
+      "publishedAt": "2026-10-05T07:37:26.764Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "speaking-time-calculator",
+      "name": "Speaking Time Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.speakingTime",
+      "priority": 252,
+      "keyword": "speaking time calculator",
+      "description": "Speaking Time Calculator — free online tool. Rehearsed speakers speed up and skip lines, so add a 10% buffer for pauses and slide transitions. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.768Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "username-generator",
+      "name": "Username Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.usernameGenerator",
+      "priority": 252,
+      "keyword": "username generator",
+      "description": "Username Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.772Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "millimeter-to-inch-converter",
+      "name": "Millimeter to Inch Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.length",
+      "priority": 253,
+      "keyword": "millimeter to inch",
+      "description": "Millimeter to Inch Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "mm",
+        "to": "in",
+        "value": 1
+      },
+      "publishedAt": "2026-10-05T07:37:26.776Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "credit-card-validator",
+      "name": "Credit Card Validator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.creditCardValidator",
+      "priority": 253,
+      "keyword": "credit card validator",
+      "description": "Credit Card Validator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.780Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "trim-whitespace",
+      "name": "Trim Whitespace",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.clean",
+      "priority": 254,
+      "keyword": "trim whitespace online",
+      "description": "Trim Whitespace — free online tool. The most common source of stray spaces is copy-paste from PDFs, which insert them between words and lines. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-05T07:37:26.784Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
     }
   ],
-  "updatedAt": "2026-09-28T07:30:28.724Z",
+  "updatedAt": "2026-10-05T07:37:26.784Z",
   "lastPublish": {
-    "at": "2026-09-28T07:30:28.724Z",
+    "at": "2026-10-05T07:37:26.784Z",
     "ids": [
-      "color-palette-generator",
-      "youtube-subscriber-growth-calculator",
-      "pixels-to-inches-converter",
-      "cgst-sgst-calculator",
-      "crop-ratio-calculator",
-      "h1-tag-checker",
-      "gold-loan-emi-calculator",
-      "hra-tax-benefit-calculator",
-      "marks-percentage-calculator",
-      "date-calculator-subtract-days",
-      "alternating-case-generator",
-      "weeks-between-dates",
-      "password-strength-checker",
-      "ipv6-validator",
-      "daily-water-intake-by-weight",
-      "percentile-calculator",
-      "uuid-to-guid-converter",
-      "best-of-5-percentage-calculator",
-      "complementary-color-finder",
-      "inch-to-centimeter-converter",
-      "remove-extra-spaces",
-      "instagram-caption-counter",
-      "qr-code-from-text",
-      "phone-regex-tester",
-      "file-size-converter"
+      "reverse-text-generator",
+      "inches-to-pixels-converter",
+      "hashtag-generator",
+      "password-entropy-calculator",
+      "mac-address-validator",
+      "social-image-aspect-calculator",
+      "ulid-decoder",
+      "youtube-tag-generator",
+      "heading-structure-checker",
+      "color-contrast-checker",
+      "business-loan-emi-calculator",
+      "tds-calculator",
+      "gratuity-tax-calculator",
+      "percentage-off-calculator",
+      "calorie-needs-calculator",
+      "months-between-dates",
+      "rank-predictor-calculator",
+      "baby-age-calculator",
+      "backwards-text-generator",
+      "semester-end-date-calculator",
+      "speaking-time-calculator",
+      "username-generator",
+      "millimeter-to-inch-converter",
+      "credit-card-validator",
+      "trim-whitespace"
     ],
     "count": 25
   }
