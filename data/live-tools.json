@@ -4490,37 +4490,592 @@
         "ok formula-smoke",
         "ok internal-links"
       ]
+    },
+    {
+      "id": "base32-encoder",
+      "name": "Base32 Encoder",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.base32",
+      "priority": 254,
+      "keyword": "base32 encoder",
+      "description": "Base32 Encoder — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-12T07:54:58.998Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "meta-description-length-checker",
+      "name": "Meta Description Length Checker",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "seo.metaLength",
+      "priority": 256,
+      "keyword": "meta description length checker",
+      "description": "Ensure your meta title, description, and URL fit search engine display limits. Use this free tool to check character and pixel length.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-12T07:54:59.013Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "wcag-contrast-ratio-calculator",
+      "name": "WCAG Contrast Ratio Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "image.contrastChecker",
+      "priority": 256,
+      "keyword": "wcag contrast ratio",
+      "description": "WCAG Contrast Ratio Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-12T07:54:59.017Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "slug-generator-for-urls",
+      "name": "Slug Generator for URLs",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.slug",
+      "priority": 258,
+      "keyword": "url slug generator",
+      "description": "Slug Generator for URLs — free online tool. Slugs should stay short, use hyphens instead of underscores, and drop stop words where possible. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-12T07:54:59.021Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "total-interest-payable-calculator",
+      "name": "Total Interest Payable Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.loanInterest",
+      "priority": 258,
+      "keyword": "total interest on loan calculator",
+      "description": "Total Interest Payable Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 500000,
+        "rate": 10,
+        "years": 5
+      },
+      "publishedAt": "2026-10-12T07:54:59.026Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "advance-tax-calculator",
+      "name": "Advance Tax Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.advanceTax",
+      "priority": 259,
+      "keyword": "advance tax calculator",
+      "description": "Advance Tax Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "liability": 300000
+      },
+      "publishedAt": "2026-10-12T07:54:59.030Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "base64-decoder",
+      "name": "Base64 Decoder",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "special.base64",
+      "priority": 260,
+      "keyword": "base64 decode",
+      "description": "Base64 Decoder — free online tool. Base64 makes data safe for text-only channels like email headers and JSON; it is encoding, not encryption, and anyone can reverse it. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "mode": "decode",
+        "input": "VG9vbEZhY3Rvcnkg4oCUIGZyZWUgdG9vbHM="
+      },
+      "publishedAt": "2026-10-12T07:54:59.034Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "mean-median-mode-calculator",
+      "name": "Mean Median Mode Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.meanMedianMode",
+      "priority": 260,
+      "keyword": "mean median mode calculator",
+      "description": "Mean Median Mode Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "list": "2, 4, 4, 4, 5, 5, 7, 9"
+      },
+      "publishedAt": "2026-10-12T07:54:59.039Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "bytes-to-mb-converter",
+      "name": "Bytes to MB Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.data",
+      "priority": 262,
+      "keyword": "bytes to mb",
+      "description": "Bytes to MB Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "B",
+        "to": "MB",
+        "value": 1048576
+      },
+      "publishedAt": "2026-10-12T07:54:59.046Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "calorie-deficit-calculator",
+      "name": "Calorie Deficit Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.calorieDeficit",
+      "priority": 263,
+      "keyword": "calorie deficit calculator",
+      "description": "Calorie Deficit Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "tdee": 2200,
+        "target": 1800
+      },
+      "publishedAt": "2026-10-12T07:54:59.052Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "og-image-size-calculator",
+      "name": "OG Image Size Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.aspectRatio",
+      "priority": 266,
+      "keyword": "open graph image size",
+      "description": "OG Image Size Calculator — free online tool. Enter either dimension to get the matching one without distortion. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "width": 1200,
+        "height": 630,
+        "newHeight": 315
+      },
+      "publishedAt": "2026-10-12T07:54:59.057Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "tax-on-salary-calculator",
+      "name": "Tax on Salary Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.incomeTax",
+      "priority": 266,
+      "keyword": "salary tax calculator",
+      "description": "Tax on Salary Calculator — free online tool. Both regimes are computed so you can compare — the cheaper one depends almost entirely on how large your deductions are. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "income": 900000,
+        "regime": "new"
+      },
+      "publishedAt": "2026-10-12T07:54:59.062Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "remove-line-breaks",
+      "name": "Remove Line Breaks",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.removeLineBreaks",
+      "priority": 267,
+      "keyword": "remove line breaks online",
+      "description": "Remove Line Breaks — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-12T07:54:59.065Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "keyword-difficulty-estimator",
+      "name": "Keyword Difficulty Estimator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "seo.keywordDifficulty",
+      "priority": 268,
+      "keyword": "keyword difficulty calculator",
+      "description": "Keyword Difficulty Estimator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "volume": 12000,
+        "competition": 60
+      },
+      "publishedAt": "2026-10-12T07:54:59.070Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "loan-against-property-emi-calculator",
+      "name": "Loan Against Property EMI Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.emi",
+      "priority": 269,
+      "keyword": "loan against property emi calculator",
+      "description": "Loan Against Property EMI Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 5000000,
+        "rate": 10,
+        "years": 15
+      },
+      "publishedAt": "2026-10-12T07:54:59.074Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "random-username-generator",
+      "name": "Random Username Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.usernameGenerator",
+      "priority": 269,
+      "keyword": "random username generator",
+      "description": "Random Username Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-12T07:54:59.078Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "luhn-algorithm-checker",
+      "name": "Luhn Algorithm Checker",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.creditCardValidator",
+      "priority": 270,
+      "keyword": "luhn check",
+      "description": "Luhn Algorithm Checker — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-12T07:54:59.083Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "ppf-interest-calculator-year-wise",
+      "name": "PPF Interest Calculator Year Wise",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.ppf",
+      "priority": 271,
+      "keyword": "ppf interest calculator",
+      "description": "PPF Interest Calculator Year Wise — free online tool. PPF is compounded annually and the interest is tax-free under EEE. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "yearly": 150000,
+        "rate": 7.1,
+        "years": 15
+      },
+      "publishedAt": "2026-10-12T07:54:59.087Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "base58-encoder",
+      "name": "Base58 Encoder",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.base58",
+      "priority": 271,
+      "keyword": "base58 encoder",
+      "description": "Base58 Encoder — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-12T07:54:59.090Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "tdee-calculator",
+      "name": "TDEE Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.tdee",
+      "priority": 272,
+      "keyword": "tdee calculator",
+      "description": "TDEE Calculator — free online tool. The −500 and +300 targets aim for roughly 0. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "weight": 70,
+        "height": 170,
+        "age": 30,
+        "sex": "male",
+        "activity": "active"
+      },
+      "publishedAt": "2026-10-12T07:54:59.094Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "percentage-points-calculator",
+      "name": "Percentage Points Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "percent.change",
+      "priority": 273,
+      "keyword": "percentage points calculator",
+      "description": "Percentage Points Calculator — free online tool. The base is always the old value, so a rise and a following fall of the same percent do not cancel out. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": 10,
+        "to": 14
+      },
+      "publishedAt": "2026-10-12T07:54:59.097Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "color-blindness-simulator",
+      "name": "Color Blindness Simulator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "image.colorBlindSim",
+      "priority": 273,
+      "keyword": "color blindness simulator",
+      "description": "Color Blindness Simulator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-12T07:54:59.101Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "days-until-my-birthday",
+      "name": "Days Until My Birthday",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "date.daysUntil",
+      "priority": 275,
+      "keyword": "days until my birthday",
+      "description": "Days Until My Birthday — free online tool. Both dates are normalised to midnight, so the answer does not shift depending on what time of day you check. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "target": "2026-12-25"
+      },
+      "publishedAt": "2026-10-12T07:54:59.104Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "loan-prepayment-calculator",
+      "name": "Loan Prepayment Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.prepayment",
+      "priority": 275,
+      "keyword": "loan prepayment calculator",
+      "description": "Loan Prepayment Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 500000,
+        "rate": 9,
+        "years": 20,
+        "extra": 10000
+      },
+      "publishedAt": "2026-10-12T07:54:59.108Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "professional-tax-calculator",
+      "name": "Professional Tax Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.professionalTax",
+      "priority": 276,
+      "keyword": "professional tax calculator",
+      "description": "Professional Tax Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "salary": 60000,
+        "state": "karnataka"
+      },
+      "publishedAt": "2026-10-12T07:54:59.112Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
     }
   ],
-  "updatedAt": "2026-10-05T07:37:26.784Z",
+  "updatedAt": "2026-10-12T07:54:59.112Z",
   "lastPublish": {
-    "at": "2026-10-05T07:37:26.784Z",
+    "at": "2026-10-12T07:54:59.112Z",
     "ids": [
-      "reverse-text-generator",
-      "inches-to-pixels-converter",
-      "hashtag-generator",
-      "password-entropy-calculator",
-      "mac-address-validator",
-      "social-image-aspect-calculator",
-      "ulid-decoder",
-      "youtube-tag-generator",
-      "heading-structure-checker",
-      "color-contrast-checker",
-      "business-loan-emi-calculator",
-      "tds-calculator",
-      "gratuity-tax-calculator",
-      "percentage-off-calculator",
-      "calorie-needs-calculator",
-      "months-between-dates",
-      "rank-predictor-calculator",
-      "baby-age-calculator",
-      "backwards-text-generator",
-      "semester-end-date-calculator",
-      "speaking-time-calculator",
-      "username-generator",
-      "millimeter-to-inch-converter",
-      "credit-card-validator",
-      "trim-whitespace"
+      "base32-encoder",
+      "meta-description-length-checker",
+      "wcag-contrast-ratio-calculator",
+      "slug-generator-for-urls",
+      "total-interest-payable-calculator",
+      "advance-tax-calculator",
+      "base64-decoder",
+      "mean-median-mode-calculator",
+      "bytes-to-mb-converter",
+      "calorie-deficit-calculator",
+      "og-image-size-calculator",
+      "tax-on-salary-calculator",
+      "remove-line-breaks",
+      "keyword-difficulty-estimator",
+      "loan-against-property-emi-calculator",
+      "random-username-generator",
+      "luhn-algorithm-checker",
+      "ppf-interest-calculator-year-wise",
+      "base58-encoder",
+      "tdee-calculator",
+      "percentage-points-calculator",
+      "color-blindness-simulator",
+      "days-until-my-birthday",
+      "loan-prepayment-calculator",
+      "professional-tax-calculator"
     ],
     "count": 25
   }
