@@ -1,0 +1,65 @@
+name: CI (core)
+
+# Moved out of the private core, where no workflow runs any more. This is the
+# same battery the core repo used to run on every push - unit tests, the
+# offline build, live audit, UX audit, render audit and the privacy gate - now
+# against a fresh clone of the core. The weekly release writes its state back
+# to the core and then pushes the built site here, so every release ends in
+# this test; workflow_dispatch covers on-demand runs.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+  pull_request:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Clone private core
+        env:
+          CORE_TOKEN: ${{ secrets.CORE_TOKEN }}
+        run: git clone --depth 1 "https://x-access-token:${CORE_TOKEN}@github.com/ErBharatMalhotra/ToolFactory.git" core
+
+      - name: Unit tests
+        working-directory: core
+        run: node tests/run.mjs
+
+      - name: Build site (offline)
+        working-directory: core
+        env:
+          GEMINI_KEYS: ""
+          GEMINI_API_KEY: ""
+        run: node engine/publisher.mjs --rebuild-all
+
+      - name: Live audit
+        working-directory: core
+        run: node engine/tests.mjs --all-live
+
+      - name: UX audit
+        working-directory: core
+        run: node scripts/ux-audit.mjs
+
+      - name: Render audit (every tool, live + pool)
+        working-directory: core
+        env:
+          GEMINI_KEYS: ""
+          GEMINI_API_KEY: ""
+        run: node scripts/render-audit-all.mjs
+
+      - name: Privacy gate
+        working-directory: core
+        run: node scripts/privacy-gate.mjs
