@@ -5045,37 +5045,587 @@
         "ok formula-smoke",
         "ok internal-links"
       ]
+    },
+    {
+      "id": "ideal-body-weight-calculator",
+      "name": "Ideal Body Weight Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.idealWeight",
+      "priority": 277,
+      "keyword": "ideal body weight calculator",
+      "description": "Ideal Body Weight Calculator — free online tool. The Devine formula gives a single reference number for drug dosing and clinical use, so it is narrow by design. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "height": 175,
+        "sex": "male"
+      },
+      "publishedAt": "2026-10-19T06:42:37.567Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "text-compare",
+      "name": "Text Compare",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.diff",
+      "priority": 277,
+      "keyword": "text compare online",
+      "description": "Text Compare — free online tool. This is the same algorithm git uses, simplified to whole lines. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-19T06:42:37.574Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "standard-deviation-calculator",
+      "name": "Standard Deviation Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.standardDeviation",
+      "priority": 277,
+      "keyword": "standard deviation calculator",
+      "description": "Standard Deviation Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "list": "10, 12, 23, 23, 16, 23, 21, 16"
+      },
+      "publishedAt": "2026-10-19T06:42:37.579Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "fee-payment-calculator",
+      "name": "Fee Payment Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "misc.salesTax",
+      "priority": 279,
+      "keyword": "college fee calculator",
+      "description": "Fee Payment Calculator — free online tool. Use it for VAT, sales tax, service tax or a state-level cess. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "amount": 120000,
+        "rate": 0
+      },
+      "publishedAt": "2026-10-19T06:42:37.585Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "weight-loss-time-calculator",
+      "name": "Weight Loss Time Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.weightLossTime",
+      "priority": 280,
+      "keyword": "weight loss calculator",
+      "description": "Weight Loss Time Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "weight": 85,
+        "target": 70,
+        "deficit": 500
+      },
+      "publishedAt": "2026-10-19T06:42:37.591Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "inch-to-millimeter-converter",
+      "name": "Inch to Millimeter Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.length",
+      "priority": 281,
+      "keyword": "inch to millimeter",
+      "description": "Inch to Millimeter Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "in",
+        "to": "mm",
+        "value": 1
+      },
+      "publishedAt": "2026-10-19T06:42:37.598Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "json-validator",
+      "name": "JSON Validator",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.json",
+      "priority": 282,
+      "keyword": "json validator",
+      "description": "JSON Validator — free online tool. Formatting is done with the browser’s own JSON parser, so you get a real syntax error with the exact position instead of a guess. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-19T06:42:37.603Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "title-tag-length-checker",
+      "name": "Title Tag Length Checker",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "seo.titleLength",
+      "priority": 284,
+      "keyword": "title tag length checker",
+      "description": "Title Tag Length Checker — free online tool. Two titles with the same character count can truncate differently — \"TOOLS & SERVICES\" is far wider than \"Tools & services\". Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-19T06:42:37.607Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "add-line-breaks",
+      "name": "Add Line Breaks",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.addLineBreaks",
+      "priority": 284,
+      "keyword": "add line breaks to text",
+      "description": "Add Line Breaks — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-19T06:42:37.612Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "seo-friendly-url-generator",
+      "name": "SEO Friendly URL Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.slug",
+      "priority": 286,
+      "keyword": "seo url generator",
+      "description": "SEO Friendly URL Generator — free online tool. Slugs should stay short, use hyphens instead of underscores, and drop stop words where possible. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-19T06:42:37.619Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "random-word-generator",
+      "name": "Random Word Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.randomWord",
+      "priority": 286,
+      "keyword": "random word generator",
+      "description": "Random Word Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-19T06:42:37.627Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "iban-validator",
+      "name": "IBAN Validator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.ibanValidator",
+      "priority": 287,
+      "keyword": "iban validator",
+      "description": "IBAN Validator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-19T06:42:37.633Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "url-decoder",
+      "name": "URL Decoder",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "special.urlCode",
+      "priority": 288,
+      "keyword": "url decode",
+      "description": "URL Decoder — free online tool. Encode individual values, not a whole URL — slashes and question marks are separators and must stay literal. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "mode": "decode"
+      },
+      "publishedAt": "2026-10-19T06:42:37.638Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "pixel-density-calculator",
+      "name": "Pixel Density Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "image.dpiCalc",
+      "priority": 288,
+      "keyword": "ppi calculator",
+      "description": "Pixel Density Calculator — free online tool. The same 1920 px image is a sharp 6×4-inch print at 300 DPI and a blurry A3 poster. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "width": 2560,
+        "inches": 27
+      },
+      "publishedAt": "2026-10-19T06:42:37.643Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "hex-encoder",
+      "name": "Hex Encoder",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.hexEncode",
+      "priority": 288,
+      "keyword": "text to hex",
+      "description": "Hex Encoder — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-19T06:42:37.649Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "mb-to-gb-converter",
+      "name": "MB to GB Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.data",
+      "priority": 290,
+      "keyword": "mb to gb",
+      "description": "MB to GB Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "MB",
+        "to": "GB",
+        "value": 1024
+      },
+      "publishedAt": "2026-10-19T06:42:37.656Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "gradient-generator",
+      "name": "Gradient Generator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "image.gradientGenerator",
+      "priority": 290,
+      "keyword": "css gradient generator",
+      "description": "Gradient Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-19T06:42:37.660Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "home-loan-prepayment-benefit",
+      "name": "Home Loan Prepayment Benefit",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.prepayment",
+      "priority": 292,
+      "keyword": "home loan prepayment calculator",
+      "description": "Home Loan Prepayment Benefit — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 3500000,
+        "rate": 8.5,
+        "years": 20,
+        "extra": 25000
+      },
+      "publishedAt": "2026-10-19T06:42:37.664Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "section-80c-deduction-calculator",
+      "name": "Section 80C Deduction Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.tax80c",
+      "priority": 293,
+      "keyword": "80c deduction calculator",
+      "description": "Section 80C Deduction Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "invested": 150000
+      },
+      "publishedAt": "2026-10-19T06:42:37.668Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "thumbnail-aspect-ratio-checker",
+      "name": "Thumbnail Aspect Ratio Checker",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.aspectRatio",
+      "priority": 294,
+      "keyword": "thumbnail ratio checker",
+      "description": "Thumbnail Aspect Ratio Checker — free online tool. Enter either dimension to get the matching one without distortion. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "width": 1280,
+        "height": 720,
+        "newWidth": 320
+      },
+      "publishedAt": "2026-10-19T06:42:37.673Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "variance-calculator",
+      "name": "Variance Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.standardDeviation",
+      "priority": 294,
+      "keyword": "variance calculator",
+      "description": "Variance Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "list": "4, 8, 15, 16, 23, 42"
+      },
+      "publishedAt": "2026-10-19T06:42:37.677Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "average-calculator",
+      "name": "Average Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.average",
+      "priority": 295,
+      "keyword": "average calculator",
+      "description": "Average Calculator — free online tool. The average answers \"what is the typical value\" only when the numbers are spread evenly. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "list": "12, 18, 24, 30"
+      },
+      "publishedAt": "2026-10-19T06:42:37.682Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "search-volume-estimator",
+      "name": "Search Volume Estimator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "seo.keywordDifficulty",
+      "priority": 296,
+      "keyword": "search volume estimator",
+      "description": "Search Volume Estimator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "volume": 5000,
+        "competition": 30
+      },
+      "publishedAt": "2026-10-19T06:42:37.686Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "used-car-loan-emi-calculator",
+      "name": "Used Car Loan EMI Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.emi",
+      "priority": 297,
+      "keyword": "used car loan emi calculator",
+      "description": "Used Car Loan EMI Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 600000,
+        "rate": 13,
+        "years": 5
+      },
+      "publishedAt": "2026-10-19T06:42:37.690Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "protein-intake-calculator",
+      "name": "Protein Intake Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.proteinIntake",
+      "priority": 297,
+      "keyword": "protein intake calculator",
+      "description": "Protein Intake Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "weight": 70,
+        "activity": "moderate"
+      },
+      "publishedAt": "2026-10-19T06:42:37.696Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
     }
   ],
-  "updatedAt": "2026-10-12T07:54:59.112Z",
+  "updatedAt": "2026-10-19T06:42:37.696Z",
   "lastPublish": {
-    "at": "2026-10-12T07:54:59.112Z",
+    "at": "2026-10-19T06:42:37.696Z",
     "ids": [
-      "base32-encoder",
-      "meta-description-length-checker",
-      "wcag-contrast-ratio-calculator",
-      "slug-generator-for-urls",
-      "total-interest-payable-calculator",
-      "advance-tax-calculator",
-      "base64-decoder",
-      "mean-median-mode-calculator",
-      "bytes-to-mb-converter",
-      "calorie-deficit-calculator",
-      "og-image-size-calculator",
-      "tax-on-salary-calculator",
-      "remove-line-breaks",
-      "keyword-difficulty-estimator",
-      "loan-against-property-emi-calculator",
-      "random-username-generator",
-      "luhn-algorithm-checker",
-      "ppf-interest-calculator-year-wise",
-      "base58-encoder",
-      "tdee-calculator",
-      "percentage-points-calculator",
-      "color-blindness-simulator",
-      "days-until-my-birthday",
-      "loan-prepayment-calculator",
-      "professional-tax-calculator"
+      "ideal-body-weight-calculator",
+      "text-compare",
+      "standard-deviation-calculator",
+      "fee-payment-calculator",
+      "weight-loss-time-calculator",
+      "inch-to-millimeter-converter",
+      "json-validator",
+      "title-tag-length-checker",
+      "add-line-breaks",
+      "seo-friendly-url-generator",
+      "random-word-generator",
+      "iban-validator",
+      "url-decoder",
+      "pixel-density-calculator",
+      "hex-encoder",
+      "mb-to-gb-converter",
+      "gradient-generator",
+      "home-loan-prepayment-benefit",
+      "section-80c-deduction-calculator",
+      "thumbnail-aspect-ratio-checker",
+      "variance-calculator",
+      "average-calculator",
+      "search-volume-estimator",
+      "used-car-loan-emi-calculator",
+      "protein-intake-calculator"
     ],
     "count": 25
   }
