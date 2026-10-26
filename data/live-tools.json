@@ -5595,37 +5595,589 @@
         "ok formula-smoke",
         "ok internal-links"
       ]
+    },
+    {
+      "id": "emi-with-insurance-calculator",
+      "name": "EMI with Insurance Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.emi",
+      "priority": 299,
+      "keyword": "loan with insurance emi calculator",
+      "description": "EMI with Insurance Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 600000,
+        "rate": 11,
+        "years": 5
+      },
+      "publishedAt": "2026-10-26T06:51:27.430Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "maintenance-calories-calculator",
+      "name": "Maintenance Calories Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.tdee",
+      "priority": 299,
+      "keyword": "maintenance calories calculator",
+      "description": "Maintenance Calories Calculator — free online tool. The −500 and +300 targets aim for roughly 0. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "weight": 65,
+        "height": 165,
+        "age": 32,
+        "sex": "female",
+        "activity": "light"
+      },
+      "publishedAt": "2026-10-26T06:51:27.435Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "bmi-calculator-feet-inches",
+      "name": "BMI Calculator Feet Inches",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.bmi",
+      "priority": 301,
+      "keyword": "bmi calculator in feet",
+      "description": "BMI Calculator Feet Inches — free online tool. BMI is a screening number, not a diagnosis. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "weight": 70,
+        "height": 170
+      },
+      "publishedAt": "2026-10-26T06:51:27.438Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "jee-percentile-calculator",
+      "name": "JEE Percentile Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "student.percentile",
+      "priority": 301,
+      "keyword": "jee percentile calculator",
+      "description": "JEE Percentile Calculator — free online tool. Percentile measures position, not marks: 99%ile means you beat 99% of candidates even if you scored 60%. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "rank": 8500,
+        "total": 1000000
+      },
+      "publishedAt": "2026-10-26T06:51:27.443Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "remove-empty-lines",
+      "name": "Remove Empty Lines",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.removeEmptyLines",
+      "priority": 301,
+      "keyword": "remove empty lines",
+      "description": "Remove Empty Lines — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.448Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "countdown-to-date",
+      "name": "Countdown to Date",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "date.daysUntil",
+      "priority": 303,
+      "keyword": "countdown calculator",
+      "description": "Countdown to Date — free online tool. Both dates are normalised to midnight, so the answer does not shift depending on what time of day you check. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "target": "2027-01-01"
+      },
+      "publishedAt": "2026-10-26T06:51:27.453Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "random-letter-generator",
+      "name": "Random Letter Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.randomLetter",
+      "priority": 303,
+      "keyword": "random letter generator",
+      "description": "Random Letter Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.457Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "diff-checker",
+      "name": "Diff Checker",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.diff",
+      "priority": 304,
+      "keyword": "diff checker",
+      "description": "Diff Checker — free online tool. This is the same algorithm git uses, simplified to whole lines. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.464Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "swift-code-validator",
+      "name": "Swift Code Validator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.swiftValidator",
+      "priority": 304,
+      "keyword": "swift code validator",
+      "description": "Swift Code Validator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.470Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "walking-distance-calculator",
+      "name": "Walking Distance Calculator",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.length",
+      "priority": 305,
+      "keyword": "walking distance calculator",
+      "description": "Walking Distance Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "km",
+        "to": "mi",
+        "value": 5
+      },
+      "publishedAt": "2026-10-26T06:51:27.478Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "hex-decoder",
+      "name": "Hex Decoder",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.hexEncode",
+      "priority": 305,
+      "keyword": "hex to text",
+      "description": "Hex Decoder — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.482Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "education-loan-emi-planner",
+      "name": "Education Loan EMI Planner",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.emi",
+      "priority": 307,
+      "keyword": "education loan calculator",
+      "description": "Education Loan EMI Planner — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 800000,
+        "rate": 8.5,
+        "years": 7
+      },
+      "publishedAt": "2026-10-26T06:51:27.487Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "box-shadow-generator",
+      "name": "Box Shadow Generator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "image.boxShadowGenerator",
+      "priority": 307,
+      "keyword": "box shadow generator",
+      "description": "Box Shadow Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.493Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "meter-to-yard-converter",
+      "name": "Meter to Yard Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.length",
+      "priority": 309,
+      "keyword": "meter to yard",
+      "description": "Meter to Yard Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "m",
+        "to": "yd",
+        "value": 1
+      },
+      "publishedAt": "2026-10-26T06:51:27.499Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "loan-balance-transfer-calculator",
+      "name": "Loan Balance Transfer Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.balanceTransfer",
+      "priority": 309,
+      "keyword": "loan balance transfer calculator",
+      "description": "Loan Balance Transfer Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 2000000,
+        "rate": 9.5,
+        "newRate": 8.2,
+        "years": 15
+      },
+      "publishedAt": "2026-10-26T06:51:27.506Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "markdown-to-html-converter",
+      "name": "Markdown to HTML Converter",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.markdown",
+      "priority": 310,
+      "keyword": "markdown to html",
+      "description": "Convert Markdown to HTML. Paste your Markdown text to instantly generate valid HTML code. Fast, free, and no server-side processing.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.511Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "binary-to-decimal-converter",
+      "name": "Binary to Decimal Converter",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "special.numberBase",
+      "priority": 310,
+      "keyword": "binary to decimal",
+      "description": "Binary to Decimal Converter — free online tool. Computers store one number; bases are just ways of writing it. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "value": "1010",
+        "from": "2",
+        "to": "10"
+      },
+      "publishedAt": "2026-10-26T06:51:27.515Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "ratio-simplifier",
+      "name": "Ratio Simplifier",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.ratioSimplifier",
+      "priority": 311,
+      "keyword": "ratio simplifier",
+      "description": "Ratio Simplifier — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "a": 24,
+        "b": 36
+      },
+      "publishedAt": "2026-10-26T06:51:27.518Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "youtube-title-length-checker",
+      "name": "YouTube Title Length Checker",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "seo.titleLength",
+      "priority": 312,
+      "keyword": "youtube title character limit",
+      "description": "YouTube Title Length Checker — free online tool. Two titles with the same character count can truncate differently — \"TOOLS & SERVICES\" is far wider than \"Tools & services\". Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.522Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "html-tag-remover",
+      "name": "HTML Tag Remover",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.stripHtml",
+      "priority": 312,
+      "keyword": "strip html tags",
+      "description": "HTML Tag Remover — free online tool. Use this before pasting web content into editors, emails or CMS fields that mangle markup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.527Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "permalink-generator",
+      "name": "Permalink Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.slug",
+      "priority": 314,
+      "keyword": "permalink generator",
+      "description": "Permalink Generator — free online tool. Slugs should stay short, use hyphens instead of underscores, and drop stop words where possible. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.530Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "gb-to-mb-converter",
+      "name": "GB to MB Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.data",
+      "priority": 317,
+      "keyword": "gb to mb",
+      "description": "GB to MB Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "GB",
+        "to": "MB",
+        "value": 1
+      },
+      "publishedAt": "2026-10-26T06:51:27.534Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "remove-duplicate-words",
+      "name": "Remove Duplicate Words",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.dedupeWords",
+      "priority": 318,
+      "keyword": "remove duplicate words",
+      "description": "Remove Duplicate Words — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-10-26T06:51:27.538Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "tweet-length-calculator",
+      "name": "Tweet Length Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.charCount",
+      "priority": 319,
+      "keyword": "tweet length calculator",
+      "description": "Tweet Length Calculator — free online tool. Both totals are shown because the rules differ: some platforms count spaces, others do not. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "input": "Hello world"
+      },
+      "publishedAt": "2026-10-26T06:51:27.542Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "capital-gains-tax-on-property",
+      "name": "Capital Gains Tax on Property",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.capitalGains",
+      "priority": 320,
+      "keyword": "property capital gains tax calculator",
+      "description": "Capital Gains Tax on Property — free online tool. The July 2024 rules removed indexation and set 12. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "purchase": 3000000,
+        "sale": 5000000,
+        "years": 5
+      },
+      "publishedAt": "2026-10-26T06:51:27.546Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
     }
   ],
-  "updatedAt": "2026-10-19T06:42:37.696Z",
+  "updatedAt": "2026-10-26T06:51:27.546Z",
   "lastPublish": {
-    "at": "2026-10-19T06:42:37.696Z",
+    "at": "2026-10-26T06:51:27.546Z",
     "ids": [
-      "ideal-body-weight-calculator",
-      "text-compare",
-      "standard-deviation-calculator",
-      "fee-payment-calculator",
-      "weight-loss-time-calculator",
-      "inch-to-millimeter-converter",
-      "json-validator",
-      "title-tag-length-checker",
-      "add-line-breaks",
-      "seo-friendly-url-generator",
-      "random-word-generator",
-      "iban-validator",
-      "url-decoder",
-      "pixel-density-calculator",
-      "hex-encoder",
-      "mb-to-gb-converter",
-      "gradient-generator",
-      "home-loan-prepayment-benefit",
-      "section-80c-deduction-calculator",
-      "thumbnail-aspect-ratio-checker",
-      "variance-calculator",
-      "average-calculator",
-      "search-volume-estimator",
-      "used-car-loan-emi-calculator",
-      "protein-intake-calculator"
+      "emi-with-insurance-calculator",
+      "maintenance-calories-calculator",
+      "bmi-calculator-feet-inches",
+      "jee-percentile-calculator",
+      "remove-empty-lines",
+      "countdown-to-date",
+      "random-letter-generator",
+      "diff-checker",
+      "swift-code-validator",
+      "walking-distance-calculator",
+      "hex-decoder",
+      "education-loan-emi-planner",
+      "box-shadow-generator",
+      "meter-to-yard-converter",
+      "loan-balance-transfer-calculator",
+      "markdown-to-html-converter",
+      "binary-to-decimal-converter",
+      "ratio-simplifier",
+      "youtube-title-length-checker",
+      "html-tag-remover",
+      "permalink-generator",
+      "gb-to-mb-converter",
+      "remove-duplicate-words",
+      "tweet-length-calculator",
+      "capital-gains-tax-on-property"
     ],
     "count": 25
   }

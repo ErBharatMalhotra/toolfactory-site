@@ -140,11 +140,11 @@ footer.site li{margin:3px 0}
 <table class="data"><thead><tr><th>Symbol</th><th>Meaning</th></tr></thead><tbody><tr><td>count</td><td style="text-align:left">how many identifiers to generate</td></tr><tr><td>version</td><td style="text-align:left">v4 — random, no MAC address or timestamp leaks</td></tr></tbody></table>
 <p>UUID v4 is random rather than sequential, so it does not reveal creation order or machine identity, and collision odds are negligible for any realistic dataset. Ideal for database keys, test fixtures and request tracing.</p>
 <p class="note">Inputs used: How many, Version.</p></section>
-<section id="example"><h2>Worked example</h2><p>Take the default example — how many of <strong>5</strong>, version set to <strong>UUID v4</strong>:</p><ul><li>list: d8a56301-b784-440e-add3-816ccd19620f
-f1367451-8b1d-4ee2-a3e0-8f79f5048b57
-031af507-160d-4cea-b6c5-39afdb4c0567
-0a9777e1-8485-4a6b-8599-0f392d70a574
-109f225e-c5e8-44d3-a6c8-a018e9e8217b</li><li>count: 5</li></ul></section>
+<section id="example"><h2>Worked example</h2><p>Take the default example — how many of <strong>5</strong>, version set to <strong>UUID v4</strong>:</p><ul><li>list: 955b8f45-9b3d-44bf-b051-4ba1cecca3f7
+bf54d19c-b65a-4d15-a8af-af4f9f351753
+4b2d960b-05dd-482a-ba04-4276b96aaae5
+3fc5af6a-6f98-405e-9481-65cc0521302c
+606cffd2-c4c9-4260-b2f7-6cbf05953e48</li><li>count: 5</li></ul></section>
 <section id="faq" class="faq"><h2>Frequently asked questions</h2><dl><dt>What formula does the UUID Generator use?</dt><dd>It uses <strong>128 random bits, with version and variant bits set (RFC 4122 v4)</strong>, where count is the how many identifiers to generate; version is the v4 — random, no MAC address or timestamp leaks.</dd>
 <dt>Is the UUID Generator free?</dt><dd>Yes. There is no signup, no usage limit and no watermark — the generator runs entirely in your browser.</dd>
 <dt>How do I read the result?</dt><dd>UUID v4 is random rather than sequential, so it does not reveal creation order or machine identity, and collision odds are negligible for any realistic dataset. Ideal for database keys, test fixtures and request tracing.</dd>
