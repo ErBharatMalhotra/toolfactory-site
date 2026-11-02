@@ -6147,37 +6147,595 @@
         "ok formula-smoke",
         "ok internal-links"
       ]
+    },
+    {
+      "id": "random-color-generator",
+      "name": "Random Color Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.randomColor",
+      "priority": 320,
+      "keyword": "random color generator",
+      "description": "Random Color Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-02T08:09:24.863Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "4k-to-1080p-scale-calculator",
+      "name": "4K to 1080p Scale Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.aspectRatio",
+      "priority": 321,
+      "keyword": "4k to 1080p converter scale",
+      "description": "4K to 1080p Scale Calculator — free online tool. Enter either dimension to get the matching one without distortion. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "width": 3840,
+        "height": 2160,
+        "newWidth": 1920
+      },
+      "publishedAt": "2026-11-02T08:09:24.869Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "postal-code-validator",
+      "name": "Postal Code Validator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.postalValidator",
+      "priority": 321,
+      "keyword": "postal code validation",
+      "description": "Postal Code Validator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-02T08:09:24.875Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "lcm-calculator",
+      "name": "LCM Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.lcmGcd",
+      "priority": 322,
+      "keyword": "lcm calculator",
+      "description": "LCM Calculator — free online tool. Euclid's algorithm is over two thousand years old and still the fastest way: keep replacing the larger number with the remainder until it hits zero. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "a": 12,
+        "b": 18
+      },
+      "publishedAt": "2026-11-02T08:09:24.880Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "traffic-potential-calculator",
+      "name": "Traffic Potential Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "seo.trafficPotential",
+      "priority": 323,
+      "keyword": "traffic potential calculator",
+      "description": "Traffic Potential Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "volume": 10000,
+        "ctr": 8
+      },
+      "publishedAt": "2026-11-02T08:09:24.887Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "cibil-score-emi-impact-calculator",
+      "name": "CIBIL Score EMI Impact Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.emi",
+      "priority": 324,
+      "keyword": "cibil score emi impact",
+      "description": "CIBIL Score EMI Impact Calculator — free online tool. The EMI is fixed for the whole tenure. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 1000000,
+        "rate": 10.5,
+        "years": 5
+      },
+      "publishedAt": "2026-11-02T08:09:24.891Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "business-days-calculator",
+      "name": "Business Days Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "date.workingDays",
+      "priority": 324,
+      "keyword": "business days calculator",
+      "description": "Business Days Calculator — free online tool. The day after the start date is the first counted day, which matches how leave and delivery estimates are usually read. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "start": "2026-01-01",
+        "end": "2026-01-31"
+      },
+      "publishedAt": "2026-11-02T08:09:24.895Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "border-radius-generator",
+      "name": "Border Radius Generator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "image.borderRadiusGenerator",
+      "priority": 324,
+      "keyword": "border radius generator",
+      "description": "Border Radius Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-02T08:09:24.899Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "vehicle-loan-eligibility-calculator",
+      "name": "Vehicle Loan Eligibility Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.loanEligibility",
+      "priority": 326,
+      "keyword": "car loan eligibility calculator",
+      "description": "Vehicle Loan Eligibility Calculator — free online tool. Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "income": 60000,
+        "obligations": 10000,
+        "rate": 9.5,
+        "years": 5
+      },
+      "publishedAt": "2026-11-02T08:09:24.906Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "carb-intake-calculator",
+      "name": "Carb Intake Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.macroSplit",
+      "priority": 326,
+      "keyword": "carb calculator",
+      "description": "Carb Intake Calculator — free online tool. Pick the split you can actually follow: balanced suits most people, high-protein suits cutting phases, keto suits those who genuinely prefer it — adherence beats optimisation. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "calories": 2200,
+        "protein": 140,
+        "fat": 60
+      },
+      "publishedAt": "2026-11-02T08:09:24.913Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "home-loan-affordability-calculator",
+      "name": "Home Loan Affordability Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.affordability",
+      "priority": 326,
+      "keyword": "home loan affordability calculator",
+      "description": "Home Loan Affordability Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "income": 100000,
+        "obligations": 15000,
+        "rate": 8.5,
+        "years": 20
+      },
+      "publishedAt": "2026-11-02T08:09:24.918Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "discount-percentage-calculator",
+      "name": "Discount Percentage Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "percent.difference",
+      "priority": 328,
+      "keyword": "discount percentage calculator",
+      "description": "Discount Percentage Calculator — free online tool. Percentage difference compares two values with neither treated as the starting point, and it is not the same as percentage change. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "a": 1000,
+        "b": 750
+      },
+      "publishedAt": "2026-11-02T08:09:24.923Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "study-time-calculator",
+      "name": "Study Time Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "student.studyPlan",
+      "priority": 328,
+      "keyword": "study hours needed calculator",
+      "description": "Study Time Calculator — free online tool. Two 90-minute sessions across the day beat one 3-hour block — sleep between sessions is when consolidation happens. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "chapters": 20,
+        "days": 30
+      },
+      "publishedAt": "2026-11-02T08:09:24.927Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "proportion-calculator",
+      "name": "Proportion Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.proportion",
+      "priority": 328,
+      "keyword": "proportion calculator",
+      "description": "Proportion Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "a": 3,
+        "b": 4,
+        "c": 15
+      },
+      "publishedAt": "2026-11-02T08:09:24.930Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "unix-timestamp-to-date",
+      "name": "Unix Timestamp to Date",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "special.epoch",
+      "priority": 330,
+      "keyword": "unix timestamp to date",
+      "description": "Unix Timestamp to Date — free online tool. Unix time is timezone-free: the same number is the same instant everywhere on Earth. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "ts": 1767225600
+      },
+      "publishedAt": "2026-11-02T08:09:24.934Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "line-diff-viewer",
+      "name": "Line Diff Viewer",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.diff",
+      "priority": 331,
+      "keyword": "line diff viewer",
+      "description": "Line Diff Viewer — free online tool. This is the same algorithm git uses, simplified to whole lines. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-02T08:09:24.938Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "dumbbell-weight-converter",
+      "name": "Dumbbell Weight Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.weight",
+      "priority": 332,
+      "keyword": "dumbbell weight conversion",
+      "description": "Dumbbell Weight Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "lb",
+        "to": "kg",
+        "value": 45
+      },
+      "publishedAt": "2026-11-02T08:09:24.943Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "scholarship-percentage-calculator",
+      "name": "Scholarship Percentage Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "percent.isWhatPercent",
+      "priority": 334,
+      "keyword": "scholarship eligibility calculator",
+      "description": "Scholarship Percentage Calculator — free online tool. Use this when you know the two numbers and want the ratio as a percentage — test scores, conversion rates, what share of revenue a product brings in. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "x": 78,
+        "y": 100
+      },
+      "publishedAt": "2026-11-02T08:09:24.947Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "remove-spaces",
+      "name": "Remove Spaces",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.removeSpaces",
+      "priority": 334,
+      "keyword": "remove spaces from text",
+      "description": "Remove Spaces — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-02T08:09:24.950Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "yard-to-meter-converter",
+      "name": "Yard to Meter Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.length",
+      "priority": 336,
+      "keyword": "yard to meter",
+      "description": "Yard to Meter Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "yd",
+        "to": "m",
+        "value": 1
+      },
+      "publishedAt": "2026-11-02T08:09:24.954Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "random-quote-generator",
+      "name": "Random Quote Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.randomQuote",
+      "priority": 336,
+      "keyword": "random quote generator",
+      "description": "Random Quote Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-02T08:09:24.958Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "text-to-pdf-ready-format",
+      "name": "Text to PDF Ready Format",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.clean",
+      "priority": 337,
+      "keyword": "text cleanup for pdf",
+      "description": "Text to PDF Ready Format — free online tool. The most common source of stray spaces is copy-paste from PDFs, which insert them between words and lines. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-02T08:09:24.961Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "decimal-to-binary-converter",
+      "name": "Decimal to Binary Converter",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "special.numberBase",
+      "priority": 337,
+      "keyword": "decimal to binary",
+      "description": "Decimal to Binary Converter — free online tool. Computers store one number; bases are just ways of writing it. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "value": "255",
+        "from": "10",
+        "to": "2"
+      },
+      "publishedAt": "2026-11-02T08:09:24.965Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "readability-score-calculator",
+      "name": "Readability Score Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.readability",
+      "priority": 339,
+      "keyword": "readability score calculator",
+      "description": "Readability Score Calculator — free online tool. Scores run 0–100: 60–70 is plain English, most news writing sits at 55–65, and legal text falls below 30. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-02T08:09:24.969Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "html-to-text-converter",
+      "name": "HTML to Text Converter",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.stripHtml",
+      "priority": 339,
+      "keyword": "html to text",
+      "description": "HTML to Text Converter — free online tool. Use this before pasting web content into editors, emails or CMS fields that mangle markup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-02T08:09:24.976Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
     }
   ],
-  "updatedAt": "2026-10-26T06:51:27.546Z",
+  "updatedAt": "2026-11-02T08:09:24.976Z",
   "lastPublish": {
-    "at": "2026-10-26T06:51:27.546Z",
+    "at": "2026-11-02T08:09:24.976Z",
     "ids": [
-      "emi-with-insurance-calculator",
-      "maintenance-calories-calculator",
-      "bmi-calculator-feet-inches",
-      "jee-percentile-calculator",
-      "remove-empty-lines",
-      "countdown-to-date",
-      "random-letter-generator",
-      "diff-checker",
-      "swift-code-validator",
-      "walking-distance-calculator",
-      "hex-decoder",
-      "education-loan-emi-planner",
-      "box-shadow-generator",
-      "meter-to-yard-converter",
-      "loan-balance-transfer-calculator",
-      "markdown-to-html-converter",
-      "binary-to-decimal-converter",
-      "ratio-simplifier",
-      "youtube-title-length-checker",
-      "html-tag-remover",
-      "permalink-generator",
-      "gb-to-mb-converter",
-      "remove-duplicate-words",
-      "tweet-length-calculator",
-      "capital-gains-tax-on-property"
+      "random-color-generator",
+      "4k-to-1080p-scale-calculator",
+      "postal-code-validator",
+      "lcm-calculator",
+      "traffic-potential-calculator",
+      "cibil-score-emi-impact-calculator",
+      "business-days-calculator",
+      "border-radius-generator",
+      "vehicle-loan-eligibility-calculator",
+      "carb-intake-calculator",
+      "home-loan-affordability-calculator",
+      "discount-percentage-calculator",
+      "study-time-calculator",
+      "proportion-calculator",
+      "unix-timestamp-to-date",
+      "line-diff-viewer",
+      "dumbbell-weight-converter",
+      "scholarship-percentage-calculator",
+      "remove-spaces",
+      "yard-to-meter-converter",
+      "random-quote-generator",
+      "text-to-pdf-ready-format",
+      "decimal-to-binary-converter",
+      "readability-score-calculator",
+      "html-to-text-converter"
     ],
     "count": 25
   }
