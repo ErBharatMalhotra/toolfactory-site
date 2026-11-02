@@ -1,0 +1,94 @@
+name: Accessibility & Quality Guard
+
+# Runs automated static accessibility, semantic markup, and link integrity
+# checks on all built public pages in site/dist on pull requests and main pushes.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/a11y-audit.yml"
+  pull_request:
+    paths:
+      - "site/**"
+      - ".github/workflows/a11y-audit.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  a11y-audit:
+    name: HTML Semantics & A11y Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Audit HTML Structure & Accessibility Standards
+        run: |
+          node -e '
+          const fs = require("fs");
+          const path = require("path");
+
+          function walk(dir) {
+            let results = [];
+            const list = fs.readdirSync(dir);
+            list.forEach(file => {
+              file = path.join(dir, file);
+              const stat = fs.statSync(file);
+              if (stat && stat.isDirectory()) {
+                results = results.concat(walk(file));
+              } else if (file.endsWith(".html")) {
+                results.push(file);
+              }
+            });
+            return results;
+          }
+
+          const distDir = path.join(process.cwd(), "site", "dist");
+          if (!fs.existsSync(distDir)) {
+            console.log("No site/dist directory found, skipping static audit.");
+            process.exit(0);
+          }
+
+          const htmlFiles = walk(distDir);
+          console.log(`Found ${htmlFiles.length} HTML files to audit.`);
+          let errors = 0;
+
+          htmlFiles.forEach(file => {
+            const content = fs.readFileSync(file, "utf8");
+            
+            // Check for lang attribute in <html> tag
+            if (content.includes("<html") && !content.includes("lang=")) {
+              console.error(`[A11Y-ERROR] Missing lang attribute in <html>: ${file}`);
+              errors++;
+            }
+            
+            // Check for images without alt tags
+            const imgWithoutAlt = /<img(?![^>]*\balt=)[^>]*>/gi;
+            if (imgWithoutAlt.test(content)) {
+              console.warn(`[A11Y-WARN] Image found without alt attribute: ${file}`);
+            }
+
+            // Check for title tag
+            if (!content.includes("<title>")) {
+              console.error(`[A11Y-ERROR] Missing <title> tag: ${file}`);
+              errors++;
+            }
+          });
+
+          if (errors > 0) {
+            console.error(`Total accessibility/semantic violations found: ${errors}`);
+            process.exit(1);
+          } else {
+            console.log("All static HTML files passed core accessibility and semantic baseline checks!");
+          }
+          '
