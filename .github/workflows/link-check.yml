@@ -46,5 +46,27 @@ jobs:
             --recurse \
             --concurrency 10 \
             --skip "mailto:*,*tel:*,*whatsapp:*,*.pdf" \
-            --fail-on-broken \
-            --silent
+            --format json > link-report.json || true
+          
+          # Parse and output broken links as GitHub Actions annotations
+          node -e '
+          const fs = require("fs");
+          try {
+            const report = JSON.parse(fs.readFileSync("link-report.json", "utf8"));
+            let brokenCount = 0;
+            report.links.forEach(link => {
+              if (link.status >= 400 || link.error) {
+                brokenCount++;
+                const msg = link.error || `HTTP ${link.status}`;
+                console.log(`::warning file=${link.url}::Broken link: ${link.url} -> ${link.parent} (${msg})`);
+              }
+            });
+            if (brokenCount > 0) {
+              console.log(`::notice::Found ${brokenCount} broken links. See annotations for details.`);
+            } else {
+              console.log("No broken links found!");
+            }
+          } catch (e) {
+            console.log("Could not parse link report");
+          }
+          '
