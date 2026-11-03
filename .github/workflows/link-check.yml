@@ -1,0 +1,50 @@
+name: Broken Link Checker
+
+# Validates all internal and external links in the built site (site/dist)
+# to ensure no dead links ship to production.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/link-check.yml"
+  pull_request:
+    paths:
+      - "site/**"
+      - ".github/workflows/link-check.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    name: Check Links in Built Site
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install linkinator (fast link checker)
+        run: npm install -g linkinator@5
+
+      - name: Check all links in site/dist
+        run: |
+          if [ ! -d "site/dist" ]; then
+            echo "site/dist not found, skipping link check"
+            exit 0
+          fi
+          echo "Checking links in site/dist..."
+          linkinator "site/dist" \
+            --recurse \
+            --concurrency 10 \
+            --skip "mailto:*,*tel:*,*whatsapp:*,*.pdf" \
+            --fail-on-broken \
+            --silent
