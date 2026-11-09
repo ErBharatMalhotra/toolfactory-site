@@ -6705,37 +6705,599 @@
         "ok formula-smoke",
         "ok internal-links"
       ]
+    },
+    {
+      "id": "social-media-image-size-guide",
+      "name": "Social Media Image Size Guide",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "social.imageSizes",
+      "priority": 339,
+      "keyword": "social media image sizes",
+      "description": "Social Media Image Size Guide — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-09T08:36:32.074Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "blur-value-calculator",
+      "name": "Blur Value Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "image.boxShadowGenerator",
+      "priority": 340,
+      "keyword": "css blur generator",
+      "description": "Blur Value Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-09T08:36:32.078Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "meta-tag-generator",
+      "name": "Meta Tag Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "seo.metaTagGenerator",
+      "priority": 341,
+      "keyword": "meta tag generator",
+      "description": "Create title, description, keyword, and canonical tags instantly. Use our free meta tag generator to output clean HTML code for your website.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-09T08:36:32.083Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "rent-vs-buy-calculator",
+      "name": "Rent vs Buy Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.rentVsBuy",
+      "priority": 342,
+      "keyword": "rent vs buy calculator",
+      "description": "Rent vs Buy Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "rent": 25000,
+        "price": 6000000,
+        "years": 10
+      },
+      "publishedAt": "2026-11-09T08:36:32.087Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "bit-to-byte-converter",
+      "name": "Bit to Byte Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.data",
+      "priority": 344,
+      "keyword": "bits to bytes",
+      "description": "Bit to Byte Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "b",
+        "to": "B",
+        "value": 8
+      },
+      "publishedAt": "2026-11-09T08:36:32.092Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "fraction-to-decimal-calculator",
+      "name": "Fraction to Decimal Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.fractionToDecimal",
+      "priority": 344,
+      "keyword": "fraction to decimal",
+      "description": "Fraction to Decimal Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "numerator": 3,
+        "denominator": 8
+      },
+      "publishedAt": "2026-11-09T08:36:32.096Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "linkedin-post-length-checker",
+      "name": "LinkedIn Post Length Checker",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.charCount",
+      "priority": 346,
+      "keyword": "linkedin character limit",
+      "description": "LinkedIn Post Length Checker — free online tool. Both totals are shown because the rules differ: some platforms count spaces, others do not. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "input": "A professional update"
+      },
+      "publishedAt": "2026-11-09T08:36:32.101Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "lean-body-mass-calculator",
+      "name": "Lean Body Mass Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.leanBodyMass",
+      "priority": 346,
+      "keyword": "lean body mass calculator",
+      "description": "Lean Body Mass Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "weight": 70,
+        "height": 170,
+        "sex": "male"
+      },
+      "publishedAt": "2026-11-09T08:36:32.107Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "aspect-ratio-comparison",
+      "name": "Aspect Ratio Comparison",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.aspectRatio",
+      "priority": 347,
+      "keyword": "aspect ratio comparison",
+      "description": "Aspect Ratio Comparison — free online tool. Enter either dimension to get the matching one without distortion. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "width": 16,
+        "height": 9,
+        "newWidth": 4
+      },
+      "publishedAt": "2026-11-09T08:36:32.112Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "ltcg-tax-on-shares-calculator",
+      "name": "LTCG Tax on Shares Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.capitalGains",
+      "priority": 347,
+      "keyword": "ltcg tax on shares calculator",
+      "description": "LTCG Tax on Shares Calculator — free online tool. The July 2024 rules removed indexation and set 12. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "purchase": 200000,
+        "sale": 500000,
+        "years": 2
+      },
+      "publishedAt": "2026-11-09T08:36:32.117Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "ctr-by-position-calculator",
+      "name": "CTR by Position Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "seo.trafficPotential",
+      "priority": 349,
+      "keyword": "ctr by position calculator",
+      "description": "CTR by Position Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "volume": 50000,
+        "ctr": 3
+      },
+      "publishedAt": "2026-11-09T08:36:32.121Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "hcf-calculator",
+      "name": "HCF Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.lcmGcd",
+      "priority": 349,
+      "keyword": "hcf calculator",
+      "description": "HCF Calculator — free online tool. Euclid's algorithm is over two thousand years old and still the fastest way: keep replacing the larger number with the remainder until it hits zero. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "a": 24,
+        "b": 36
+      },
+      "publishedAt": "2026-11-09T08:36:32.125Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "compound-interest-calculator-quarterly",
+      "name": "Compound Interest Calculator Quarterly",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.compoundInterest",
+      "priority": 350,
+      "keyword": "compound interest quarterly calculator",
+      "description": "Compound Interest Calculator Quarterly — free online tool. Interest on interest is the whole story here. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 200000,
+        "rate": 9,
+        "years": 7,
+        "frequency": "4"
+      },
+      "publishedAt": "2026-11-09T08:36:32.129Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "sms-length-calculator",
+      "name": "SMS Length Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.smsLength",
+      "priority": 350,
+      "keyword": "sms character counter",
+      "description": "SMS Length Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-09T08:36:32.134Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "working-days-in-month",
+      "name": "Working Days in Month",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "date.workingDays",
+      "priority": 351,
+      "keyword": "working days in a month",
+      "description": "Working Days in Month — free online tool. The day after the start date is the first counted day, which matches how leave and delivery estimates are usually read. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "start": "2026-09-01",
+        "end": "2026-09-30"
+      },
+      "publishedAt": "2026-11-09T08:36:32.137Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "lottery-number-generator",
+      "name": "Lottery Number Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.lotteryNumbers",
+      "priority": 351,
+      "keyword": "lottery number generator",
+      "description": "Lottery Number Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-09T08:36:32.141Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "personal-loan-eligibility-calculator",
+      "name": "Personal Loan Eligibility Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.loanEligibility",
+      "priority": 352,
+      "keyword": "personal loan eligibility calculator",
+      "description": "Personal Loan Eligibility Calculator — free online tool. Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "income": 50000,
+        "obligations": 8000,
+        "rate": 14,
+        "years": 3
+      },
+      "publishedAt": "2026-11-09T08:36:32.144Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "vat-number-validator",
+      "name": "VAT Number Validator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.vatValidator",
+      "priority": 352,
+      "keyword": "vat number validator",
+      "description": "VAT Number Validator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-09T08:36:32.148Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "macro-calculator",
+      "name": "Macro Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.macroSplit",
+      "priority": 353,
+      "keyword": "macro calculator",
+      "description": "Macro Calculator — free online tool. Pick the split you can actually follow: balanced suits most people, high-protein suits cutting phases, keto suits those who genuinely prefer it — adherence beats optimisation. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "calories": 2000,
+        "protein": 130,
+        "fat": 55
+      },
+      "publishedAt": "2026-11-09T08:36:32.151Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "octal-encoder",
+      "name": "Octal Encoder",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.octalEncode",
+      "priority": 353,
+      "keyword": "text to octal",
+      "description": "Octal Encoder — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-09T08:36:32.155Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "profit-percentage-calculator",
+      "name": "Profit Percentage Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "percent.change",
+      "priority": 354,
+      "keyword": "profit percentage calculator",
+      "description": "Profit Percentage Calculator — free online tool. The base is always the old value, so a rise and a following fall of the same percent do not cancel out. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": 800,
+        "to": 1000
+      },
+      "publishedAt": "2026-11-09T08:36:32.158Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "meeting-time-planner",
+      "name": "Meeting Time Planner",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "special.timezone",
+      "priority": 356,
+      "keyword": "meeting time planner",
+      "description": "Meeting Time Planner — free online tool. Offsets are read from your browser’s own timezone database, so daylight-saving changes are handled for the date you entered — not for today. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "dt": "2026-03-10T15:00",
+        "from": "Asia/Kolkata",
+        "to": "Europe/London"
+      },
+      "publishedAt": "2026-11-09T08:36:32.166Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "reverse-mortgage-calculator",
+      "name": "Reverse Mortgage Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.reverseMortgage",
+      "priority": 357,
+      "keyword": "reverse mortgage calculator",
+      "description": "Reverse Mortgage Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "value": 8000000,
+        "age": 65,
+        "years": 15
+      },
+      "publishedAt": "2026-11-09T08:36:32.170Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "bmi-prime-calculator",
+      "name": "BMI Prime Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.bmi",
+      "priority": 358,
+      "keyword": "bmi prime calculator",
+      "description": "BMI Prime Calculator — free online tool. BMI is a screening number, not a diagnosis. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "weight": 80,
+        "height": 175
+      },
+      "publishedAt": "2026-11-09T08:36:32.174Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "word-diff-checker",
+      "name": "Word Diff Checker",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.diff",
+      "priority": 358,
+      "keyword": "word diff checker",
+      "description": "Word Diff Checker — free online tool. This is the same algorithm git uses, simplified to whole lines. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-09T08:36:32.177Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
     }
   ],
-  "updatedAt": "2026-11-02T08:09:24.976Z",
+  "updatedAt": "2026-11-09T08:36:32.177Z",
   "lastPublish": {
-    "at": "2026-11-02T08:09:24.976Z",
+    "at": "2026-11-09T08:36:32.177Z",
     "ids": [
-      "random-color-generator",
-      "4k-to-1080p-scale-calculator",
-      "postal-code-validator",
-      "lcm-calculator",
-      "traffic-potential-calculator",
-      "cibil-score-emi-impact-calculator",
-      "business-days-calculator",
-      "border-radius-generator",
-      "vehicle-loan-eligibility-calculator",
-      "carb-intake-calculator",
-      "home-loan-affordability-calculator",
-      "discount-percentage-calculator",
-      "study-time-calculator",
-      "proportion-calculator",
-      "unix-timestamp-to-date",
-      "line-diff-viewer",
-      "dumbbell-weight-converter",
-      "scholarship-percentage-calculator",
-      "remove-spaces",
-      "yard-to-meter-converter",
-      "random-quote-generator",
-      "text-to-pdf-ready-format",
-      "decimal-to-binary-converter",
-      "readability-score-calculator",
-      "html-to-text-converter"
+      "social-media-image-size-guide",
+      "blur-value-calculator",
+      "meta-tag-generator",
+      "rent-vs-buy-calculator",
+      "bit-to-byte-converter",
+      "fraction-to-decimal-calculator",
+      "linkedin-post-length-checker",
+      "lean-body-mass-calculator",
+      "aspect-ratio-comparison",
+      "ltcg-tax-on-shares-calculator",
+      "ctr-by-position-calculator",
+      "hcf-calculator",
+      "compound-interest-calculator-quarterly",
+      "sms-length-calculator",
+      "working-days-in-month",
+      "lottery-number-generator",
+      "personal-loan-eligibility-calculator",
+      "vat-number-validator",
+      "macro-calculator",
+      "octal-encoder",
+      "profit-percentage-calculator",
+      "meeting-time-planner",
+      "reverse-mortgage-calculator",
+      "bmi-prime-calculator",
+      "word-diff-checker"
     ],
     "count": 25
   }
