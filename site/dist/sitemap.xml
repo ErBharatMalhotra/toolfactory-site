@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tools.bharatdn.com/</loc><lastmod>2026-11-09</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-  <url><loc>https://tools.bharatdn.com/tools/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://tools.bharatdn.com/calculators/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tools.bharatdn.com/converters/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tools.bharatdn.com/formatters/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tools.bharatdn.com/generators/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tools.bharatdn.com/checkers/</loc><lastmod>2026-11-09</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://tools.bharatdn.com/about/</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://tools.bharatdn.com/privacy/</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://tools.bharatdn.com/terms/</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://tools.bharatdn.com/disclaimer/</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://tools.bharatdn.com/contact/</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tools.bharatdn.com/</loc><lastmod>2026-11-16</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/</loc><lastmod>2026-11-16</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tools.bharatdn.com/calculators/</loc><lastmod>2026-11-16</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tools.bharatdn.com/converters/</loc><lastmod>2026-11-16</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tools.bharatdn.com/formatters/</loc><lastmod>2026-11-16</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tools.bharatdn.com/generators/</loc><lastmod>2026-11-16</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tools.bharatdn.com/checkers/</loc><lastmod>2026-11-16</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://tools.bharatdn.com/about/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tools.bharatdn.com/privacy/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tools.bharatdn.com/terms/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tools.bharatdn.com/disclaimer/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://tools.bharatdn.com/contact/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://tools.bharatdn.com/tools/age-calculator/</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tools.bharatdn.com/tools/percentage-calculator/</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tools.bharatdn.com/tools/emi-calculator/</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -362,4 +362,29 @@
   <url><loc>https://tools.bharatdn.com/tools/reverse-mortgage-calculator/</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tools.bharatdn.com/tools/bmi-prime-calculator/</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://tools.bharatdn.com/tools/word-diff-checker/</loc><lastmod>2026-11-09</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/indexed-capital-gains-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/decimal-to-fraction-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/percentile-to-marks-converter/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/bmi-for-kids-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/kilometer-to-meter-converter/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/text-to-speech-friendly-formatter/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/hex-to-decimal-converter/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/flesch-reading-ease-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/css-unit-converter/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/dice-roller/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/sitemap-generator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/base64-validator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/rot13-encoder/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/random-port-generator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/image-compression-ratio-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/aspect-ratio-for-reels-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/stcg-tax-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/ad-revenue-estimator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/fraction-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/compound-interest-monthly-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/gcd-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/pregnancy-due-date-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/home-loan-eligibility-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/age-in-working-days/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tools.bharatdn.com/tools/loss-percentage-calculator/</loc><lastmod>2026-11-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 </urlset>

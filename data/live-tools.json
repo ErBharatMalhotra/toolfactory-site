@@ -7267,37 +7267,602 @@
         "ok formula-smoke",
         "ok internal-links"
       ]
+    },
+    {
+      "id": "indexed-capital-gains-calculator",
+      "name": "Indexed Capital Gains Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.indexedGains",
+      "priority": 358,
+      "keyword": "indexed capital gains calculator",
+      "description": "Indexed Capital Gains Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "purchase": 2000000,
+        "sale": 3500000,
+        "years": 4
+      },
+      "publishedAt": "2026-11-16T08:31:17.872Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "decimal-to-fraction-calculator",
+      "name": "Decimal to Fraction Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.fractionToDecimal",
+      "priority": 359,
+      "keyword": "decimal to fraction",
+      "description": "Decimal to Fraction Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "numerator": 1,
+        "denominator": 4
+      },
+      "publishedAt": "2026-11-16T08:31:17.875Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "percentile-to-marks-converter",
+      "name": "Percentile to Marks Converter",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "percent.ofWhat",
+      "priority": 360,
+      "keyword": "percentile to marks",
+      "description": "Percentile to Marks Converter — free online tool. This is the everyday percentage case: GST on a price, a tip, a discount, a salary hike. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "x": 96,
+        "y": 720
+      },
+      "publishedAt": "2026-11-16T08:31:17.878Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "bmi-for-kids-calculator",
+      "name": "BMI for Kids Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.childBmi",
+      "priority": 361,
+      "keyword": "child bmi calculator",
+      "description": "BMI for Kids Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "weight": 35,
+        "height": 140,
+        "age": 10,
+        "sex": "male"
+      },
+      "publishedAt": "2026-11-16T08:31:17.880Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "kilometer-to-meter-converter",
+      "name": "Kilometer to Meter Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.length",
+      "priority": 362,
+      "keyword": "kilometer to meter",
+      "description": "Kilometer to Meter Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "km",
+        "to": "m",
+        "value": 1
+      },
+      "publishedAt": "2026-11-16T08:31:17.884Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "text-to-speech-friendly-formatter",
+      "name": "Text to Speech Friendly Formatter",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.clean",
+      "priority": 363,
+      "keyword": "text formatter for tts",
+      "description": "Text to Speech Friendly Formatter — free online tool. The most common source of stray spaces is copy-paste from PDFs, which insert them between words and lines. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-16T08:31:17.888Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "hex-to-decimal-converter",
+      "name": "Hex to Decimal Converter",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "special.numberBase",
+      "priority": 363,
+      "keyword": "hex to decimal",
+      "description": "Hex to Decimal Converter — free online tool. Computers store one number; bases are just ways of writing it. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "value": "FF",
+        "from": "16",
+        "to": "10"
+      },
+      "publishedAt": "2026-11-16T08:31:17.893Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "flesch-reading-ease-calculator",
+      "name": "Flesch Reading Ease Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.readability",
+      "priority": 365,
+      "keyword": "flesch reading ease calculator",
+      "description": "Flesch Reading Ease Calculator — free online tool. Scores run 0–100: 60–70 is plain English, most news writing sits at 55–65, and legal text falls below 30. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-16T08:31:17.896Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "css-unit-converter",
+      "name": "CSS Unit Converter",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "dev.cssUnitConverter",
+      "priority": 365,
+      "keyword": "px to rem converter",
+      "description": "CSS Unit Converter — free online tool. rem is predictable because it always chains to the root; em compounds through nesting, which is why a button inside a heading can surprise you. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-16T08:31:17.899Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "dice-roller",
+      "name": "Dice Roller",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.diceRoller",
+      "priority": 366,
+      "keyword": "dice roller online",
+      "description": "Dice Roller — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-16T08:31:17.902Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "sitemap-generator",
+      "name": "Sitemap Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "seo.sitemapGenerator",
+      "priority": 367,
+      "keyword": "sitemap generator",
+      "description": "Create standard XML sitemaps for search engines. Paste your website URLs, set change frequencies, and export clean XML code instantly.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-16T08:31:17.906Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "base64-validator",
+      "name": "Base64 Validator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.base64Validator",
+      "priority": 367,
+      "keyword": "base64 validator",
+      "description": "Base64 Validator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-16T08:31:17.909Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "rot13-encoder",
+      "name": "ROT13 Encoder",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.rot13",
+      "priority": 368,
+      "keyword": "rot13 converter",
+      "description": "ROT13 Encoder — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-16T08:31:17.912Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "random-port-generator",
+      "name": "Random Port Generator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "misc.random",
+      "priority": 370,
+      "keyword": "random port generator",
+      "description": "Random Port Generator — free online tool. Both the minimum and maximum can come up, and every whole number between them is equally likely. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "min": 1024,
+        "max": 65535
+      },
+      "publishedAt": "2026-11-16T08:31:17.915Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "image-compression-ratio-calculator",
+      "name": "Image Compression Ratio Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "image.compressionRatio",
+      "priority": 370,
+      "keyword": "image compression calculator",
+      "description": "Image Compression Ratio Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "original": 2.4,
+        "compressed": 0.6
+      },
+      "publishedAt": "2026-11-16T08:31:17.917Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "aspect-ratio-for-reels-calculator",
+      "name": "Aspect Ratio for Reels Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.aspectRatio",
+      "priority": 372,
+      "keyword": "reels aspect ratio",
+      "description": "Aspect Ratio for Reels Calculator — free online tool. Enter either dimension to get the matching one without distortion. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "width": 1080,
+        "height": 1920,
+        "newWidth": 720
+      },
+      "publishedAt": "2026-11-16T08:31:17.920Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "stcg-tax-calculator",
+      "name": "STCG Tax Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.capitalGains",
+      "priority": 373,
+      "keyword": "stcg tax calculator",
+      "description": "STCG Tax Calculator — free online tool. The July 2024 rules removed indexation and set 12. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "purchase": 200000,
+        "sale": 250000,
+        "years": 1
+      },
+      "publishedAt": "2026-11-16T08:31:17.922Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "ad-revenue-estimator",
+      "name": "Ad Revenue Estimator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "seo.adRevenue",
+      "priority": 374,
+      "keyword": "adsense revenue calculator",
+      "description": "Ad Revenue Estimator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "pageviews": 100000,
+        "rpm": 1.2
+      },
+      "publishedAt": "2026-11-16T08:31:17.925Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "fraction-calculator",
+      "name": "Fraction Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.fractionMath",
+      "priority": 374,
+      "keyword": "fraction calculator",
+      "description": "Fraction Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "a": "1/2",
+        "b": "3/4"
+      },
+      "publishedAt": "2026-11-16T08:31:17.927Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "compound-interest-monthly-calculator",
+      "name": "Compound Interest Monthly Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.compoundInterest",
+      "priority": 375,
+      "keyword": "compound interest monthly calculator",
+      "description": "Compound Interest Monthly Calculator — free online tool. Interest on interest is the whole story here. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 100000,
+        "rate": 12,
+        "years": 3,
+        "frequency": "12"
+      },
+      "publishedAt": "2026-11-16T08:31:17.930Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "gcd-calculator",
+      "name": "GCD Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.lcmGcd",
+      "priority": 375,
+      "keyword": "gcd calculator",
+      "description": "GCD Calculator — free online tool. Euclid's algorithm is over two thousand years old and still the fastest way: keep replacing the larger number with the remainder until it hits zero. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "a": 48,
+        "b": 180
+      },
+      "publishedAt": "2026-11-16T08:31:17.933Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "pregnancy-due-date-calculator",
+      "name": "Pregnancy Due Date Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.dueDate",
+      "priority": 376,
+      "keyword": "pregnancy due date calculator",
+      "description": "Pregnancy Due Date Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "lmp": "2026-01-05",
+        "cycle": 28
+      },
+      "publishedAt": "2026-11-16T08:31:17.936Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "home-loan-eligibility-calculator",
+      "name": "Home Loan Eligibility Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.loanEligibility",
+      "priority": 377,
+      "keyword": "home loan eligibility calculator",
+      "description": "Home Loan Eligibility Calculator — free online tool. Lenders use the FOIR rule: total EMIs should stay under about half of your monthly income. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "income": 100000,
+        "obligations": 10000,
+        "rate": 8.5,
+        "years": 20
+      },
+      "publishedAt": "2026-11-16T08:31:17.938Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "age-in-working-days",
+      "name": "Age in Working Days",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "date.workingDays",
+      "priority": 377,
+      "keyword": "working days until date",
+      "description": "Age in Working Days — free online tool. The day after the start date is the first counted day, which matches how leave and delivery estimates are usually read. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "start": "2026-01-01",
+        "end": "2026-12-31"
+      },
+      "publishedAt": "2026-11-16T08:31:17.942Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "loss-percentage-calculator",
+      "name": "Loss Percentage Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "percent.change",
+      "priority": 379,
+      "keyword": "loss percentage calculator",
+      "description": "Loss Percentage Calculator — free online tool. The base is always the old value, so a rise and a following fall of the same percent do not cancel out. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": 1000,
+        "to": 850
+      },
+      "publishedAt": "2026-11-16T08:31:17.944Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
     }
   ],
-  "updatedAt": "2026-11-09T08:36:32.177Z",
+  "updatedAt": "2026-11-16T08:31:17.944Z",
   "lastPublish": {
-    "at": "2026-11-09T08:36:32.177Z",
+    "at": "2026-11-16T08:31:17.944Z",
     "ids": [
-      "social-media-image-size-guide",
-      "blur-value-calculator",
-      "meta-tag-generator",
-      "rent-vs-buy-calculator",
-      "bit-to-byte-converter",
-      "fraction-to-decimal-calculator",
-      "linkedin-post-length-checker",
-      "lean-body-mass-calculator",
-      "aspect-ratio-comparison",
-      "ltcg-tax-on-shares-calculator",
-      "ctr-by-position-calculator",
-      "hcf-calculator",
-      "compound-interest-calculator-quarterly",
-      "sms-length-calculator",
-      "working-days-in-month",
-      "lottery-number-generator",
-      "personal-loan-eligibility-calculator",
-      "vat-number-validator",
-      "macro-calculator",
-      "octal-encoder",
-      "profit-percentage-calculator",
-      "meeting-time-planner",
-      "reverse-mortgage-calculator",
-      "bmi-prime-calculator",
-      "word-diff-checker"
+      "indexed-capital-gains-calculator",
+      "decimal-to-fraction-calculator",
+      "percentile-to-marks-converter",
+      "bmi-for-kids-calculator",
+      "kilometer-to-meter-converter",
+      "text-to-speech-friendly-formatter",
+      "hex-to-decimal-converter",
+      "flesch-reading-ease-calculator",
+      "css-unit-converter",
+      "dice-roller",
+      "sitemap-generator",
+      "base64-validator",
+      "rot13-encoder",
+      "random-port-generator",
+      "image-compression-ratio-calculator",
+      "aspect-ratio-for-reels-calculator",
+      "stcg-tax-calculator",
+      "ad-revenue-estimator",
+      "fraction-calculator",
+      "compound-interest-monthly-calculator",
+      "gcd-calculator",
+      "pregnancy-due-date-calculator",
+      "home-loan-eligibility-calculator",
+      "age-in-working-days",
+      "loss-percentage-calculator"
     ],
     "count": 25
   }
