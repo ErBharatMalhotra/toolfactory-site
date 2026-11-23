@@ -7832,37 +7832,578 @@
         "ok formula-smoke",
         "ok internal-links"
       ]
+    },
+    {
+      "id": "text-repeater",
+      "name": "Text Repeater",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.repeat",
+      "priority": 379,
+      "keyword": "text repeater",
+      "description": "Text Repeater — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.652Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "ist-to-est-converter",
+      "name": "IST to EST Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "special.timezone",
+      "priority": 381,
+      "keyword": "ist to est converter",
+      "description": "IST to EST Converter — free online tool. Offsets are read from your browser’s own timezone database, so daylight-saving changes are handled for the date you entered — not for today. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "dt": "2026-03-10T18:00",
+        "from": "Asia/Kolkata",
+        "to": "America/New_York"
+      },
+      "publishedAt": "2026-11-23T09:40:15.661Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "assignment-weight-calculator",
+      "name": "Assignment Weight Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "math.weightedAverage",
+      "priority": 381,
+      "keyword": "assignment weight calculator",
+      "description": "Assignment Weight Calculator — free online tool. A weighted average is the honest average whenever items count differently: a 4-credit course should move your GPA more than a 2-credit one. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "marks": "80, 75",
+        "weights": "40, 60"
+      },
+      "publishedAt": "2026-11-23T09:40:15.665Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "coin-flip",
+      "name": "Coin Flip",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "text.coinFlip",
+      "priority": 381,
+      "keyword": "coin flip online",
+      "description": "Coin Flip — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.670Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "json-schema-validator",
+      "name": "JSON Schema Validator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.jsonSchemaValidator",
+      "priority": 382,
+      "keyword": "json schema validator",
+      "description": "JSON Schema Validator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.673Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "caesar-cipher",
+      "name": "Caesar Cipher",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.caesarCipher",
+      "priority": 383,
+      "keyword": "caesar cipher",
+      "description": "Caesar Cipher — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.677Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "viva-marks-calculator",
+      "name": "Viva Marks Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "percent.ofWhat",
+      "priority": 384,
+      "keyword": "viva marks calculator",
+      "description": "Viva Marks Calculator — free online tool. This is the everyday percentage case: GST on a price, a tip, a discount, a salary hike. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "x": 80,
+        "y": 50
+      },
+      "publishedAt": "2026-11-23T09:40:15.681Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "csv-formatter",
+      "name": "CSV Formatter",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.csvTools",
+      "priority": 384,
+      "keyword": "csv formatter",
+      "description": "CSV Formatter — free online tool. Paste straight from Excel or Sheets — they export TSV when you copy. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.687Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "meter-to-kilometer-converter",
+      "name": "Meter to Kilometer Converter",
+      "category": "converters",
+      "type": "CONV",
+      "primitive": "unit.length",
+      "priority": 386,
+      "keyword": "meter to kilometer",
+      "description": "Meter to Kilometer Converter — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "from": "m",
+        "to": "km",
+        "value": 1
+      },
+      "publishedAt": "2026-11-23T09:40:15.691Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "chat-text-cleaner",
+      "name": "Chat Text Cleaner",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.clean",
+      "priority": 387,
+      "keyword": "whatsapp text formatter",
+      "description": "Chat Text Cleaner — free online tool. The most common source of stray spaces is copy-paste from PDFs, which insert them between words and lines. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.695Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "flesch-kincaid-grade-calculator",
+      "name": "Flesch Kincaid Grade Calculator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.readability",
+      "priority": 389,
+      "keyword": "flesch kincaid grade level",
+      "description": "Flesch Kincaid Grade Calculator — free online tool. Scores run 0–100: 60–70 is plain English, most news writing sits at 55–65, and legal text falls below 30. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.699Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "decimal-to-hex-converter",
+      "name": "Decimal to Hex Converter",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "special.numberBase",
+      "priority": 389,
+      "keyword": "decimal to hex",
+      "description": "Decimal to Hex Converter — free online tool. Computers store one number; bases are just ways of writing it. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "value": "255",
+        "from": "10",
+        "to": "16"
+      },
+      "publishedAt": "2026-11-23T09:40:15.703Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "htaccess-redirect-generator",
+      "name": "Htaccess Redirect Generator",
+      "category": "generators",
+      "type": "GEN",
+      "primitive": "seo.htaccessGenerator",
+      "priority": 391,
+      "keyword": "htaccess redirect generator",
+      "description": "Htaccess Redirect Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.706Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "px-to-em-converter",
+      "name": "PX to EM Converter",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "dev.cssUnitConverter",
+      "priority": 391,
+      "keyword": "px to em",
+      "description": "PX to EM Converter — free online tool. rem is predictable because it always chains to the root; em compounds through nesting, which is why a button inside a heading can surprise you. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.709Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "ovulation-calculator",
+      "name": "Ovulation Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "health.ovulation",
+      "priority": 391,
+      "keyword": "ovulation calculator",
+      "description": "Ovulation Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "lmp": "2026-01-05",
+        "cycle": 28
+      },
+      "publishedAt": "2026-11-23T09:40:15.712Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "cloud-storage-cost-calculator",
+      "name": "Cloud Storage Cost Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "percent.ofWhat",
+      "priority": 394,
+      "keyword": "cloud storage cost calculator",
+      "description": "Cloud Storage Cost Calculator — free online tool. This is the everyday percentage case: GST on a price, a tip, a discount, a salary hike. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "x": 0.023,
+        "y": 500
+      },
+      "publishedAt": "2026-11-23T09:40:15.715Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "text-reverser-word-order",
+      "name": "Text Reverser Word Order",
+      "category": "formatters",
+      "type": "FMT",
+      "primitive": "text.reverseWords",
+      "priority": 394,
+      "keyword": "reverse word order",
+      "description": "Text Reverser Word Order — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.718Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "aspect-ratio-for-stories",
+      "name": "Aspect Ratio for Stories",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "math.aspectRatio",
+      "priority": 396,
+      "keyword": "story aspect ratio calculator",
+      "description": "Aspect Ratio for Stories — free online tool. Enter either dimension to get the matching one without distortion. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "width": 1080,
+        "height": 1920,
+        "newHeight": 1280
+      },
+      "publishedAt": "2026-11-23T09:40:15.721Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "random-team-generator",
+      "name": "Random Team Generator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "text.teamGenerator",
+      "priority": 396,
+      "keyword": "random team generator",
+      "description": "Random Team Generator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.725Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "yaml-validator",
+      "name": "YAML Validator",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.yamlValidator",
+      "priority": 397,
+      "keyword": "yaml validator",
+      "description": "YAML Validator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.728Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "page-rpm-calculator",
+      "name": "Page RPM Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "seo.adRevenue",
+      "priority": 398,
+      "keyword": "page rpm calculator",
+      "description": "Page RPM Calculator — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "pageviews": 50000,
+        "rpm": 2
+      },
+      "publishedAt": "2026-11-23T09:40:15.731Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "vigenere-cipher",
+      "name": "Vigenere Cipher",
+      "category": "checkers",
+      "type": "CHK",
+      "primitive": "dev.vigenereCipher",
+      "priority": 398,
+      "keyword": "vigenere cipher",
+      "description": "Vigenere Cipher — free online tool. Fast, private, no signup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {},
+      "publishedAt": "2026-11-23T09:40:15.734Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "compound-interest-half-yearly-calculator",
+      "name": "Compound Interest Half Yearly Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "finance.compoundInterest",
+      "priority": 399,
+      "keyword": "compound interest half yearly",
+      "description": "Compound Interest Half Yearly Calculator — free online tool. Interest on interest is the whole story here. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "principal": 100000,
+        "rate": 9,
+        "years": 5,
+        "frequency": "2"
+      },
+      "publishedAt": "2026-11-23T09:40:15.737Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "aadhaar-validator",
+      "name": "Aadhaar Validator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "india.aadhaarValidator",
+      "priority": 401,
+      "keyword": "aadhaar number validation",
+      "description": "Aadhaar Validator — free online tool. The checksum catches the common mistakes — a mistyped digit or two swapped digits — without any database lookup. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "value": "234123412346"
+      },
+      "publishedAt": "2026-11-23T09:40:15.741Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
+    },
+    {
+      "id": "profit-margin-calculator",
+      "name": "Profit Margin Calculator",
+      "category": "calculators",
+      "type": "CALC",
+      "primitive": "percent.isWhatPercent",
+      "priority": 403,
+      "keyword": "profit margin calculator",
+      "description": "Profit Margin Calculator — free online tool. Use this when you know the two numbers and want the ratio as a percentage — test scores, conversion rates, what share of revenue a product brings in. Works on mobile and offline.",
+      "contentSource": "deterministic",
+      "defaults": {
+        "x": 20000,
+        "y": 120000
+      },
+      "publishedAt": "2026-11-23T09:40:15.743Z",
+      "gate": [
+        "ok js-syntax",
+        "ok no-external-calls",
+        "ok html-validity",
+        "ok formula-smoke",
+        "ok internal-links"
+      ]
     }
   ],
-  "updatedAt": "2026-11-16T08:31:17.944Z",
+  "updatedAt": "2026-11-23T09:40:15.743Z",
   "lastPublish": {
-    "at": "2026-11-16T08:31:17.944Z",
+    "at": "2026-11-23T09:40:15.743Z",
     "ids": [
-      "indexed-capital-gains-calculator",
-      "decimal-to-fraction-calculator",
-      "percentile-to-marks-converter",
-      "bmi-for-kids-calculator",
-      "kilometer-to-meter-converter",
-      "text-to-speech-friendly-formatter",
-      "hex-to-decimal-converter",
-      "flesch-reading-ease-calculator",
-      "css-unit-converter",
-      "dice-roller",
-      "sitemap-generator",
-      "base64-validator",
-      "rot13-encoder",
-      "random-port-generator",
-      "image-compression-ratio-calculator",
-      "aspect-ratio-for-reels-calculator",
-      "stcg-tax-calculator",
-      "ad-revenue-estimator",
-      "fraction-calculator",
-      "compound-interest-monthly-calculator",
-      "gcd-calculator",
-      "pregnancy-due-date-calculator",
-      "home-loan-eligibility-calculator",
-      "age-in-working-days",
-      "loss-percentage-calculator"
+      "text-repeater",
+      "ist-to-est-converter",
+      "assignment-weight-calculator",
+      "coin-flip",
+      "json-schema-validator",
+      "caesar-cipher",
+      "viva-marks-calculator",
+      "csv-formatter",
+      "meter-to-kilometer-converter",
+      "chat-text-cleaner",
+      "flesch-kincaid-grade-calculator",
+      "decimal-to-hex-converter",
+      "htaccess-redirect-generator",
+      "px-to-em-converter",
+      "ovulation-calculator",
+      "cloud-storage-cost-calculator",
+      "text-reverser-word-order",
+      "aspect-ratio-for-stories",
+      "random-team-generator",
+      "yaml-validator",
+      "page-rpm-calculator",
+      "vigenere-cipher",
+      "compound-interest-half-yearly-calculator",
+      "aadhaar-validator",
+      "profit-margin-calculator"
     ],
     "count": 25
   }
